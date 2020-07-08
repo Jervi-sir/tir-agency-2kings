@@ -1,0 +1,641 @@
+/*------------------Preloader---------------*/
+svg {
+  position: absolute;
+  width: 20em;
+  height: 9em;
+  top: 4%;
+  right: 0;
+  /* bottom: 0; */
+  left: 24%;
+  margin: auto;
+}
+.credit {
+  position: absolute;
+  bottom: 50px;
+  width: 100%;
+  text-align: center;
+}
+
+.credit a {
+  color: #FDB515;
+  font: 800 75% "Open Sans", sans-serif;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.navbar-toggler
+{
+  display: none;
+}
+.pre-loader {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+.pre-loader-lay {
+    background: rgba(45, 34, 21, 0.48);
+    border-radius: 9px;
+}
+
+/*----------------------Backgrounds---------------------*/
+.about-banner-voiture 
+{
+  background-image: url('../img/voiture.jpg');
+  background-position: 35% 23%;
+  background-size: 100%;
+}
+
+.about-banner-voiture .overlay-bg 
+{
+  background: rgba(4, 9, 30, 0.4);
+}
+.about-banner-hotel
+{
+  background-image: url('../img/hotel.jpg');
+  background-position: 42% 59%;
+  background-size: 100%;
+}
+
+.about-banner-hotel .overlay-bg 
+{
+  background: rgba(4, 9, 30, 0.4);
+}
+
+.about-banner-contacter 
+{
+  background-image: url('../img/voiture.jpg');
+  background-position: 35% 23%;
+  background-size: 100%;
+}
+
+.about-banner-contacter .overlay-bg 
+{
+  background: rgba(4, 9, 30, 0.4);
+}
+.about-banner-login 
+{
+  background-image: url('../img/accueil.jpg');
+  background-position: 35% 40%;;
+  background-size: 100%;
+}
+
+.about-banner-login .overlay-bg 
+{
+  background: rgba(4, 9, 30, 0.4);
+}
+
+.about-banner-avion 
+{
+  background-image: url('../img/avion.jpg');
+  background-position: 34% 53%;
+  background-size: 100%;
+}
+
+.about-banner-avion .overlay-bg 
+{
+  background: rgba(4, 9, 30, 0.4);
+}
+
+.about-banner-contacer 
+{
+  background-image: url('../img/contacer.jpg');
+  background-position: 42% 50%;
+  background-size: 100%;
+}
+
+.about-banner-contacer .overlay-bg 
+{
+  background: rgba(4, 9, 30, 0.4);
+}
+
+.about-banner-omra 
+{
+  background-image: url('../img/omra.jpg');
+  background-position: 0% 67%;
+}
+
+.about-banner-omra .overlay-bg 
+{
+  background: rgba(4, 9, 30, 0.4);
+}
+
+
+/*---------------------------------------------------*/
+
+
+.sort-size
+{
+     font-size: 13px; 
+     font-weight: 600; 
+     margin: 0; 
+     padding: 0; 
+     border-bottom: 1px solid rgba(32, 32, 32, .078); 
+     color: black; 
+}
+
+.sort-size:hover
+{
+     color: #f8b600; 
+}
+
+
+
+.page-item.active .page-link {
+    z-index: 1;
+    color: #fff;
+    background-color: #f8b600;
+    border-color: #f8b600;
+}
+
+
+.page-link {
+    position: relative;
+    display: block;
+    padding: 0.5rem 0.75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #000000;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+}
+
+.page-link:hover {
+    position: relative;
+    display: block;
+    padding: 0.5rem 0.75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #f8b600;
+    background-color: #fff;
+    border-color: #f8b600;
+}
+
+
+body {
+  background: #e2eaef;
+}
+h2 {
+  color: #000;
+  font-size: 26px;
+  font-weight: 300;
+  text-align: center;
+  text-transform: uppercase;
+  position: relative;
+  margin: 30px 0 60px;
+}
+h2::after {
+  content: "";
+  width: 10em;
+  position: absolute;
+  margin: 0 auto;
+  height: 4px;
+  border-radius: 1px;
+  background: #f8b600;
+  left: 0;
+  right: 0;
+  bottom: -20px;
+}
+/*============================================================*/
+/*====================Carousel images========================*/
+/*=====pour afficher meilleur offres========================*/
+.carousel {
+  margin: 50px auto;
+  padding: 0 70px;
+}
+.carousel .item {
+  color: #747d89;
+  min-height: 325px;
+    text-align: center;
+  overflow: hidden;
+}
+.carousel .thumb-wrapper {
+  padding: 50px 5px;
+    padding-bottom: 20px;
+  background: #fff;
+  border-radius: 3px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 9px 3px rgba(0,0,0,0.3);
+    margin-bottom: 20px;
+    
+}
+.carousel .item .img-box {
+    
+  height: 180px;
+  width: 100%;
+  position: relative;
+    transform: translate(0px,-20px);
+    
+}
+.carousel .item img { 
+  max-width: 100%;
+  max-height: 100%;
+    display: block; 
+    position: absolute;
+  bottom: 0;
+  margin: auto;
+  left: 0;
+  right: 0;
+    
+}
+.carousel .item h4 {
+  font-size: 18px;
+}
+.carousel .item h4, .carousel .item p, .carousel .item ul {
+  margin-bottom: 5px;
+}
+.carousel .thumb-content .btn {
+  color: #f8b600;
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: bold;
+    background: none;
+    border: 1px solid #f8b600;
+    padding: 6px 14px;
+    margin-top: 5px;
+    line-height: 16px;
+    border-radius: 20px;
+}
+.carousel .thumb-content .btn:hover, .carousel .thumb-content .btn:focus {
+  color: #fff;
+  background: #f8b600;
+  box-shadow: none;
+}
+.carousel .thumb-content .btn i {
+  font-size: 14px;
+    font-weight: bold;
+    margin-left: 5px;
+}
+.carousel .carousel-control {
+  height: 44px;
+  width: 40px;
+  background:  #f8b600; 
+    margin: auto 0;
+    border-radius: 4px;
+  opacity: 0.8;
+}
+.carousel .carousel-control:hover {
+  background: #78bf00;
+  opacity: 1;
+}
+.carousel .carousel-control i {
+    font-size: 36px;
+    position: absolute;
+    top: 50%;
+    display: inline-block;
+    margin: -19px 0 0 0;
+    z-index: 5;
+    left: 0;
+    right: 0;
+    color: #fff;
+  text-shadow: none;
+    font-weight: bold;
+}
+.carousel .item-price {
+  font-size: 13px;
+  padding: 2px 0;
+}
+.carousel .item-price strike {
+  opacity: 0.7;
+  margin-right: 5px;
+}
+.carousel .carousel-control.left i {
+  margin-left: -2px;
+}
+.carousel .carousel-control.right i {
+  margin-right: -4px;
+}
+.carousel .carousel-indicators {
+  bottom: -50px;
+}
+.carousel-indicators li, .carousel-indicators li.active {
+  width: 10px;
+  height: 10px;
+  margin: 4px;
+  border-radius: 50%;
+  border: none;
+}
+.carousel-indicators li { 
+  background: rgba(0, 0, 0, 0.2);
+}
+.carousel-indicators li.active {  
+  background: rgba(0, 0, 0, 0.6);
+}
+.carousel .wish-icon {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  z-index: 99;
+  cursor: pointer;
+  font-size: 16px;
+  color: #abb0b8;
+}
+.carousel .wish-icon .fa-heart {
+  color: #ff6161;
+}
+.star-rating li {
+  padding: 0;
+}
+.star-rating i {
+  font-size: 14px;
+  color: #ffc000;
+}
+.price {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 8px 5px;
+    margin-left: 21px;
+    color: #fff;
+    font-size: 16px;
+    background-color: #000000b8;
+}
+}
+/*============================================================*/
+/*====================Images=================================*/
+/*==========================================================*/
+.fit-image {
+    width: 100%;
+    height: 300px;
+    /* only if you want fixed height */
+}
+
+.owl-prev,
+.owl-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background:  #f8b600; 
+  color: transparent; 
+  border-radius: 4px;
+  height: 40px;
+  opacity: 0.8;
+
+}
+
+.owl-prev {
+  left: -2.3rem;
+  background:no-repeat url(../img/icons/chevron-left-solid.svg) #f8b600;
+
+}
+
+.owl-next {
+  right: -2.3rem;
+  background:no-repeat url(../img/icons/chevron-right-solid.svg) #f8b600;
+
+}
+
+
+.img-hover-zoom {
+     height: 300px; 
+  overflow: hidden; 
+}
+
+.img-hover-zoom img {
+  transform-origin: 0 0;
+  transition: transform .25s, visibility .25s ease-in;
+}
+
+/* The Transformation */
+.img-hover-zoom:hover img {
+   transform: scale(1.1, 1.02);
+    cursor: pointer;
+}
+
+/*============================================================*/
+/*====================Stars==================================*/
+/*==========================================================*/
+#full-stars-example {
+  /* use display:inline-flex to prevent whitespace issues. alternatively, you can put all the children of .rating-group on a single line */
+  /* make hover effect work properly in IE */
+  /* hide radio inputs */
+  /* set icon padding and size */
+  /* set default star color */
+  /* set color of none icon when unchecked */
+  /* if none icon is checked, make it red */
+  /* if any input is checked, make its following siblings grey */
+  /* make all stars orange on rating group hover */
+  /* make hovered input's following siblings grey on hover */
+  /* make none icon grey on rating group hover */
+  /* make none icon red on hover */
+}
+#full-stars-example .rating-group {
+  display: inline-flex;
+}
+#full-stars-example .rating__icon {
+  pointer-events: none;
+}
+#full-stars-example .rating__input {
+  position: absolute !important;
+  left: -9999px !important;
+}
+#full-stars-example .rating__label {
+  cursor: pointer;
+  padding: 0 0.1em;
+  font-size: 2rem;
+}
+#full-stars-example .rating__icon--star {
+  color: orange;
+}
+#full-stars-example .rating__icon--none {
+  color: #eee;
+}
+#full-stars-example .rating__input--none:checked + .rating__label .rating__icon--none {
+  color: red;
+}
+#full-stars-example .rating__input:checked ~ .rating__label .rating__icon--star {
+  color: #ddd;
+}
+#full-stars-example .rating-group:hover .rating__label .rating__icon--star {
+  color: orange;
+}
+#full-stars-example .rating__input:hover ~ .rating__label .rating__icon--star {
+  color: #ddd;
+}
+#full-stars-example .rating-group:hover .rating__input--none:not(:hover) + .rating__label .rating__icon--none {
+  color: #eee;
+}
+#full-stars-example .rating__input--none:hover + .rating__label .rating__icon--none {
+  color: red;
+}
+
+#half-stars-example {
+  /* use display:inline-flex to prevent whitespace issues. alternatively, you can put all the children of .rating-group on a single line */
+  /* make hover effect work properly in IE */
+  /* hide radio inputs */
+  /* set icon padding and size */
+  /* add padding and positioning to half star labels */
+  /* set default star color */
+  /* set color of none icon when unchecked */
+  /* if none icon is checked, make it red */
+  /* if any input is checked, make its following siblings grey */
+  /* make all stars orange on rating group hover */
+  /* make hovered input's following siblings grey on hover */
+  /* make none icon grey on rating group hover */
+  /* make none icon red on hover */
+}
+#half-stars-example .rating-group {
+  display: inline-flex;
+}
+#half-stars-example .rating__icon {
+  pointer-events: none;
+}
+#half-stars-example .rating__input {
+  position: absolute !important;
+  left: -9999px !important;
+}
+#half-stars-example .rating__label {
+  cursor: pointer;
+  /* if you change the left/right padding, update the margin-right property of .rating__label--half as well. */
+  padding: 0 0.1em;
+  font-size: 2rem;
+}
+#half-stars-example .rating__label--half {
+  padding-right: 0;
+  margin-right: -0.6em;
+  z-index: 2;
+}
+#half-stars-example .rating__icon--star {
+  color: orange;
+}
+#half-stars-example .rating__icon--none {
+  color: #eee;
+}
+#half-stars-example .rating__input--none:checked + .rating__label .rating__icon--none {
+  color: red;
+}
+#half-stars-example .rating__input:checked ~ .rating__label .rating__icon--star {
+  color: #ddd;
+}
+#half-stars-example .rating-group:hover .rating__label .rating__icon--star,
+#half-stars-example .rating-group:hover .rating__label--half .rating__icon--star {
+  color: orange;
+}
+#half-stars-example .rating__input:hover ~ .rating__label .rating__icon--star,
+#half-stars-example .rating__input:hover ~ .rating__label--half .rating__icon--star {
+  color: #ddd;
+}
+#half-stars-example .rating-group:hover .rating__input--none:not(:hover) + .rating__label .rating__icon--none {
+  color: #eee;
+}
+#half-stars-example .rating__input--none:hover + .rating__label .rating__icon--none {
+  color: red;
+}
+
+#full-stars-example-two {
+  /* use display:inline-flex to prevent whitespace issues. alternatively, you can put all the children of .rating-group on a single line */
+  /* make hover effect work properly in IE */
+  /* hide radio inputs */
+  /* hide 'none' input from screenreaders */
+  /* set icon padding and size */
+  /* set default star color */
+  /* if any input is checked, make its following siblings grey */
+  /* make all stars orange on rating group hover */
+  /* make hovered input's following siblings grey on hover */
+}
+#full-stars-example-two .rating-group {
+  display: inline-flex;
+}
+#full-stars-example-two .rating__icon {
+  pointer-events: none;
+}
+#full-stars-example-two .rating__input {
+  position: absolute !important;
+  left: -9999px !important;
+}
+#full-stars-example-two .rating__input--none {
+  display: none;
+}
+#full-stars-example-two .rating__label {
+  cursor: pointer;
+  padding: 0 0.1em;
+  font-size: 2rem;
+}
+#full-stars-example-two .rating__icon--star {
+  color: orange;
+}
+#full-stars-example-two .rating__input:checked ~ .rating__label .rating__icon--star {
+  color: #ddd;
+}
+#full-stars-example-two .rating-group:hover .rating__label .rating__icon--star {
+  color: orange;
+}
+#full-stars-example-two .rating__input:hover ~ .rating__label .rating__icon--star {
+  color: #ddd;
+}
+
+/*============================================================*/
+/*====================Sort acsendent descendent==============*/
+/*==========================================================*/
+
+.sort-style
+{
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 10px;
+    padding: 0;
+    padding: 0px 1px 11px;
+    border-bottom: 1px solid rgba(32, 32, 32, .078);
+    color: black;
+}
+
+/*============================================================*/
+/*====================the google translate api===============*/
+/*==========================================================*/
+      /*hide its element*/
+iframe.goog-te-banner-frame
+{ 
+  display: none !important;
+}
+
+body 
+{
+  position: static !important; top:0px !important;
+}
+
+.goog-logo-link
+{
+  display:none !important;
+} 
+
+.goog-te-gadget
+{
+  color: transparent !important;
+}
+
+/*style its element*/
+.goog-te-combo
+{
+    background-color: #343a40;
+    color: white;
+    border-radius: 6px;
+    width: 84%;
+    padding: 10px;
+    border-color: white;
+    width: 85%;
+
+}
+
+
+body > .skiptranslate {
+    /*display: none;*/
+    /*position: unset;*/
+    
+}
+
+
+.goog-te-balloon-frame { display: none; }
+
+.goog-tooltip {
+  display:none !important;
+}
+
+.goog-tooltip:hover {
+    display: none !important;
+}
+.goog-text-highlight {
+    background-color: transparent !important;
+    border: none !important; 
+    box-shadow: none !important;
+}
