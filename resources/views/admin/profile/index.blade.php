@@ -24,7 +24,7 @@
                         <h5 class="card-title mb-0">Détails du Profil</h5>
                     </div>
                     <div class="card-body text-center">
-                        <img src="{{ secure_asset('storage/' . Auth::user()->avatar) }}" alt="Admin" class="img-fluid rounded-circle mb-2" width="128" height="128">
+                        <img src="{{ secure_asset( Auth::user()->avatar) }}" alt="Admin" class="img-fluid rounded-circle mb-2" width="128" height="128">
                         <h5 class="card-title mb-0"></h5>
                         <div class="text-muted mb-2">{{Auth::user()->name }}</div>
 

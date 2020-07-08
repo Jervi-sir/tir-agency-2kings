@@ -82,7 +82,7 @@
                    <div class="col row">
                        <div class="col-12 top-content d-flex flex-lg-row flex-column align-items-lg-center justify-content-left  justify-content-lg-between">
                            <div class="flight-logo">
-                                  <img src="{{ secure_asset('storage/' . $vol->image) }}" alt="ligne logo" draggable="false">
+                                  <img src="{{ secure_asset( $vol->image) }}" alt="ligne logo" draggable="false">
                                 </div><!-- /.flight-logo -->
                                  <div class="pricing">
                                     <p>{{$vol->nom_avion}} | {{$vol->aeroport_depart}}</p>
@@ -273,11 +273,11 @@
                       @if($vol->images)
                        <div class="col-4">
                         
-                        <img src="{{ secure_asset('storage/' . $vol->image)}}" alt="image vol" id="mainImage" class="rt-border-primary2">
+                        <img src="{{ secure_asset( $vol->image)}}" alt="image vol" id="mainImage" class="rt-border-primary2">
                             <div class="mt-2">
-                                <img class="img-thumbnail" src="{{ secure_asset('storage/' . $vol->image) }}"  width="50" >
+                                <img class="img-thumbnail" src="{{ secure_asset( $vol->image) }}"  width="50" >
                                     @foreach (json_decode($vol->images, true) as $image)
-                                        <img src="{{secure_asset('storage/' . $image)}}" width="50" class="img-thumbnail">
+                                        <img src="{{secure_asset( $image)}}" width="50" class="img-thumbnail">
                                     @endforeach
                             </div>
                         </div>

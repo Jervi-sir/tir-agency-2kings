@@ -95,11 +95,11 @@
                                             <td>{{ $vol->id }}</td>
                                             <td>{{ $vol->titre }}</td>
                                             <td>{{ $vol->nombre_places }}</td>
-                                            <td><img src="{{ secure_asset('storage/' . $vol->image)  }}"></td>
+                                            <td><img src="{{ secure_asset( $vol->image)  }}"></td>
                                             <td>
                                               @if($vol->images)
                                                     @foreach(json_decode($vol->images) as $image)
-                                                        <img src="{{secure_asset('storage/' . $image)}}" width="50" class="img-thumbnail">
+                                                        <img src="{{secure_asset( $image)}}" width="50" class="img-thumbnail">
                                                     @endforeach
                                                 @endif
                                             </td>

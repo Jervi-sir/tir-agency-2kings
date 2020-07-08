@@ -4,7 +4,7 @@
     <!-- Mobile Specific Meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Favicon-->
-    <link rel="shortcut icon" href="{{ secure_asset('storage/' . \App\Agence::first()->logo) }}">
+    <link rel="shortcut icon" href="{{ secure_asset( \App\Agence::first()->logo) }}">
     <!-- Meta Description -->
     <meta name="description" content="">
     <!-- Meta Keyword -->
@@ -92,7 +92,7 @@
                 <div id="logo">
                     <div class="row">
                         <div class="col-5">
-                            <a href="index.html"><img src="{{ secure_asset('storage/' . \App\Agence::first()->logo) }}" alt="" title="" /></a>
+                            <a href="index.html"><img src="{{ secure_asset( \App\Agence::first()->logo) }}" alt="" title="" /></a>
                         </div>
                         <div class="col-6 pl-0">
                             <div class="logo-style"> {{ \App\Agence::first()->nom_agence}}</div>

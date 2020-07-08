@@ -317,7 +317,7 @@ $heur_minute_arrivee2_avion1 = date("H:i", strtotime( $result2_avion1 ));
             <!----------UPPER------------------>
             <div class="col-12 row px-0 mx-0">
                 <div class="col-sm-2 flight-logo">
-                    <img src="{{ secure_asset('storage/' . $avion1->image) }}" alt="vol logo" draggable="false">
+                    <img src="{{ secure_asset( $avion1->image) }}" alt="vol logo" draggable="false">
                 </div><!-- /.flight-logo -->
                 @if($avion1->promotion_pourcentage > 0)
                 <div class="promotion">
@@ -388,7 +388,7 @@ $heur_minute_arrivee2_avion1 = date("H:i", strtotime( $result2_avion1 ));
             <div class="col-12 bottom-content row px-0 mx-0">
 
                 <div class="col-sm-2 flight-logo">
-                    <img src="{{ secure_asset('storage/' . $avion1->image) }}" alt="vol logo" draggable="false">
+                    <img src="{{ secure_asset( $avion1->image) }}" alt="vol logo" draggable="false">
                 </div><!-- /.flight-logo -->
                 @if($avion1->promotion_pourcentage > 0)
                 <div class="promotion">
@@ -461,7 +461,7 @@ $heur_minute_arrivee2_avion1 = date("H:i", strtotime( $result2_avion1 ));
             <!----------UPPER------------------>
             <div class="col-12 row px-0 mx-0">
                 <div class="col-sm-2 flight-logo">
-                    <img src="{{ secure_asset('storage/' . $product->image) }}" alt="vol logo" draggable="false">
+                    <img src="{{ secure_asset( $product->image) }}" alt="vol logo" draggable="false">
                 </div><!-- /.flight-logo -->
                 @if($product->promotion_pourcentage > 0)
                 <div class="promotion">
@@ -532,7 +532,7 @@ $heur_minute_arrivee2_avion1 = date("H:i", strtotime( $result2_avion1 ));
             <div class="col-12 bottom-content row px-0 mx-0">
 
                 <div class="col-sm-2 flight-logo">
-                    <img src="{{ secure_asset('storage/' . $product->image) }}" alt="vol logo" draggable="false">
+                    <img src="{{ secure_asset( $product->image) }}" alt="vol logo" draggable="false">
                 </div><!-- /.flight-logo -->
                 @if($product->promotion_pourcentage > 0)
                 <div class="promotion">

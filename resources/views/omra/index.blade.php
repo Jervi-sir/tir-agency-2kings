@@ -47,7 +47,7 @@
                     <div class="hotel-thumb col-md-3 mb-4 mb-md-0">
                         <div class="mb-0">
 
-                            <img src="{{ secure_asset('storage/' . $product->image) }}" class="hotel-bg rtbgprefix-cover">
+                            <img src="{{ secure_asset( $product->image) }}" class="hotel-bg rtbgprefix-cover">
 
                             <div class='control-group'>
                                 <input class='red-heart-checkbox' id='{{ $product->id+33 }}' type='checkbox'>

@@ -96,7 +96,7 @@
                                             <td>{{ $omra->slug }}</td>
                                             <td>{{ $omra->vol_titre }}</td>
                                             <td>{{ $omra->hotel_titre }}</td>
-                                            <td ><img src="{{secure_asset('storage/' .$omra->image) }}" width="50"></td>
+                                            <td ><img src="{{secure_asset($omra->image) }}" width="50"></td>
                                             </td>
                                             <td>{{ $omra->prix }}</td> 
                                             <td>{{ $omra->lieu }}</td>

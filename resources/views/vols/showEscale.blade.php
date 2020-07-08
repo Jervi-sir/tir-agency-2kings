@@ -271,7 +271,7 @@ $heur_minute_arrivee2_avion1 = date("H:i", strtotime( $result2_avion1 ));
                             <!----------UPPER------------------>
                             <div class="col-12 row px-0 mx-0">
                                 <div class="col-sm-2 flight-logo">
-                                    <img src="{{ secure_asset('storage/' . $vol2->image) }}" alt="vol logo" draggable="false">
+                                    <img src="{{ secure_asset( $vol2->image) }}" alt="vol logo" draggable="false">
                                 </div><!-- /.flight-logo -->
                                 @if($vol2->promotion_pourcentage > 0)
                                 <div class="promotion">
@@ -342,7 +342,7 @@ $heur_minute_arrivee2_avion1 = date("H:i", strtotime( $result2_avion1 ));
                             <div class="col-12 bottom-content row px-0 mx-0">
 
                                 <div class="col-sm-2 flight-logo">
-                                    <img src="{{ secure_asset('storage/' . $vol2->image) }}" alt="vol logo" draggable="false">
+                                    <img src="{{ secure_asset( $vol2->image) }}" alt="vol logo" draggable="false">
                                 </div><!-- /.flight-logo -->
                                 @if($vol2->promotion_pourcentage > 0)
                                 <div class="promotion">
@@ -415,7 +415,7 @@ $heur_minute_arrivee2_avion1 = date("H:i", strtotime( $result2_avion1 ));
                             <!----------UPPER------------------>
                             <div class="col-12 row px-0 mx-0">
                                 <div class="col-sm-2 flight-logo">
-                                    <img src="{{ secure_asset('storage/' . $vol->image) }}" alt="vol logo" draggable="false">
+                                    <img src="{{ secure_asset( $vol->image) }}" alt="vol logo" draggable="false">
                                 </div><!-- /.flight-logo -->
                                 @if($vol->promotion_pourcentage > 0)
                                 <div class="promotion">
@@ -486,7 +486,7 @@ $heur_minute_arrivee2_avion1 = date("H:i", strtotime( $result2_avion1 ));
                             <div class="col-12 bottom-content row px-0 mx-0">
 
                                 <div class="col-sm-2 flight-logo">
-                                    <img src="{{ secure_asset('storage/' . $vol->image) }}" alt="vol logo" draggable="false">
+                                    <img src="{{ secure_asset( $vol->image) }}" alt="vol logo" draggable="false">
                                 </div><!-- /.flight-logo -->
                                 @if($vol->promotion_pourcentage > 0)
                                 <div class="promotion">
@@ -742,11 +742,11 @@ $heur_minute_arrivee2_avion1 = date("H:i", strtotime( $result2_avion1 ));
                       @if($vol->images)
                        <div class="col-4">
                         
-                        <img src="{{ secure_asset('storage/' . $vol->image)}}" alt="image vol" id="mainImage" class="rt-border-primary2">
+                        <img src="{{ secure_asset( $vol->image)}}" alt="image vol" id="mainImage" class="rt-border-primary2">
                             <div class="mt-2">
-                                <img class="img-thumbnail" src="{{ secure_asset('storage/' . $vol->image) }}"  width="50" >
+                                <img class="img-thumbnail" src="{{ secure_asset( $vol->image) }}"  width="50" >
                                     @foreach (json_decode($vol->images, true) as $image)
-                                        <img src="{{secure_asset('storage/' . $image)}}" width="50" class="img-thumbnail">
+                                        <img src="{{secure_asset( $image)}}" width="50" class="img-thumbnail">
                                     @endforeach
                             </div>
                         </div>

@@ -61,7 +61,7 @@
 
                                     <th scope="row" class="border-0">
                                         <div class="p-2">
-                                            <img src="{{ secure_asset('storage/' . $order->voiture->image) }}" alt="" width="70" class="img-fluid rounded shadow-sm">
+                                            <img src="{{ secure_asset( $order->voiture->image) }}" alt="" width="70" class="img-fluid rounded shadow-sm">
                                             <div class="ml-3 d-inline-block align-middle">
                                                 <h5 class="mb-0"> 
                                                     <a href="{{ route('voitures.show', ['slug' => $order->voiture->slug]) }}" class="text-dark d-inline-block align-middle">
@@ -122,7 +122,7 @@
                                 <tr>
                                     <th scope="row" class="border-0">
                                         <div class="p-2">
-                                            <img src="{{ secure_asset('storage/' . $order->place->avion->image) }}" alt="" width="70" class="img-fluid rounded shadow-sm">
+                                            <img src="{{ secure_asset( $order->place->avion->image) }}" alt="" width="70" class="img-fluid rounded shadow-sm">
                                             <div class="ml-3 d-inline-block align-middle">
                                                 <h5 class="mb-0"> 
                                                     <a href="{{ route('vols.show', ['slug' => $order->place->avion->slug]) }}" class="text-dark d-inline-block align-middle">
@@ -186,7 +186,7 @@
                                 <tr>
                                     <th scope="row" class="border-0">
                                         <div class="p-2">
-                                            <img src="{{ secure_asset('storage/' . $order->chambre->image) }}" alt="" width="70" class="img-fluid rounded shadow-sm">
+                                            <img src="{{ secure_asset( $order->chambre->image) }}" alt="" width="70" class="img-fluid rounded shadow-sm">
                                             <div class="ml-3 d-inline-block align-middle">
                                                 <h5 class="mb-0"> 
                                                     <a href="{{ route('hotels.show', ['slug' => $order->chambre->slug]) }}" class="text-dark d-inline-block align-middle">

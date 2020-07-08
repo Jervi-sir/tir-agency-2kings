@@ -101,12 +101,12 @@
                                             <td>{{ $voiture->id }}</td>
                                             <td>{{ $voiture->titre }}</td>
                                             <td >
-                                                <img src="{{secure_asset('storage/' .$voiture->image) }}" width="50">
+                                                <img src="{{secure_asset($voiture->image) }}" width="50">
                                             </td>
                                             <td>
                                                  @if($voiture->images)
                                                     @foreach(json_decode($voiture->images) as $image)
-                                                        <img src="{{secure_asset('storage/' . $image)}}" width="50" class="img-thumbnail">
+                                                        <img src="{{secure_asset( $image)}}" width="50" class="img-thumbnail">
                                                     @endforeach
                                                 @endif
                                             </td>

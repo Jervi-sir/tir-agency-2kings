@@ -68,7 +68,7 @@
                                             <div class="form-row col-md-12">
                                                 <div class="form-group col-md-12">
                                                     <label class="form-label w-100">Logo</label>
-                                                    <img class="text-center" src="{{ secure_asset('storage/' . $agence->logo) }}" width="8%" value="$agence->logo">
+                                                    <img class="text-center" src="{{ secure_asset( $agence->logo) }}" width="8%" value="$agence->logo">
                                                 </div>
 
                                                 <div class="form-group col-md-12">   

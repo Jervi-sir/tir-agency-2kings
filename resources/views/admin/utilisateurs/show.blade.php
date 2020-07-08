@@ -1,4 +1,4 @@
-@extends('admin.masterAdmin')
+s@extends('admin.masterAdmin')
 
 
 @section('title-page-admin')
@@ -42,7 +42,7 @@
                                             </tr>
                                             <tr>
                                                 <td >Avatar</td>
-                                                <td ><img src="{{ secure_asset('storage/' . $user->avatar) }}" style="width: 11%;"></td>
+                                                <td ><img src="{{ secure_asset( $user->avatar) }}" style="width: 11%;"></td>
                                             </tr>
                                             <tr>
                                                 <td>Email vérifiée dans</td>

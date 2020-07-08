@@ -47,7 +47,7 @@
           <div class="flight-list-box rt-mb-30 mx-auto" style="width: 800px;">
               <div class="top-content d-flex flex-md-row flex-column justify-content-lg-between row">
                   <div class="car-thumb mr-4 mr-lg-0 mb-5 mb-md-0 col-md-4">
-                      <img src="{{ secure_asset('storage/' . $voiture->image) }}" alt="car image" class="rt-border-primary2">
+                      <img src="{{ secure_asset( $voiture->image) }}" alt="car image" class="rt-border-primary2">
                   </div>
                   <div class="economy mb-5 mb-md-0 col-md-5">
                       <h5 class="f-size-16 rt-medium">{{ $voiture->titre }}</h5>
@@ -172,7 +172,7 @@
           
                         
             <div class="city col-4">
-                  <img src="{{ secure_asset('storage/' . $voiture->image) }}">
+                  <img src="{{ secure_asset( $voiture->image) }}">
             </div>
             <div class="city col-4">
                 @if($voiture->electric)

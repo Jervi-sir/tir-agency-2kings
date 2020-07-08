@@ -46,7 +46,7 @@
                 <ul class="rt-list d-flex flex-lg-row flex-column justify-content-md-between box-style__1 rt-light-bg rt-mb-10 row" >
 
                     <li class="rt-pt-8 col-md-4">
-                        <span class="d-block"><img src="{{ secure_asset('storage/' . $chambre->image) }}" alt="chambre->hotel iamge" draggable="false">
+                        <span class="d-block"><img src="{{ secure_asset( $chambre->image) }}" alt="chambre->hotel iamge" draggable="false">
                             <span class="text-333"><i class="icofont-bed"></i> <i class="icofont-bed"></i></span>
                             <span class="d-block"></span>
 

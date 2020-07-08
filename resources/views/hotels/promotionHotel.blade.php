@@ -205,7 +205,7 @@
         <div class="hotel-thumb col-lg-4 mb-4 mb-md-0">
             <div  class="mb-0">
 
-                <img src="{{ secure_asset('storage/' . $product->image) }}" class="hotel-bg rtbgprefix-cover">
+                <img src="{{ secure_asset( $product->image) }}" class="hotel-bg rtbgprefix-cover">
                 @if($promo = $product->chambres->where('occupee',0)->where('promotion_pourcentage', '>', 0)->count())
                 <div class="promotion">
                            ( {{$promo}} ) chambres en promotion

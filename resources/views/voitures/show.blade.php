@@ -83,12 +83,12 @@
                     <div class="flight-list-box rt-mb-30">
                         <div class="top-content d-flex flex-md-row flex-column justify-content-lg-between">
                             <div class="car-thumb mr-4 mr-lg-0 mb-5 mb-md-0" style="max-width: 35em;">
-                            <img src="{{ secure_asset('storage/' . $voiture->image) }}" alt="image voiture" id="mainImage" width="100%" class="rt-border-primary2">
+                            <img src="{{ secure_asset( $voiture->image) }}" alt="image voiture" id="mainImage" width="100%" class="rt-border-primary2">
                             <div class="mt-2">
                                 @if($voiture->images)
-                                <img class="img-thumbnail" src="{{ secure_asset('storage/' . $voiture->image) }}"  width="50" >
+                                <img class="img-thumbnail" src="{{ secure_asset( $voiture->image) }}"  width="50" >
                                     @foreach (json_decode($voiture->images, true) as $image)
-                                        <img src="{{secure_asset('storage/' . $image)}}" width="50" class="img-thumbnail">
+                                        <img src="{{secure_asset( $image)}}" width="50" class="img-thumbnail">
                                     @endforeach
                                 @endif
                             </div>

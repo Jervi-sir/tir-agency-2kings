@@ -50,7 +50,7 @@
                                 <div class="thumb-wrapper">
 
                                         <div class="img-box img-hover-zoom" >
-                                                 <img src="{{ secure_asset('storage/' . $product->image) }}" class="img-fluid" alt="">
+                                                 <img src="{{ secure_asset( $product->image) }}" class="img-fluid" alt="">
                                                  <div class="price">à partir de <span class="review">{{ getPriceHelper($product->chambres->where('occupee',0)->min('prix')) }}</span></div>
                                         </div>
                                         <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
@@ -108,7 +108,7 @@
                                 <div class="thumb-wrapper">
 
                                         <div class="img-box img-hover-zoom" >
-                                                 <img src="{{ secure_asset('storage/' . $product->image) }}" class="img-fluid" alt="">
+                                                 <img src="{{ secure_asset( $product->image) }}" class="img-fluid" alt="">
                                                  <div class="price">à partir de <span class="review">{{ getPriceHelper($product->prix) }}</span></div>
                                         </div>
                                         <span class="wish-icon"><i class="fa fa-heart-o"></i></span>

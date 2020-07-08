@@ -92,11 +92,11 @@
                                 <td><input type="checkbox" name="row_id" id="checkbox-{{$hotel->id}}" value="{{$hotel->id}}"></td>
                                 <td>{{ $hotel->id }}</td>
                                 <td>{{ $hotel->titre }}</td>
-                                <td><img src="{{secure_asset('storage/' .$hotel->image) }}" width="50"></td>
+                                <td><img src="{{secure_asset($hotel->image) }}" width="50"></td>
                                 <td>
                                     @if($hotel->images)
                                     @foreach (json_decode($hotel->images, true) as $image)
-                                    <img src="{{secure_asset('storage/' . $image)}}" width="50" class="img-thumbnail">
+                                    <img src="{{secure_asset( $image)}}" width="50" class="img-thumbnail">
                                     @endforeach
                                     @endif
                                 </td>
