@@ -25,6 +25,8 @@ class AppServiceProvider extends ServiceProvider
     
      public function boot()
     {
+        session(['currency'        => 'dzd']);
+        
         if(env('APP_ENV') !== 'local') {
             URL::forceScheme('https');
         }

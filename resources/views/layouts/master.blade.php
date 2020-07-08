@@ -4,7 +4,7 @@
     <!-- Mobile Specific Meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Favicon-->
-    <link rel="shortcut icon" href="{{ asset('storage/' . \App\Agence::first()->logo) }}">
+    <link rel="shortcut icon" href="{{ secure_asset('storage/' . \App\Agence::first()->logo) }}">
     <!-- Meta Description -->
     <meta name="description" content="">
     <!-- Meta Keyword -->
@@ -18,23 +18,23 @@
     <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="{{ asset('js/vue.min.js') }}"></script>
+    <script src="{{ secure_asset('js/vue.min.js') }}"></script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 @yield('extra-script')
         <!--CSS=========================================================== -->
-        <link rel="stylesheet" href="{{ asset('css/linearicons.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/magnific-popup.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/jquery-ui.css') }}">             
-        <link rel="stylesheet" href="{{ asset('css/nice-select.css') }}">                           
-        <link rel="stylesheet" href="{{ asset('css/animate.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/owl.carousel.css') }}">              
-        <link rel="stylesheet" href="{{ asset('css/main.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/additional.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/checkbox.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/lightpick.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        <link rel="stylesheet" href="{{ secure_asset('css/linearicons.css') }}">
+        <link rel="stylesheet" href="{{ secure_asset('css/font-awesome.min.css') }}">
+        <link rel="stylesheet" href="{{ secure_asset('css/bootstrap.css') }}">
+        <link rel="stylesheet" href="{{ secure_asset('css/magnific-popup.css') }}">
+        <link rel="stylesheet" href="{{ secure_asset('css/jquery-ui.css') }}">             
+        <link rel="stylesheet" href="{{ secure_asset('css/nice-select.css') }}">                           
+        <link rel="stylesheet" href="{{ secure_asset('css/animate.min.css') }}">
+        <link rel="stylesheet" href="{{ secure_asset('css/owl.carousel.css') }}">              
+        <link rel="stylesheet" href="{{ secure_asset('css/main.css') }}">
+        <link rel="stylesheet" href="{{ secure_asset('css/additional.css') }}">
+        <link rel="stylesheet" href="{{ secure_asset('css/checkbox.css') }}">
+        <link rel="stylesheet" href="{{ secure_asset('css/lightpick.css') }}">
+        <link rel="stylesheet" href="{{ secure_asset('css/app.css') }}">
 
             @yield('extra-style')
         <script type="text/javascript">
@@ -92,7 +92,7 @@
                 <div id="logo">
                     <div class="row">
                         <div class="col-5">
-                            <a href="index.html"><img src="{{ asset('storage/' . \App\Agence::first()->logo) }}" alt="" title="" /></a>
+                            <a href="index.html"><img src="{{ secure_asset('storage/' . \App\Agence::first()->logo) }}" alt="" title="" /></a>
                         </div>
                         <div class="col-6 pl-0">
                             <div class="logo-style"> {{ \App\Agence::first()->nom_agence}}</div>
@@ -120,7 +120,7 @@
                             </li>
                             <li class="mx-3">
                                 <a href="{{ route('omra.index') }}">
-                                    <img style="transform: translate(0px,-4px);width: 25px;" src="{{ asset('img/crescent-moon-on-top-of-minaret.png') }}" >
+                                    <img style="transform: translate(0px,-4px);width: 25px;" src="{{ secure_asset('img/crescent-moon-on-top-of-minaret.png') }}" >
 
                                     omra</a>
                             </li>
@@ -318,25 +318,25 @@
     </script>
 
 
-    <script src="{{ asset('js/vendor/jquery-2.2.4.min.js') }}"></script>
-    <script src="{{ asset('js/popper.min.js') }}"></script>
-    <script src="{{ asset('js/vendor/bootstrap.min.js') }}"></script>
+    <script src="{{ secure_asset('js/vendor/jquery-2.2.4.min.js') }}"></script>
+    <script src="{{ secure_asset('js/popper.min.js') }}"></script>
+    <script src="{{ secure_asset('js/vendor/bootstrap.min.js') }}"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
-    <script src="{{ asset('js/jquery-ui.js') }}"></script>
-    <script src="{{ asset('js/easing.min.js') }}"></script>
-    <script src="{{ asset('js/hoverIntent.js') }}"></script>
-    <script src="{{ asset('js/superfish.min.js') }}"></script>
-    <script src="{{ asset('js/jquery.ajaxchimp.min.js') }}"></script>
-    <script src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script>
-    <script src="{{ asset('js/jquery.nice-select.min.js') }}"></script>
-    <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
-    <script src="{{ asset('js/mail-script.js') }}"></script>
-    <script src="{{ asset('js/main.js') }}"></script>
-    <script src="{{ asset('js/additional.js') }}"></script>
+    <script src="{{ secure_asset('js/jquery-ui.js') }}"></script>
+    <script src="{{ secure_asset('js/easing.min.js') }}"></script>
+    <script src="{{ secure_asset('js/hoverIntent.js') }}"></script>
+    <script src="{{ secure_asset('js/superfish.min.js') }}"></script>
+    <script src="{{ secure_asset('js/jquery.ajaxchimp.min.js') }}"></script>
+    <script src="{{ secure_asset('js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ secure_asset('js/jquery.nice-select.min.js') }}"></script>
+    <script src="{{ secure_asset('js/owl.carousel.min.js') }}"></script>
+    <script src="{{ secure_asset('js/mail-script.js') }}"></script>
+    <script src="{{ secure_asset('js/main.js') }}"></script>
+    <script src="{{ secure_asset('js/additional.js') }}"></script>
     <script async src="https://buttons.github.io/buttons.js"></script>
-    <script src="{{ asset('js/moment.min.js') }}"></script>
-    <script src="{{ asset('js/lightpick.js') }}"></script>
-    <script src="{{ asset('js/demo.js') }}"></script>
+    <script src="{{ secure_asset('js/moment.min.js') }}"></script>
+    <script src="{{ secure_asset('js/lightpick.js') }}"></script>
+    <script src="{{ secure_asset('js/demo.js') }}"></script>
 
 
 </body>
