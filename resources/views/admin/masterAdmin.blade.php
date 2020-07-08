@@ -7,11 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 
-    <link rel="shortcut icon" href="{{ asset('styleAdmin/img/icons/icon-48x48.png') }}" />
+    <link rel="shortcut icon" href="{{ secure_asset('styleAdmin/img/icons/icon-48x48.png') }}" />
 
     @yield('title-page-admin')
 
-    <link href="{{ asset('styleAdmin/css/app.css')}}" rel="stylesheet">
+    <link href="{{ secure_asset('styleAdmin/css/app.css')}}" rel="stylesheet">
 
     <style>
         .table-child-style :nth-child(4) {
@@ -130,7 +130,7 @@
                             </a>
 
                             <a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-toggle="dropdown">
-                                <img src="{{ asset('storage/' . Auth::user()->avatar) }}" class="avatar img-fluid rounded mr-1" alt="{{Auth::user()->name }}" /> <span class="text-dark">{{ Auth::user()->name }}</span>
+                                <img src="{{ secure_asset('storage/' . Auth::user()->avatar) }}" class="avatar img-fluid rounded mr-1" alt="{{Auth::user()->name }}" /> <span class="text-dark">{{ Auth::user()->name }}</span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right">
                                 <a class="dropdown-item" href="{{ route('adminProfile.index') }}"><i class="align-middle mr-1" data-feather="user"></i> Profile</a>
@@ -185,8 +185,8 @@
             $('input:checkbox').not(this).prop('checked', this.checked);
             });
     </script>
-    <script src="{{ asset('styleAdmin/js/vendor.js')}}"></script>
-    <script src="{{ asset('styleAdmin/js/app.js')}}"></script>
+    <script src="{{ secure_asset('styleAdmin/js/vendor.js')}}"></script>
+    <script src="{{ secure_asset('styleAdmin/js/app.js')}}"></script>
 
 </body>
 

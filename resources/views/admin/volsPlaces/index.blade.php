@@ -73,7 +73,7 @@
                                         <tr >
                                             <td>{{ $place->avion->id }}</td>
                                             <td>{{ $place->avion->nom_avion }}</td>
-                                            <td><img src="{{ asset('storage/' . $place->avion->image )  }}" width="50%" style="align-content: center;"></td>
+                                            <td><img src="{{ secure_asset('storage/' . $place->avion->image )  }}" width="50%" style="align-content: center;"></td>
                                             <td>{{ $place->code_place }}</td>
                                             <td>{{ $place->numero_place }}</td>
                                             <td>{{ $place->occupee }}</td>

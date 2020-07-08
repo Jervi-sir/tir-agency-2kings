@@ -50,7 +50,7 @@
                                 <div class="thumb-wrapper">
 
                                         <div class="img-box img-hover-zoom" >
-                                                 <img src="{{ asset('storage/' . $product->image) }}" class="img-fluid" alt="">
+                                                 <img src="{{ secure_asset('storage/' . $product->image) }}" class="img-fluid" alt="">
                                                  <div class="price">à partir de <span class="review">{{ getPriceHelper($product->chambres->where('occupee',0)->min('prix')) }}</span></div>
                                         </div>
                                         <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
@@ -108,7 +108,7 @@
                                 <div class="thumb-wrapper">
 
                                         <div class="img-box img-hover-zoom" >
-                                                 <img src="{{ asset('storage/' . $product->image) }}" class="img-fluid" alt="">
+                                                 <img src="{{ secure_asset('storage/' . $product->image) }}" class="img-fluid" alt="">
                                                  <div class="price">à partir de <span class="review">{{ getPriceHelper($product->prix) }}</span></div>
                                         </div>
                                         <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
@@ -161,7 +161,7 @@
             <div class="col-lg-6 col-md-12">
                 <div class="single-other-issue">
                     <div class="thumb">
-                        <img class="img-fluid" src="{{ asset('../img/o1.jpg')}}" width="20%" alt="voiture">                   
+                        <img class="img-fluid" src="{{ secure_asset('../img/o1.jpg')}}" width="20%" alt="voiture">                   
                     </div>
                     <a href="#">
                         <h4>Louer une voiture</h4>
@@ -174,7 +174,7 @@
             <div class="col-lg-6 col-md-12">
                 <div class="single-other-issue">
                     <div class="thumb">
-                        <img class="img-fluid" src="{{ asset('../img/hotel-4.jpg')}}" width="20%" alt="hotel">                   
+                        <img class="img-fluid" src="{{ secure_asset('../img/hotel-4.jpg')}}" width="20%" alt="hotel">                   
                     </div>
                     <a href="#">
                         <h4>Réserver une chambre d'un de nos hôtels</h4>

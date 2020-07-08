@@ -39,7 +39,7 @@
                                             </tr>
                                             <tr>
                                                 <td>Image</td>
-                                                <td><img src="{{ asset('storage/' . $omra->image) }}"></td>
+                                                <td><img src="{{ secure_asset('storage/' . $omra->image) }}"></td>
                                             </tr>
 
                                             <tr>

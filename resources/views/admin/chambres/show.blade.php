@@ -39,7 +39,7 @@
                                             </tr>
                                             <tr>
                                                 <td >Image</td>
-                                                <td ><img src="{{asset('storage/' .$chambre->image) }}" width="100"></td>
+                                                <td ><img src="{{secure_asset('storage/' .$chambre->image) }}" width="100"></td>
                                                 
                                             </tr>
                                             <tr>
@@ -47,7 +47,7 @@
                                                 <td>
                                                 @if($chambre->images)
                                                     @foreach (json_decode($chambre->images, true) as $image)
-                                                        <img src="{{asset('storage/' . $image)}}" width="50" class="img-thumbnail">
+                                                        <img src="{{secure_asset('storage/' . $image)}}" width="50" class="img-thumbnail">
                                                     @endforeach
                                                 @endif
                                                 </td>

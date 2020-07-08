@@ -42,7 +42,7 @@
                                             </tr>
                                             <tr>
                                                 <td >Avatar</td>
-                                                <td ><img src="{{ asset('storage/' . $user->avatar) }}" style="width: 11%;"></td>
+                                                <td ><img src="{{ secure_asset('storage/' . $user->avatar) }}" style="width: 11%;"></td>
                                             </tr>
                                             <tr>
                                                 <td>Email vérifiée dans</td>

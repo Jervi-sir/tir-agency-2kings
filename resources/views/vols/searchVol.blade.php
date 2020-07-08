@@ -289,7 +289,7 @@ $heur_minute_arrivee2 = date("H:i", strtotime( $result2 ));
         <div class="col-md-10 px-0 mr-3">
             <div class="col-12 row px-0 mx-0">
                 <div class="col-sm-2 flight-logo">
-                    <img src="{{ asset('storage/' . $product->image) }}" alt="vol logo" draggable="false">
+                    <img src="{{ secure_asset('storage/' . $product->image) }}" alt="vol logo" draggable="false">
                 </div><!-- /.flight-logo -->
                 @if($product->promotion_pourcentage > 0)
                 <div class="promotion">
@@ -320,7 +320,7 @@ $heur_minute_arrivee2 = date("H:i", strtotime( $result2 ));
                     <div class="middle row">
                         <div class="col-sm-12 text-center">Aller</div>
                         <div class="col-sm-12">
-                            <img src="{{ asset('img/go.png')}}" alt="vol logo" draggable="false">
+                            <img src="{{ secure_asset('img/go.png')}}" alt="vol logo" draggable="false">
                         </div>
                     </div><!-- /.middle -->
                     <div class="right">
@@ -362,7 +362,7 @@ $heur_minute_arrivee2 = date("H:i", strtotime( $result2 ));
             <div class="col-12 bottom-content row px-0 mx-0">
 
                 <div class="col-sm-2 flight-logo">
-                    <img src="{{ asset('storage/' . $product->image) }}" alt="vol logo" draggable="false">
+                    <img src="{{ secure_asset('storage/' . $product->image) }}" alt="vol logo" draggable="false">
                 </div><!-- /.flight-logo -->
                 @if($product->promotion_pourcentage > 0)
                 <div class="promotion">
@@ -393,7 +393,7 @@ $heur_minute_arrivee2 = date("H:i", strtotime( $result2 ));
                     <div class=" middle">
                         <div class="col-sm-12 text-center">Retour</div>
                         <div class="col-sm-12">
-                            <img src="{{ asset('img/back.png')}}" alt="vol logo" draggable="false">
+                            <img src="{{ secure_asset('img/back.png')}}" alt="vol logo" draggable="false">
                         </div>
                     </div><!-- /.middle -->
                     <div class="right">

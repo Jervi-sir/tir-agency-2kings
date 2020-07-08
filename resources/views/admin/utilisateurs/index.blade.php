@@ -83,7 +83,7 @@
                                             <td>{{ $user->role_id }}</td>
                                             <td>{{ $user->name }}</td>
                                             <td>{{ $user->email }}</td>
-                                            <td style="text-align: center;"><img class="text-center" src="{{ asset('storage/' . $user->avatar) }}" width="25%" ></td>
+                                            <td style="text-align: center;"><img class="text-center" src="{{ secure_asset('storage/' . $user->avatar) }}" width="25%" ></td>
                                             <td>{{ $user->email_verified_at }}</td>
                                             
                                             <td class="d-none d-md-table-cell">{{ $user->created_at }}</td>

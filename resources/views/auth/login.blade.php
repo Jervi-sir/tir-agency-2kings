@@ -30,7 +30,7 @@
 
                 <div class="card-body">
                     <form class="text-center" method="POST" action="{{ route('login') }}">
-                        <a href="{{ route('home') }}"><img src="{{ asset('storage/' . \App\Agence::first()->logo) }}" class="img-fluid mt-2" alt="" title=""/></a>
+                        <a href="{{ route('home') }}"><img src="{{ secure_asset('storage/' . \App\Agence::first()->logo) }}" class="img-fluid mt-2" alt="" title=""/></a>
                         @csrf
                         <div class="form-group row mt-5">
                             <label for="email" class="col-md-4 col-form-label text-md-right text-dark font-weight-bold">{{ __('Adresse e-mail') }}</label>

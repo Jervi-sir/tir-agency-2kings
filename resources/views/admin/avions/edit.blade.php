@@ -143,7 +143,7 @@
                                         <div class="form-group">
                                             <label class="form-label w-100">Image</label>
                                             <div class="mb-1">
-                                                <img src="{{asset('storage/' .$avion->image) }}" class="img-thumbnail" width="90">
+                                                <img src="{{secure_asset('storage/' .$avion->image) }}" class="img-thumbnail" width="90">
                                             </div>
 
                                             <input type="file" name="image" accept="image/*" value="{{ $avion->image }}">
@@ -153,7 +153,7 @@
                                                 <div class="mb-1">
                                                     @if($avion->images)
                                                         @foreach (json_decode($avion->images, true) as $image)
-                                                            <img src="{{asset('storage/' . $image)}}" width="70" class="img-thumbnail">
+                                                            <img src="{{secure_asset('storage/' . $image)}}" width="70" class="img-thumbnail">
                                                         @endforeach
                                                     @endif
                                                 </div>

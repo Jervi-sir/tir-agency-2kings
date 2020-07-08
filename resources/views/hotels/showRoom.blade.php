@@ -58,13 +58,13 @@
             <div class="col-lg-7">
                 <div class="rt-duel-slider-main rt-mb-30">
                     <div class="single-main rtbgprefix-cover">
-                        <img class="single-main rtbgprefix-cover" src="{{ asset('storage/' . $chambre->image) }}" id="mainImage">
+                        <img class="single-main rtbgprefix-cover" src="{{ secure_asset('storage/' . $chambre->image) }}" id="mainImage">
                         <div class="mt-2">
                             @if($chambre->images)
-                            <img class="img-thumbnail" src="{{ asset('storage/' . $chambre->image) }}" width="50">
+                            <img class="img-thumbnail" src="{{ secure_asset('storage/' . $chambre->image) }}" width="50">
 
                             @foreach (json_decode($chambre->images, true) as $image)
-                            <img src="{{asset('storage/' . $image)}}" width="50" class="img-thumbnail">
+                            <img src="{{secure_asset('storage/' . $image)}}" width="50" class="img-thumbnail">
                             @endforeach
                             @endif
                         </div>

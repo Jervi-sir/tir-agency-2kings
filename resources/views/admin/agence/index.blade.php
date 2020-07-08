@@ -24,7 +24,7 @@
                         <h5 class="card-title mb-0">Détails de l'Agence</h5>
                     </div>
                     <div class="card-body text-center">
-                        <img class="text-center" src="{{ asset('storage/' . $agence->logo) }}" width="25%" >
+                        <img class="text-center" src="{{ secure_asset('storage/' . $agence->logo) }}" width="25%" >
                         <h5 class="card-title mb-0"></h5>
                         <div class="text-muted mb-2">{{ $agence->nom_agence }}</div>
 

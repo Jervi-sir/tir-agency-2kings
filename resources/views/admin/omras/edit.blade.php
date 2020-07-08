@@ -78,7 +78,7 @@
                                             <div class="form-row col-md-12">
                                                 <div class="form-group col-md-12">
                                                     <label class="form-label w-100">Image</label>
-                                                    <img class="text-center" src="{{ asset('storage/' . $omra->image) }}" width="8%" >
+                                                    <img class="text-center" src="{{ secure_asset('storage/' . $omra->image) }}" width="8%" >
                                                 </div>
 
                                                 <div class="form-group col-md-12">   

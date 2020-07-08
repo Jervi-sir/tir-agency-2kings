@@ -28,8 +28,8 @@
 
 @section('extra-script')
 
-    <script src="{{ asset('js/qrcode.js')}}"></script>
-    <script src="{{ asset('js/JsBarcode.all.min.js')}}"></script>
+    <script src="{{ secure_asset('js/qrcode.js')}}"></script>
+    <script src="{{ secure_asset('js/JsBarcode.all.min.js')}}"></script>
 
 @endsection
 
@@ -82,7 +82,7 @@
                    <div class="col row">
                        <div class="col-12 top-content d-flex flex-lg-row flex-column align-items-lg-center justify-content-left  justify-content-lg-between">
                            <div class="flight-logo">
-                                  <img src="{{ asset('storage/' . $vol->image) }}" alt="ligne logo" draggable="false">
+                                  <img src="{{ secure_asset('storage/' . $vol->image) }}" alt="ligne logo" draggable="false">
                                 </div><!-- /.flight-logo -->
                                  <div class="pricing">
                                     <p>{{$vol->nom_avion}} | {{$vol->aeroport_depart}}</p>
@@ -107,7 +107,7 @@
                                </div><!-- /.left1 -->
                                <div class="middle">
                                     <div class="col-sm-12 text-center">Aller</div>
-                                   <img src="{{ asset('img/go.png')}}" alt="time shape" draggable="false">
+                                   <img src="{{ secure_asset('img/go.png')}}" alt="time shape" draggable="false">
                                </div><!-- /.middle -->
                                <div class="right" style="top: 30%;right: 19%;">
                                   <span class="d-block">
@@ -143,7 +143,7 @@
 
                        <div class="col-12 bottom-content top-content d-flex flex-lg-row flex-column align-items-lg-center justify-content-left  justify-content-lg-between">
                            <div class="flight-logo">
-                               <img src="{{asset('storage/'.$vol->image  ) }}" alt="flt logo" draggable="false">
+                               <img src="{{secure_asset('storage/'.$vol->image  ) }}" alt="flt logo" draggable="false">
                            </div><!-- /.flight-logo -->
                             <div class="pricing">
                                       <p>{{$vol->nom_avion}} | {{$vol->aeroport_arrivee}}</p>
@@ -166,7 +166,7 @@
                                </div><!-- /.left1 -->
                                <div class="middle">
                                    <div class="col-sm-12 text-center">Retour</div>
-                                   <img src="{{ asset('img/back.png')}}" alt="time shape" draggable="false">
+                                   <img src="{{ secure_asset('img/back.png')}}" alt="time shape" draggable="false">
                                </div><!-- /.middle -->
                                <div class="right" style="top: 30%;right: 19%;">
                                     <span class="d-block">
@@ -273,11 +273,11 @@
                       @if($vol->images)
                        <div class="col-4">
                         
-                        <img src="{{ asset('storage/' . $vol->image)}}" alt="image vol" id="mainImage" class="rt-border-primary2">
+                        <img src="{{ secure_asset('storage/' . $vol->image)}}" alt="image vol" id="mainImage" class="rt-border-primary2">
                             <div class="mt-2">
-                                <img class="img-thumbnail" src="{{ asset('storage/' . $vol->image) }}"  width="50" >
+                                <img class="img-thumbnail" src="{{ secure_asset('storage/' . $vol->image) }}"  width="50" >
                                     @foreach (json_decode($vol->images, true) as $image)
-                                        <img src="{{asset('storage/' . $image)}}" width="50" class="img-thumbnail">
+                                        <img src="{{secure_asset('storage/' . $image)}}" width="50" class="img-thumbnail">
                                     @endforeach
                             </div>
                         </div>
@@ -296,7 +296,7 @@
                     <span class="airline">{{ $vol->titre }}</span>
                     <span class="airline airlineslip">
                       <?php echo $nom_avion[1] ?>
-                      <img src="{{asset('storage/'.$vol->image)}}" width="20%" style="transform: translate(16px, -6px);">
+                      <img src="{{secure_asset('storage/'.$vol->image)}}" width="20%" style="transform: translate(16px, -6px);">
                     </span>
                     <span class="boarding">{{\App\Agence::first()->nom_agence}}</span>
                     <div class="content">

@@ -6,11 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="author" content="AdminKit">
-    <link rel="shortcut icon" href="{{ asset('styleAdmin/img/icons/icon-48x48.png') }}" />
+    <link rel="shortcut icon" href="{{ secure_asset('styleAdmin/img/icons/icon-48x48.png') }}" />
 
     @yield('title-page-admin')
 
-    <link href="{{ asset('styleAdmin/css/app.css')}}" rel="stylesheet">
+    <link href="{{ secure_asset('styleAdmin/css/app.css')}}" rel="stylesheet">
 
     <style>
         .table-child-style :nth-child(4) {
@@ -87,7 +87,7 @@
                                     <div class="card-body col-12 mx-auto">
 
                         <form class="text-center" method="POST" action="{{ route('login') }}">
-                        <a href="{{ route('home') }}"><img src="{{ asset('img/logo.png') }}" class="img-fluid mt-2" alt="" title=""/></a>
+                        <a href="{{ route('home') }}"><img src="{{ secure_asset('img/logo.png') }}" class="img-fluid mt-2" alt="" title=""/></a>
                         @csrf
                         <div class="form-group row mt-5">
                             <label for="email" class="col-md-4 col-form-label text-md-right text-dark font-weight-bold">{{ __('Adresse e-mail') }}</label>
@@ -175,7 +175,7 @@
         </div>
     </div>
 
-    <script src="{{ asset('styleAdmin/js/vendor.js')}}"></script>
-    <script src="{{ asset('styleAdmin/js/app.js')}}"></script>
+    <script src="{{ secure_asset('styleAdmin/js/vendor.js')}}"></script>
+    <script src="{{ secure_asset('styleAdmin/js/app.js')}}"></script>
 
 </body></html>
