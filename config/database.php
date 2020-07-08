@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Str;
 
-$DATABASE_URL=parse_url(‘mysql://eojaj4t26cpcjnvq:d58el42wv9h5xn7s@u3r5w4ayhxzdrw87.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/s1uv6n1mfnziq911’);
+$DATABASE_URL=parse_url('mysql://eojaj4t26cpcjnvq:d58el42wv9h5xn7s@u3r5w4ayhxzdrw87.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/s1uv6n1mfnziq911');
 
 return [
 
