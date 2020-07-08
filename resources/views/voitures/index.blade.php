@@ -199,7 +199,7 @@
 <div class="flight-list-box rt-mb-30">
     <div class="top-content d-flex flex-md-row flex-column justify-content-lg-between">
          <div class="car-thumb mr-4 mr-lg-0 mb-5 mb-md-0" style="max-width: 15em;">
-                    <img src="{{ secure_asset('storage/' . $product->image) }}" alt="image voiture" class="rt-border-primary2">
+                    <img src="{{ secure_asset($product->image) }}" alt="image voiture" class="rt-border-primary2">
                     <span class="d-block f-size-13 text-555 " style="margin-bottom: -14px;">Ajoutée le : {{ $product->created_at->format('d/m/Y')  }}</span>
                 </div>
                 @if($product->promotion_pourcentage > 0)

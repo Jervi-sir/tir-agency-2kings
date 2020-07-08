@@ -55,13 +55,13 @@
             <div class="col-lg-7">
                 <div class="rt-duel-slider-main rt-mb-30">
                     <div class="single-main rtbgprefix-cover" >
-                        <img class="single-main rtbgprefix-cover" src="{{ secure_asset('storage/' . $hotel->image) }}" id="mainImage">
+                        <img class="single-main rtbgprefix-cover" src="{{ secure_asset($hotel->image) }}" id="mainImage">
                         <div class="mt-2">
                             @if($hotel->images)
-                            <img class="img-thumbnail" src="{{ secure_asset('storage/' . $hotel->image) }}"  width="50" >
+                            <img class="img-thumbnail" src="{{ secure_asset($hotel->image) }}"  width="50" >
 
                                 @foreach (json_decode($hotel->images, true) as $image)
-                                    <img src="{{secure_asset('storage/' . $image)}}" width="50" class="img-thumbnail">
+                                    <img src="{{secure_asset($image)}}" width="50" class="img-thumbnail">
                                 @endforeach
                             @endif
                         </div>
@@ -215,7 +215,7 @@
                                                                 
                                                                 <li class="rt-pt-8 col-3">
                                                                     <span class="d-block">
-                                                                        <img src="{{secure_asset('storage/' .  $product->image)}}" alt="hotel iamge" draggable="false" width="100%">
+                                                                        <img src="{{secure_asset( $product->image)}}" alt="hotel iamge" draggable="false" width="100%">
                                                                         <span class="text-333"><i class="icofont-bed"></i> <i class="icofont-bed"></i></span>
                                                                     <span class="d-block"></span>
                                                                     @if($product->promotion_pourcentage > 0)
