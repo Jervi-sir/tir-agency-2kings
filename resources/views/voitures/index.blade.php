@@ -6,17 +6,17 @@
 
 @section('bannerArea')
 <section class="about-banner-voiture relative">
-    <div class="overlay overlay-bg"></div>
-    <div class="container">             
-        <div class="row d-flex align-items-center justify-content-center">
-            <div class="about-content col-lg-12">
-                <h1 class="text-white">
-                    Voitures                
-                </h1>   
-                <p class="text-white link-nav"><a href="{{ route('/') }}" class="mx-3">Accueil </a>  <span class="fa fa-angle-right"></span>  <a href="{{ route('voitures.index') }}" class="ml-3"> Voitures</a></p>
-            </div>  
-        </div>
-    </div>
+	<div class="overlay overlay-bg"></div>
+	<div class="container">				
+		<div class="row d-flex align-items-center justify-content-center">
+			<div class="about-content col-lg-12">
+				<h1 class="text-white">
+					Voitures				
+				</h1>	
+				<p class="text-white link-nav"><a href="{{ route('/') }}" class="mx-3">Accueil </a>  <span class="fa fa-angle-right"></span>  <a href="{{ route('voitures.index') }}" class="ml-3"> Voitures</a></p>
+			</div>	
+		</div>
+	</div>
 </section>
 @endsection
 
@@ -30,9 +30,76 @@
 
 
 
-
 @section('stars')
+ <div data-role="page">
+    <div id="full-stars-example-two">
+        <div class="rating-group">
+            <input disabled checked class="rating__input rating__input--none" name="rating3" id="rating3-none" value="0" type="radio">
+            <label aria-label="1 star" class="rating__label" for="rating3-1">
+                <a href="{{ route('voitures.index', ['sort' => request('sort') ,
+                                                    'etoiles' => 1,
+                                                    'min_prix'=>request('min_prix'),
+                                                    'max_prix'=>request('max_prix')])}}">
+                    <i class="rating__icon rating__icon--star fa fa-star"></i>
+                </a>
+            </label>
+            
+            <input class="rating__input" name="rating3" id="rating3-1" value="1" type="radio">
+            <label aria-label="2 stars" class="rating__label" for="rating3-2">
+                <a href="{{ route('voitures.index', ['sort' => request('sort') ,
+                                                    'etoiles' => 2,
+                                                    'min_prix'=>request('min_prix'),
+                                                    'max_prix'=>request('max_prix')])}}">
+                    <i class="rating__icon rating__icon--star fa fa-star"></i>
+                </a>
+            </label>
 
+            <input class="rating__input" name="rating3" id="rating3-2" value="2" type="radio">
+            <label aria-label="3 stars" class="rating__label" for="rating3-3">
+                <a href="{{ route('voitures.index', ['sort' => request('sort') ,
+                                                    'etoiles' => 3,
+                                                    'min_prix'=>request('min_prix'),
+                                                    'max_prix'=>request('max_prix')])}}">
+                    <i class="rating__icon rating__icon--star fa fa-star"></i>
+                </a>
+            </label>
+
+            <input class="rating__input" name="rating3" id="rating3-3" value="3" type="radio">
+            <label aria-label="4 stars" class="rating__label" for="rating3-4">
+                <a href="{{ route('voitures.index', ['sort' => request('sort') ,
+                                                    'etoiles' => 4,
+                                                    'min_prix'=>request('min_prix'),
+                                                    'max_prix'=>request('max_prix')])}}">
+                    <i class="rating__icon rating__icon--star fa fa-star"></i>
+                </a>
+            </label>
+
+            <input class="rating__input" name="rating3" id="rating3-4" value="4" type="radio">
+
+            <label aria-label="5 stars" class="rating__label" for="rating3-5">
+                <a href="{{ route('voitures.index', ['sort' => request('sort') ,
+                                                    'etoiles' => 5,
+                                                    'min_prix'=>request('min_prix'),
+                                                    'max_prix'=>request('max_prix')])}}">
+                    <i class="rating__icon rating__icon--star fa fa-star"></i>
+                </a>
+            </label>
+            <input class="rating__input" name="rating3" id="rating3-5" value="5" type="radio">
+
+        </div>
+        <label aria-label="0 stars" class="" for="rating3-0">
+            <a href="{{ route('voitures.index', ['sort' => request('sort') ,
+                                                'etoiles' => 0,
+                                                'min_prix'=>request('min_prix'),
+                                                'max_prix'=>request('max_prix')])}}">
+                <span class="mx-2 my-2 lnr lnr-cross" style="font-size: 1.7em;color: black;font-weight: 1000;opacity: 0.7;"></span>
+            </a>
+        </label>
+
+        <input class="rating__input" name="rating3" id="rating3-0" value="0" type="radio">
+
+    </div>
+</div>
 @endsection
 
 
@@ -75,25 +142,25 @@
                                             'etoiles'   => request('etoiles'),
                                             'min_prix'  => request('min_prix'),
                                             'max_prix'  => request('max_prix')])}}">
-        ascendant</a>
+         ascendant</a>
     </div>
     <div class="col-6 p-0">
     <i class="fa fa-sort-asc col-3" aria-hidden="true"></i>
-    <a class="sort-size col-8" href="{{ route('voitures.index', ['sort'     => 'desc' ,
+    <a class="sort-size col-8"  href="{{ route('voitures.index', ['sort'     => 'desc' ,
                                         'etoiles'   => request('etoiles'),
                                         'min_prix'  =>request('min_prix'),
                                         'max_prix'  =>request('max_prix')])}}">
-    descendant</a>
+     descendant</a>
     </div>
 </div>
 @endsection
 
-
 @section('price_range_submit')
-<form action="{{route('voitures.index')}}">
+<form action="{{ route('voitures.index')}}">
+
     <input id="min_prix" type="hidden" name="min_prix">
     <input id="max_prix" type="hidden" name="max_prix">
-
+    
     @if(request('sort') != null)
     <input type="hidden" name="sort" value="{{request('sort')}}">
     @endif
@@ -102,11 +169,13 @@
     <input type="hidden" name="etoiles" value="{{request('etoiles')}}">
     @endif
 
-    <button class="rt-btn rt-gradient rounded-sm rt-sm text-uppercase" onclick="send_price_range()">Filtrer</button>
+
+    <button class="rt-btn rt-gradient rounded-sm rt-sm text-uppercase">Filtrer</button>
 </form>
 @endsection
 
 @section('result')
+
 <input type="hidden" id="min_prix_for_function" value="{{request('min_prix') ?? $voitures->min('prix') }}">
 <input type="hidden" id="max_prix_for_function" value="{{request('max_prix') ?? $voitures->max('prix') }}">
 
@@ -124,15 +193,13 @@
 @endif
 
 
+
 @foreach($voitures as $product)
-<div class="container row">
 
-
-</div>
 <div class="flight-list-box rt-mb-30">
     <div class="top-content d-flex flex-md-row flex-column justify-content-lg-between">
          <div class="car-thumb mr-4 mr-lg-0 mb-5 mb-md-0" style="max-width: 15em;">
-                    <img src="{{ secure_asset($product->image) }}" alt="image voiture" class="rt-border-primary2">
+                    <img src="" alt="image_voiture" class="rt-border-primary2">
                     <span class="d-block f-size-13 text-555 " style="margin-bottom: -14px;">Ajoutée le : {{ $product->created_at->format('d/m/Y')  }}</span>
                 </div>
                 @if($product->promotion_pourcentage > 0)
@@ -169,7 +236,7 @@
                 </li>
             </ul><!-- /.rt-list -->
         </div><!-- /.ck-list -->
-        <div class="price-mant text-lg-right  row" style="display: block;">
+        <div class="price-mant text-lg-right row" style="display: block;">
             <div class="col-12" style="float: left; display: block;">
                         @for ($i = 0;$i < $product->etoiles;$i++)
                         <i class="fa fa-star review"></i>
@@ -182,7 +249,7 @@
                 @else
                 <span class="d-block  f-size-24 rt-semiblod title-font col-12"><strike style="font-size: 16px;">{{ getPriceHelper($product->prix)}}</strike><br>{{ getPriceHelper_Pourcentage($product->prix,$product->promotion_pourcentage) }}</span>
                 @endif
-                <a href="{{ route('voitures.show', $product->slug) }}" class="rt-btn rt-gradient pill rt-sm3 text-uppercase rt-mt-10">Voir</a>
+                <a href="{{ route('voitures.show', $product->slug) }}" class="rt-btn rt-gradient pill rt-sm3 text-uppercase rt-mt-10 ">Voir</a>
             </div>
         </div><!-- /.price-mant -->
     </div><!-- /.top-content -->
