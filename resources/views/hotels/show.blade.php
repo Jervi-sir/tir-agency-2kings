@@ -158,11 +158,11 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" id="rt-itm_3-tab" data-toggle="tab" href="#rt-itm_3" role="tab"
-                                    aria-controls="rt-itm_3" aria-selected="false">Hotel Description</a>
+                                    aria-controls="rt-itm_3" aria-selected="false">Description</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" id="rt-itm_4-tab" data-toggle="tab" href="#rt-itm_4" role="tab"
-                                    aria-controls="rt-itm_4" aria-selected="false">Services & Amenities</a>
+                                    aria-controls="rt-itm_4" aria-selected="false">Services</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" id="rt-itm_5-tab" data-toggle="tab" href="#rt-itm_5" role="tab"
@@ -321,25 +321,15 @@
                                 </div><!-- /.flight-list-box -->
 
                             </div>
-
-
                             <div class="tab-pane fade" id="rt-itm_3" role="tabpanel" aria-labelledby="rt-itm_3-tab">
 
                                 <div class="flight-list-box rt-mb-30">
-                                    <h3 class="f-size-18 rt-semiblod rt-mt-15 rt-mb-30">Hotel Description</h3>
-                                   
-                                        <h3 class="f-size-16 rt-semiblod text-uppercase"><span class="rt-mr-15">Opened: 1990</span> <span class="rt-mr-15">Number of rooms: 142</span> Renovated: 2016</h3>
-                                    <br>
+                                    <div class="ml-5">
+                                        <h3 class="f-size-18 rt-semiblod rt-mt-15 rt-mb-30">Description</h3>
                                         <p>
-                                            À distance de marche de l'un des centres d'affaires et financiers de Hong Kong ainsi que de plusieurs centres commerciaux, le Garden View Hong Kong met la station de tramway Peak, le quartier branché de la discothèque "Lan Kwai Fong" et le jardin zoologique et botanique de Hong Kong à la disposition des clients. des portes. Plusieurs options de transports en commun et la gare centrale MTR sont également à proximité.
+                                                {!! $hotel->description !!}
                                         </p>
-                                    <br>
-                                   
-                                   <p>
-                                        Les chambres et suites spacieuses de l'hôtel surplombant la ville avec vue panoramique sur le jardin, offrent un confort optimal avec un service à un prix raisonnable. Les suites sont équipées d'une cuisine entièrement équipée.
-                                   </p>
-                                    
-                                    
+                                    </div>
                                 </div>
                                 <div class="googleMap">
                                     
@@ -353,69 +343,26 @@
                                 
                               <div class="flight-list-box">
                                     <div class="inner-content rt-pt-10 rt-pl-15">
-                                        <h4 class="f-size-18 rt-semiblod rt-mb-35 ">Services & Amenities</h4>
+                                        <h4 class="f-size-18 rt-semiblod rt-mb-35 ">Services</h4>
                                     </div><!-- /.inner-content -->
                                     <div class="media service-amitence-box rt-mb-30">
-                                        <img src="assets/images/all-img/hottel-cion-12.png" class="rt-pr-23" alt="hottel-cion">
                                         <div class="media-body rt-pl-23">
                                             <h5 class="f-size-16 rt-semiblod">Transportation Services</h5>
                                             <p class="f-size-13 text-333">
-                                                <span class="rt-mr-40"><i class="icofont-check-circled primary-color rt-pr-4"></i> Airport pickup service</span>
-                                                <span class="rt-mr-40"> <i class="icofont-check-circled primary-color"></i> Parking</span>
-                                                <span> <i class="icofont-check-circled primary-color"></i> Car rental</span>
+                                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
                                             </p>
                                         </div>
                                     </div><!-- /.service-amitence-box -->
-                                    <div class="media service-amitence-box rt-mb-30">
-                                        <img src="assets/images/all-img/hottel-cion-13.png" class="rt-pr-23" alt="hottel-cion">
-                                        <div class="media-body rt-pl-23">
-                                            <h5 class="f-size-16 rt-semiblod">General</h5>
-                                            <p class="f-size-13 text-333">
-                                                <span class="rt-mr-40"><i class="icofont-check-circled primary-color rt-pr-4"></i> Free Wi-Fi areas</span>
-                                                <span class="rt-mr-40"> <i class="icofont-check-circled primary-color"></i> Heating</span>
-                                                <span class="rt-mr-40"> <i class="icofont-check-circled primary-color"></i> Elevator</span>
-                                                <span class="rt-mr-40"> <i class="icofont-check-circled primary-color"></i> Newspaper in lobby</span>
-                                                <span class="rt-mr-40"> <i class="icofont-check-circled primary-color"></i> CCTV in public areas</span> <br>
-                                                <span class="rt-mr-40"> <i class="icofont-check-circled primary-color"></i> CCTV in public areas</span>
-                                                <span> <i class="icofont-check-circled primary-color"></i>PA system</span>
-                                            </p>
-                                        </div>
-                                    </div><!-- /.service-amitence-box -->
-                                    <div class="media service-amitence-box rt-mb-30">
-                                        <img src="assets/images/all-img/hottel-cion-15.png" class="rt-pr-23" alt="hottel-cion">
-                                        <div class="media-body rt-pl-23">
-                                            <h5 class="f-size-16 rt-semiblod">Food & Drink</h5>
-                                            <p class="f-size-13 text-333">
-                                                <span class="rt-mr-40"><i class="icofont-check-circled primary-color rt-pr-4"></i> Western restaurant</span>
-                                                <span class="rt-mr-40"> <i class="icofont-check-circled primary-color"></i> Chinese</span>
-                                                <span> <i class="icofont-check-circled primary-color"></i>Café</span>
-                                            </p>
-                                        </div>
-                                    </div><!-- /.service-amitence-box -->
-                                    <div class="media service-amitence-box rt-mb-30">
-                                        <img src="assets/images/all-img/hottel-cion-14.png" class="rt-pr-23" alt="hottel-cion">
-                                        <div class="media-body rt-pl-23">
-                                            <h5 class="f-size-16 rt-semiblod">Front Desk Services</h5>
-                                            <p class="f-size-13 text-333">
-                                                <span class="rt-mr-40"><i class="icofont-check-circled primary-color rt-pr-4"></i> Luggage storage</span>
-                                                <span class="rt-mr-40"> <i class="icofont-check-circled primary-color"></i> Porter</span>
-                                                <span class="rt-mr-40"> <i class="icofont-check-circled primary-color"></i> Tourist map</span>
-                                                <span class="rt-mr-40"> <i class="icofont-check-circled primary-color"></i> Ticket service</span>
-                                                <span> <i class="icofont-check-circled primary-color"></i> Postal service</span>
-                                            </p>
-                                        </div>
-                                    </div><!-- /.service-amitence-box -->
-                                    
+                                   
                               </div><!-- /.flight-list-box -->
                             </div><!-- ./ tab content -->
                             <div class="tab-pane fade" id="rt-itm_5" role="tabpanel" aria-labelledby="rt-itm_5-tab">
-                                <div class="flight-list-box rt-mb-30">
+                                <div class="flight-list-box rt-mb-30  ml-5">
                                     <div class="inner-content rt-pt-10 rt-pl-15">
                                         <h4 class="f-size-18 rt-semiblod rt-mb-35 ">Conditions de l'hôtel</h4>
                                     </div><!-- /.inner-content -->
 
                                     <div class="media service-amitence-box rt-mb-30">
-                                        <img src="assets/images/all-img/hottel-cion-17.png" class="rt-pr-23" alt="hottel-cion">
                                         <div class="media-body rt-pl-23">
                                             <h5 class="f-size-16 rt-semiblod">Enfants et lits supplémentaires</h5>
                                             <p class="f-size-13 text-333">    
@@ -424,45 +371,34 @@
                                             </p>
                                         </div>
                                     </div><!-- /.service-amitence-box -->
-                                    <div class="media service-amitence-box rt-mb-30">
-                                        <img src="assets/images/all-img/hottel-cion-15.png" class="rt-pr-23" alt="hottel-cion">
-
-                                    </div><!-- /.service-amitence-box -->
-                                    <div class="media service-amitence-box rt-mb-30">
-                                        <img src="assets/images/all-img/hottel-cion-14.png" class="rt-pr-23" alt="hottel-cion">
-                                        <div class="media-body rt-pl-23">
-                                            <h5 class="f-size-16 rt-semiblod rt-mb-10">Paying at the Hotel</h5>
-                                            <div class="rt-footer-social">
-                                                {{ $hotel->type_payment }}
-                                            </div>
-                                        </div>
-                                    </div><!-- /.service-amitence-box -->
+                                   
                                 
                                 </div><!-- /.flight-list-box -->
                                 <div class="flight-list-box">
-                                    <h3 class="f-size-18 rt-semiblod rt-mt-15 rt-mb-30">Annulation</h3>
-                                    <h3 class="f-size-14 text-uppercase rt-mt-15 rt-mb-30">ANNULATIONS ET REMBOURSEMENTS</h3>
-                                
-                                    <h4 class="f-size-14 rt-medium rt-mb-10">Notre faute</h4>
+                                    <div class="ml-5">
+                                        <h3 class="f-size-18 rt-semiblod rt-mt-15 rt-mb-30">Annulation</h3>
+                                        <h3 class="f-size-14 text-uppercase rt-mt-15 rt-mb-30">ANNULATIONS ET REMBOURSEMENTS</h3>
                                     
-                                    <p class="f-size-14">
-                                        Nous travaillons très dur pour garantir que toutes les visites se déroulent comme prévu et bénéficient d'un taux de réussite de 99%. Lorsqu'une visite est annulée et que c'est la faute de The Shoreditch Pub Crawl ou de l'un des guides indépendants avec lesquels nous travaillons, nous vous rembourserons votre place préacheté et offrirons jusqu'à 100% de la valeur du prix du place d'origine en tant que crédit pour l'achat d'une autre tournée à titre de compensation. Ce crédit ne peut être utilisé d'aucune autre manière et ne sera pas encaissable.
-                                    </p>
-                                    <br>
-                                    <h4 class="f-size-14 rt-medium rt-mb-10">Votre demande</h4>
+                                        <h4 class="f-size-14 rt-medium rt-mb-10">Notre faute</h4>
+                                        
+                                        <p class="f-size-14">
+                                            Nous travaillons très dur pour garantir que toutes les visites se déroulent comme prévu et bénéficient d'un taux de réussite de 99%. Lorsqu'une visite est annulée et que c'est la faute de The Shoreditch Pub Crawl ou de l'un des guides indépendants avec lesquels nous travaillons, nous vous rembourserons votre place préacheté et offrirons jusqu'à 100% de la valeur du prix du place d'origine en tant que crédit pour l'achat d'une autre tournée à titre de compensation. Ce crédit ne peut être utilisé d'aucune autre manière et ne sera pas encaissable.
+                                        </p>
+                                        <br>
+                                        <h4 class="f-size-14 rt-medium rt-mb-10">Votre demande</h4>
+                                        
+                                        <p class="f-size-14">
+                                            Si vous ne pouvez pas assister à votre visite et devez annuler une réservation de visite en nous informant au moins 24 heures avant votre visite, nous annulerons votre place et vous créditerons 50% du prix d'achat pour l'achat d'une future visite supplémentaire. Nous n'avons aucune politique de remboursement, sauf si nous sommes responsables de l'annulation de votre visite.
+                                        </p>
+                                        <br>
+                                        <h4 class="f-size-14 rt-medium rt-mb-10">Actes de Dieu</h4>
+                                        <p class="f-size-14">
+                                            Nous ne pouvons être tenus responsables si nous ne sommes pas en mesure d'offrir une visite en raison de catastrophes naturelles (tsunamis, tremblements de terre, volcanisme
+                                             nuages de poussière, extrême
+                                             météo, etc.).
+                                        </p>
                                     
-                                    <p class="f-size-14">
-                                        Si vous ne pouvez pas assister à votre visite et devez annuler une réservation de visite en nous informant au moins 24 heures avant votre visite, nous annulerons votre place et vous créditerons 50% du prix d'achat pour l'achat d'une future visite supplémentaire. Nous n'avons aucune politique de remboursement, sauf si nous sommes responsables de l'annulation de votre visite.
-                                    </p>
-                                    <br>
-                                    <h4 class="f-size-14 rt-medium rt-mb-10">Actes de Dieu</h4>
-                                    <p class="f-size-14">
-                                        Nous ne pouvons être tenus responsables si nous ne sommes pas en mesure d'offrir une visite en raison de catastrophes naturelles (tsunamis, tremblements de terre, volcanisme
-                                         nuages de poussière, extrême
-                                         météo, etc.).
-                                    </p>
-                                
-                                
+                                    </div>
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="rt-itm_6" role="tabpanel" aria-labelledby="rt-itm_6-tab">
@@ -507,66 +443,8 @@
                                             <a href="#" class="replay-cmnt text-uppercase rt-strong">Reply <i class="icofont-reply-all"></i> </a>
                                     </div><!-- /.right-column -->
                                 </div><!-- /.flight-list-box -->
-                                <div class="flight-list-box single-commnets row rt-mb-30">
-                                    <div class="col-lg-3 col-md-4  rt-dashed-primary rt-pt-30 rt-pl-30 rt-pb-30 rt-pr-30 rt-dborder-primary rounded">
-                                            <div class="cmnt-thumb rt-hw-60 rt-border-primary rounded-circle rtbgprefix-cover rt-mb-20" style="background-image: url(assets/images/all-img/cmnt-4.jpg)">   
-                                            </div><!-- /.cmnt-thumb -->
-                                            <span class="d-block f-size-13 text-878"> <span><i class="icofont-ui-calendar rt-mr-5"></i></span>Stayed in Nov 2018</span>
-                                            <span class="d-block f-size-13 text-878"> <span><i class="icofont-edit rt-mr-5"></i></span>Stayed in Nov 2018</span>
-                                    </div><!-- /.left-coulmn -->
-                                    <div class="col-md-8 col-lg-9 pl-md-5">
-                                            <h4 class="f-size-17 rt-strong">Mark Ques <span class="rt-pl-15 f-size-14"> <i class="icofont-star review"></i><i class="icofont-star review"></i> <i class="icofont-star review"></i><i
-                                                    class="icofont-star review"></i> <i class="icofont-star review"></i></span></h4>
-                                            <span class="f-size-13 text-878 d-block rt-mb-15">November 20, 2018 at 8:31 pm</span>
-                                            <p class="f-size-14 text-333">
-                                                I am very please with Garden View Hong Kong Hotel! I will certainly return. I got a wonderful from the 15 floor to the
-                                                Botanical Garden a great Supermarket in the corner, about 2 minutes walking, and a bus stop to downtown within few
-                                                meters. It is close to downtown and great price!
-                                            </p>
+                                
 
-                                            <a href="#" class="replay-cmnt text-uppercase rt-strong">Reply <i class="icofont-reply-all"></i> </a>
-                                    </div><!-- /.right-column -->
-                                </div><!-- /.flight-list-box -->
-                                <div class="flight-list-box single-commnets row rt-mb-30">
-                                    <div class="col-lg-3 col-md-4  rt-dashed-primary rt-pt-30 rt-pl-30 rt-pb-30 rt-pr-30 rt-dborder-primary rounded">
-                                            <div class="cmnt-thumb rt-hw-60 rt-border-primary rounded-circle rtbgprefix-cover rt-mb-20" style="background-image: url(assets/images/all-img/cmnt-5.jpg)">   
-                                            </div><!-- /.cmnt-thumb -->
-                                            <span class="d-block f-size-13 text-878"> <span><i class="icofont-ui-calendar rt-mr-5"></i></span>Stayed in Nov 2018</span>
-                                            <span class="d-block f-size-13 text-878"> <span><i class="icofont-edit rt-mr-5"></i></span>Stayed in Nov 2018</span>
-                                    </div><!-- /.left-coulmn -->
-                                    <div class="col-md-8 col-lg-9 pl-md-5">
-                                            <h4 class="f-size-17 rt-strong">Mans Livly <span class="rt-pl-15 f-size-14"> <i class="icofont-star review"></i><i class="icofont-star review"></i> <i class="icofont-star review"></i><i
-                                                    class="icofont-star review"></i> <i class="icofont-star review"></i></span></h4>
-                                            <span class="f-size-13 text-878 d-block rt-mb-15">November 20, 2018 at 8:31 pm</span>
-                                            <p class="f-size-14 text-333">
-                                                I am very please with Garden View Hong Kong Hotel! I will certainly return. I got a wonderful from the 15 floor to the
-                                                Botanical Garden a great Supermarket in the corner, about 2 minutes walking, and a bus stop to downtown within few
-                                                meters. It is close to downtown and great price!
-                                            </p>
-
-                                            <a href="#" class="replay-cmnt text-uppercase rt-strong">Reply <i class="icofont-reply-all"></i> </a>
-                                    </div><!-- /.right-column -->
-                                </div><!-- /.flight-list-box -->
-                                <div class="flight-list-box single-commnets row rt-mb-30">
-                                    <div class="col-lg-3 col-md-4  rt-dashed-primary rt-pt-30 rt-pl-30 rt-pb-30 rt-pr-30 rt-dborder-primary rounded">
-                                            <div class="cmnt-thumb rt-hw-60 rt-border-primary rounded-circle rtbgprefix-cover rt-mb-20" style="background-image: url(assets/images/all-img/cmnt-2.jpg)">   
-                                            </div><!-- /.cmnt-thumb -->
-                                            <span class="d-block f-size-13 text-878"> <span><i class="icofont-ui-calendar rt-mr-5"></i></span>Stayed in Nov 2018</span>
-                                            <span class="d-block f-size-13 text-878"> <span><i class="icofont-edit rt-mr-5"></i></span>Stayed in Nov 2018</span>
-                                    </div><!-- /.left-coulmn -->
-                                    <div class="col-md-8 pl-md-5">
-                                            <h4 class="f-size-17 rt-strong">Sirlon Mika <span class="rt-pl-15 f-size-14"> <i class="icofont-star review"></i><i class="icofont-star review"></i> <i class="icofont-star review"></i><i
-                                                    class="icofont-star review"></i> <i class="icofont-star review"></i></span></h4>
-                                            <span class="f-size-13 text-878 d-block rt-mb-15">November 20, 2018 at 8:31 pm</span>
-                                            <p class="f-size-14 text-333">
-                                                I am very please with Garden View Hong Kong Hotel! I will certainly return. I got a wonderful from the 15 floor to the
-                                                Botanical Garden a great Supermarket in the corner, about 2 minutes walking, and a bus stop to downtown within few
-                                                meters. It is close to downtown and great price!
-                                            </p>
-
-                                            <a href="#" class="replay-cmnt text-uppercase rt-strong">Reply <i class="icofont-reply-all"></i> </a>
-                                    </div><!-- /.right-column -->
-                                </div><!-- /.flight-list-box -->
                             </div>
                         </div>
                     
