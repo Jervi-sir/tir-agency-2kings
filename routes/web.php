@@ -23,7 +23,7 @@ Route::get('/', 'AccueilController@index')->name('/');
 
 
 /*===============HOTEL et CHAMBRES==============================*/
-Route::get('/hotels','HotelController@index')->name('hotels.index');
+Route::get('/hotel','HotelController@index')->name('hotels.index');
 Route::get('/hotels/{slug}','HotelController@show')->name('hotels.show');
 
 /*Rechercher Hotel*/
