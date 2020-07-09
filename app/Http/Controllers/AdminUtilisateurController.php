@@ -69,11 +69,11 @@ class AdminUtilisateurController extends Controller
         $utilisateur->role_id = $role_id;
         if($role_id == 1)
         {
-            $utilisateur->avatar = 'utilisateurs'.DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR.'default.png' ;
+            $utilisateur->avatar = 'users'.DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR.'default.png' ;
         }
         else if($role_id == 3)
         {
-            $utilisateur->avatar = 'utilisateurs'.DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR.'receptionisste.png' ;
+            $utilisateur->avatar = 'users'.DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR.'receptionisste.png' ;
         }
         else
         {
