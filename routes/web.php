@@ -39,7 +39,7 @@ Route::get('/copyrights','CopyRightController@index')->name('copyrights.index');
 /*================VOITURE=======================================*/
 Route::get('/v','VoitureController@index')->name('voitures.index');
 Route::get('/voitures','VoitureController@suggestion')->name('voitures.theIndex');
-Route::get('/voitures/{slug}','VoitureController@show')->name('voitures.show');
+Route::get('/voiture/{slug}','VoitureController@show')->name('voitures.show');
 
 /*Rechercher Voiture*/
 Route::get('/rechercher_voiture','VoitureController@searchVoiture')->name('voitures.searchVoiture');
