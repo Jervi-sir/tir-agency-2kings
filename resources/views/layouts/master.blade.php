@@ -106,7 +106,7 @@
                             <li class="mx-3"><a href="{{ route('/') }}">accueil</a></li>
                             <li class="mx-3"><a href="{{ route('vols.index') }}">vols</a></li>
                             <li class="mx-3"><a href="{{ route('hotels.index') }}">Hôtels</a></li>
-                            <li class="mx-3"><a href="{{ route('voitures.theIndex') }}">Voitures</a></li>
+                            <li class="mx-3"><a href="{{ route('voitures.index') }}">Voitures</a></li>
 
                             <li class="mx-3 nav-item dropdown" style="white-space: normal;">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
