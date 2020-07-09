@@ -18,7 +18,7 @@
                 <h1 class="text-white">
                     Voitures                
                 </h1>   
-                <p class="text-white link-nav"><a href="{{ route('/') }}" class="mx-3">Accueil </a>  <span class="fa fa-angle-right"></span>  <a href="{{ route('voitures.theIndex') }}" class="ml-3"> Voitures</a></p>
+                <p class="text-white link-nav"><a href="{{ route('/') }}" class="mx-3">Accueil </a>  <span class="fa fa-angle-right"></span>  <a href="{{ route('voitures.index') }}" class="ml-3"> Voitures</a></p>
             </div>  
         </div>
     </div>

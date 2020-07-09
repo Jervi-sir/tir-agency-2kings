@@ -13,7 +13,7 @@
 				<h1 class="text-white">
 					Voitures				
 				</h1>	
-				<p class="text-white link-nav"><a href="{{ route('/') }}" class="mx-3">Accueil </a>  <span class="fa fa-angle-right"></span>  <a href="{{ route('voitures.theIndex') }}" class="ml-3"> Voitures</a></p>
+				<p class="text-white link-nav"><a href="{{ route('/') }}" class="mx-3">Accueil </a>  <span class="fa fa-angle-right"></span>  <a href="{{ route('voitures.index') }}" class="ml-3"> Voitures</a></p>
 			</div>	
 		</div>
 	</div>
@@ -36,7 +36,7 @@
         <div class="rating-group">
             <input disabled checked class="rating__input rating__input--none" name="rating3" id="rating3-none" value="0" type="radio">
             <label aria-label="1 star" class="rating__label" for="rating3-1">
-                <a href="{{ route('voitures.theIndex', ['sort' => request('sort') ,
+                <a href="{{ route('voitures.index', ['sort' => request('sort') ,
                                                     'etoiles' => 1,
                                                     'min_prix'=>request('min_prix'),
                                                     'max_prix'=>request('max_prix')])}}">
@@ -46,7 +46,7 @@
             
             <input class="rating__input" name="rating3" id="rating3-1" value="1" type="radio">
             <label aria-label="2 stars" class="rating__label" for="rating3-2">
-                <a href="{{ route('voitures.theIndex', ['sort' => request('sort') ,
+                <a href="{{ route('voitures.index', ['sort' => request('sort') ,
                                                     'etoiles' => 2,
                                                     'min_prix'=>request('min_prix'),
                                                     'max_prix'=>request('max_prix')])}}">
@@ -56,7 +56,7 @@
 
             <input class="rating__input" name="rating3" id="rating3-2" value="2" type="radio">
             <label aria-label="3 stars" class="rating__label" for="rating3-3">
-                <a href="{{ route('voitures.theIndex', ['sort' => request('sort') ,
+                <a href="{{ route('voitures.index', ['sort' => request('sort') ,
                                                     'etoiles' => 3,
                                                     'min_prix'=>request('min_prix'),
                                                     'max_prix'=>request('max_prix')])}}">
@@ -66,7 +66,7 @@
 
             <input class="rating__input" name="rating3" id="rating3-3" value="3" type="radio">
             <label aria-label="4 stars" class="rating__label" for="rating3-4">
-                <a href="{{ route('voitures.theIndex', ['sort' => request('sort') ,
+                <a href="{{ route('voitures.index', ['sort' => request('sort') ,
                                                     'etoiles' => 4,
                                                     'min_prix'=>request('min_prix'),
                                                     'max_prix'=>request('max_prix')])}}">
@@ -77,7 +77,7 @@
             <input class="rating__input" name="rating3" id="rating3-4" value="4" type="radio">
 
             <label aria-label="5 stars" class="rating__label" for="rating3-5">
-                <a href="{{ route('voitures.theIndex', ['sort' => request('sort') ,
+                <a href="{{ route('voitures.index', ['sort' => request('sort') ,
                                                     'etoiles' => 5,
                                                     'min_prix'=>request('min_prix'),
                                                     'max_prix'=>request('max_prix')])}}">
@@ -88,7 +88,7 @@
 
         </div>
         <label aria-label="0 stars" class="" for="rating3-0">
-            <a href="{{ route('voitures.theIndex', ['sort' => request('sort') ,
+            <a href="{{ route('voitures.index', ['sort' => request('sort') ,
                                                 'etoiles' => 0,
                                                 'min_prix'=>request('min_prix'),
                                                 'max_prix'=>request('max_prix')])}}">
@@ -138,7 +138,7 @@
 <div class="container-flex row" style="padding: 0;">
     <div class="col-6 p-0">
         <i class="col-3 fa fa-sort-desc" aria-hidden="true"></i>
-        <a class="sort-size col-8" href="{{ route('voitures.theIndex', ['sort'     => 'asc' ,
+        <a class="sort-size col-8" href="{{ route('voitures.index', ['sort'     => 'asc' ,
                                             'etoiles'   => request('etoiles'),
                                             'min_prix'  => request('min_prix'),
                                             'max_prix'  => request('max_prix')])}}">
@@ -146,7 +146,7 @@
     </div>
     <div class="col-6 p-0">
     <i class="fa fa-sort-asc col-3" aria-hidden="true"></i>
-    <a class="sort-size col-8"  href="{{ route('voitures.theIndex', ['sort'     => 'desc' ,
+    <a class="sort-size col-8"  href="{{ route('voitures.index', ['sort'     => 'desc' ,
                                         'etoiles'   => request('etoiles'),
                                         'min_prix'  =>request('min_prix'),
                                         'max_prix'  =>request('max_prix')])}}">
@@ -156,7 +156,7 @@
 @endsection
 
 @section('price_range_submit')
-<form action="{{ route('voitures.theIndex')}}">
+<form action="{{ route('voitures.index')}}">
 
     <input id="min_prix" type="hidden" name="min_prix">
     <input id="max_prix" type="hidden" name="max_prix">

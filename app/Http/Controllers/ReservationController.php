@@ -174,7 +174,7 @@ class ReservationController extends Controller
 
 
         //[mazal]//optional mazal mareft , idea is to prevent to access payment directly from entring the link
-        //if(!$request) { return redirect()->route('voitures.theIndex'); } 
+        //if(!$request) { return redirect()->route('voitures.index'); } 
 
         //stripe my key
         Stripe::setApiKey('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
@@ -288,7 +288,7 @@ class ReservationController extends Controller
                 session()->forget('voiture_date_debut_search');
                 session()->forget('voiture_days_search');
             }
-            return redirect()->route('voitures.theIndex')
+            return redirect()->route('voitures.index')
                              ->with('success', 'La Voiture a bien été reservee.');
 
         }
@@ -620,7 +620,7 @@ class ReservationController extends Controller
         $product = Voiture::find($request->product_id);
         $product_find = Reservation::where('voiture_id', $product->id)->count(); //to check if it already purchased by user
         if($product->occupee == 1){
-            return redirect()->route('voitures.theIndex')->with('error', 'cette chambre est deja occupee.');
+            return redirect()->route('voitures.index')->with('error', 'cette chambre est deja occupee.');
 
         }
         if ($product_find == 0) {
@@ -638,11 +638,11 @@ class ReservationController extends Controller
                 $order->save();
                 $product->occupee = 1;
                 $product->save();
-            return redirect()->route('voitures.theIndex')->with('success', 'La Voiture a bien été ajouté.');
+            return redirect()->route('voitures.index')->with('success', 'La Voiture a bien été ajouté.');
 
         }
 
-        return redirect()->route('voitures.theIndex')->with('error', 'La Voiture a déjà été reserver.');
+        return redirect()->route('voitures.index')->with('error', 'La Voiture a déjà été reserver.');
     }
 */
 

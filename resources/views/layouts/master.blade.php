@@ -174,7 +174,7 @@
 
 
                                     <li><a href="{{ route('vols.index') }}">Vols</a></li>
-                                    <li><a href="{{ route('voitures.theIndex') }}">Voitures</a></li>
+                                    <li><a href="{{ route('voitures.index') }}">Voitures</a></li>
 
                                 </ul>
                             </div>

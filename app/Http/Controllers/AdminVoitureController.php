@@ -19,7 +19,7 @@ class AdminVoitureController extends Controller
 
         $voitures = $voitures->paginate(20);
 
-        return view('admin.voitures.theIndex')->with('voitures', $voitures);
+        return view('admin.voitures.index')->with('voitures', $voitures);
     }
 
     /*Delete selected VOITURE*/
@@ -113,7 +113,7 @@ class AdminVoitureController extends Controller
 
         $voitures = $voitures->paginate(20);
       
-        return view('admin.voitures.theIndex',['voitures'=> $voitures]);   
+        return view('admin.voitures.index',['voitures'=> $voitures]);   
 
     }
 

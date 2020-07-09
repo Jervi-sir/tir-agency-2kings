@@ -143,7 +143,7 @@
 @endsection
 
 @section('price_range_submit')
-<form action="{{ route('voitures.theIndex')}}">
+<form action="{{ route('voitures.index')}}">
 
     <input id="min_prix" type="hidden" name="min_prix">
     <input id="max_prix" type="hidden" name="max_prix">
