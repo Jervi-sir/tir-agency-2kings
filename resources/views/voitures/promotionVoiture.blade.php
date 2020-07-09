@@ -1,7 +1,7 @@
 @extends('layouts.master2')
 
 @section('titleSite')
-    <title>{{ \App\Agence::first()->nom_agence}} - Voitures</title>
+    <title>{{ \App\Agence::first()->nom_agence}} - VoituressaSas</title>
 @endsection
 
 @section('bannerArea')

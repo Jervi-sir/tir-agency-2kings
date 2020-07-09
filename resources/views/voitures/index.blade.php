@@ -194,6 +194,134 @@
 
 
 
+@foreach($voitures as $product)
+
+<div class="flight-list-box rt-mb-30">
+    <div class="top-content d-flex flex-md-row flex-column justify-content-lg-between">
+         <div class="car-thumb mr-4 mr-lg-0 mb-5 mb-md-0" style="max-width: 15em;">
+                    <img src="{{ secure_asset($product->image) }}" alt="image voiture" class="rt-border-primary2">
+                    <span class="d-block f-size-13 text-555 " style="margin-bottom: -14px;">Ajoutée le : {{ $product->created_at->format('d/m/Y')  }}</span>
+                </div>
+                @if($product->promotion_pourcentage > 0)
+                <div class="promotion">
+                           reduction de {{ $product->promotion_pourcentage }} %
+                </div><!-- /.inner-badge -->
+                @endif
+                <div class="economy mb-5 mb-md-0">
+                    <h5 class="f-size-16 rt-medium mt-1">{{ $product->titre }}</h5>
+                    <span class="d-block f-size-13 text-555 mt-1">{{ $product->portes }} portes</span>
+
+                    <span class="badge rt-gradinet-badge pill rt-mr-10 mt-2">{{ $product->etoiles}}<small>/5</small></span>
+                    <span class="primary-color">
+                        @if($product->etoiles >= 5) Super
+                        @elseif ($product->etoiles >= 3) Excellent
+                        @else Satisfaisante
+                        @endif
+                    </span>
+                    <span class="f-size-12 text-878"></span>
+                    
+            </div>
+
+        <div class="ck-list">
+            <ul class="rt-list">
+                <li class="d-block"> {{ $product->nombre_places}} Places
+                </li>
+                <li class="d-block"> {{ $product->portes}} Portes
+                </li>
+                <li class="d-block"> Année {{ $product->annee}}
+                </li>
+                <li class="d-block " style="background-color: #faf2d8;"> {{ $product->type_voiture}}
+                </li>
+                <li class="d-block">
+                </li>
+            </ul><!-- /.rt-list -->
+        </div><!-- /.ck-list -->
+        <div class="price-mant text-lg-right row" style="display: block;">
+            <div class="col-12" style="float: left; display: block;">
+                        @for ($i = 0;$i < $product->etoiles;$i++)
+                        <i class="fa fa-star review"></i>
+                        @endfor
+            </div>
+            <div class="col-12">
+                <span class="d-block f-size-12 text-878 col-12" style="float: left;">1 jour pour :<br></span>
+                @if($product->promotion_pourcentage == 0)
+                <span class="d-block  f-size-24 rt-semiblod title-font col-12">{{ getPriceHelper($product->prix)}}</span>
+                @else
+                <span class="d-block  f-size-24 rt-semiblod title-font col-12"><strike style="font-size: 16px;">{{ getPriceHelper($product->prix)}}</strike><br>{{ getPriceHelper_Pourcentage($product->prix,$product->promotion_pourcentage) }}</span>
+                @endif
+                <a href="{{ route('voitures.show', $product->slug) }}" class="rt-btn rt-gradient pill rt-sm3 text-uppercase rt-mt-10 ">Voir</a>
+            </div>
+        </div><!-- /.price-mant -->
+    </div><!-- /.top-content -->
+    <div class="bottom-content row">
+        <div class="single-discribe col-md-4">
+            <h3 class="f-size-16 rt-medium text-424 rt-mb-10">Lieu d'emprunt</h3>
+            <p class="f-size-14 line-height-24 text-555">
+                {{ $product->lieu }}
+            </p>
+        </div><!-- /.single-discribe -->
+        <div class="single-discribe col-md-4">
+            <h3 class="f-size-16 rt-medium text-424 rt-mb-10">Inclus gratuitement</h3>
+            <ul class="rt-list">
+                <li class="d-block">
+                    @if($product->electric)
+                    <span class="text-primary rt-mr-3"><i class="fa fa-check-circle"></i> moteur electrique</span>
+                    @else
+                    <span class="primary-color rt-mr-3"><i class="fa fa-check-circle"></i> moteur fuel</span>
+                    @endif
+                </li>
+                <li class="d-block">
+                    @if($product->manuel)
+                    <span class="primary-color rt-mr-3"><i class="fa fa-check-circle"></i> transmission manuelle</span>
+                    @else
+                    <span class="text-primary rt-mr-3"><i class="fa fa-check-circle"></i> transmission automatique</span>
+
+                    @endif
+                </li>
+
+
+                <li class="d-block">
+                    @if($product->climatiseur)
+                    <span class="text-primary rt-mr-3"><i class="fa fa-check-circle"></i> avec climatiseur</span>
+                    @else<span class=" rt-mr-3"><i class="fa fa-times-circle"></i> sans climatiseur</span>
+                    @endif
+                </li>
+
+            </ul><!-- /.rt-list -->
+        </div><!-- /.single-discribe -->
+        <div class="single-discribe col-md-4">
+            <h3 class="f-size-16 rt-medium text-424 rt-mb-10">Inclus dans le prix:</h3>
+            <ul class="rt-list">
+                <li class="d-block">
+                    @if($product->assurance)
+                    <span class="text-success rt-mr-3"><i class="fa fa-check-circle"></i> avec assurance</span>
+                    @else
+                    <span class="text-danger rt-mr-3"><i class="fa fa-times-circle"></i> sans assurance</span>
+                    @endif
+                </li>
+
+                <li class="d-block">
+                    @if($product->km_illimite)
+                    <span class="text-success rt-mr-3"><i class="fa fa-check-circle"></i> Kilométrage illimite</span>
+                    @else<span class="text-danger rt-mr-3"><i class="fa fa-times-circle"></i> Kilométrage limite</span>
+                    @endif
+                </li>
+                <li class="d-block">
+                    @if($product->annulation)
+                    <span class="text-success rt-mr-3"><i class="fa fa-check-circle"></i> annulation gratuite</span>
+
+                    @else
+                    <span class="text-danger rt-mr-3"><i class="fa fa-times-circle"></i> pas d'annulation</span>
+                    @endif
+                </li>
+            </ul><!-- /.rt-list -->
+        </div><!-- /.single-discribe -->
+    </div><!-- /.bottom-content -->
+</div><!-- /.flight-box -->
+
+@endforeach
+{{ $voitures->appends(request()->input())->links() }}
+
 @endsection
 
 
