@@ -66,7 +66,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h5 class="card-title mb-4">Clients</h5>
-                                    <h1 class="display-5 mt-1 mb-3">{{ $utilisateurs->where('role_id',2)->count()}}</h1>
+                                    <h1 class="display-5 mt-1 mb-3" style="padding-bottom: 1.78em;">{{ $utilisateurs->where('role_id',2)->count()}}</h1>
                                     <div class="mb-1">
                                         <span class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i> </span>
                                         <span class="text-muted"></span>

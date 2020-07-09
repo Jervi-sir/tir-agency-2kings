@@ -17,7 +17,7 @@ class AdminRendezVousController extends Controller
         
         $meets = $meets->paginate(6);
 
-        return view('admin.rendezvous.index')->with('meets', $meets);
+        return view('admin.rendezVous.index')->with('meets', $meets);
     }
 
     public function supprimer(Request $request)
@@ -44,7 +44,7 @@ class AdminRendezVousController extends Controller
     {
         $meet    = OmraRendezVous::find($request->meet_id);
 
-        return view('admin.rendezvous.show',['meet'=> $meet]);
+        return view('admin.rendezVous.show',['meet'=> $meet]);
     }
 
 
@@ -60,7 +60,7 @@ class AdminRendezVousController extends Controller
 
         $meets = $meets->paginate(20);
       
-        return view('admin.rendezvous.index',['meets'=> $meets]);   
+        return view('admin.rendezVous.index',['meets'=> $meets]);   
 
     }
 

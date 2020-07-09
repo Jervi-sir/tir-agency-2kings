@@ -194,12 +194,17 @@
 @elseif(session('currency') == "usd")
 <input type="hidden" id="currency" value="0.0077">
 @endif
-
+    <?php 
+        $show_pagination = 0;
+     ?>
 @foreach($hotels as $product)
 @if($product->chambres->where('occupe','=',0) 
     && 
     $product->chambres->where('occupee',0)->where('promotion_pourcentage','>',0)->count()
     )
+    <?php 
+        $show_pagination = $show_pagination + 1;
+     ?>
 <div class="box-style__1 rt-mb-30">
     <div class="hotel-inner-content row">
         <div class="hotel-thumb col-lg-4 mb-4 mb-md-0">
@@ -320,6 +325,8 @@
 @endif
 @endforeach
 
+@if($show_pagination)
 {{ $hotels->appends(request()->input())->links() }}
+@endif
 
 @endsection
