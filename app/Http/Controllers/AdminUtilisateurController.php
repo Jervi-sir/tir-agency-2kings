@@ -62,12 +62,25 @@ class AdminUtilisateurController extends Controller
         $utilisateur->name = $request->nom ;
         $utilisateur->email = $request->email ;
         $utilisateur->password = bcrypt($request->mot_de_pass) ;
-        $utilisateur->avatar = 'utilisateurs'.DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR.$request->image ;
 
         $role_id_but_array = explode(' ..', $request->role_id);       //to take the first number of seletion
         $role_id = $role_id_but_array[0];                            // since it is the id of the role
         
         $utilisateur->role_id = $role_id;
+        if($role_id == 1)
+        {
+            $utilisateur->avatar = 'utilisateurs'.DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR.'default.png' ;
+        }
+        else if($role_id == 3)
+        {
+            $utilisateur->avatar = 'utilisateurs'.DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR.'receptionisste.png' ;
+        }
+        else
+        {
+            $utilisateur->avatar = null;
+        }
+
+
         $utilisateur->remember_token = Str::random(60);
 
         $utilisateur->save();

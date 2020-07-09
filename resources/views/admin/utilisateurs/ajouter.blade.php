@@ -55,15 +55,6 @@
                                             </select>
                                         </div>
 
-                                        <div class="form-group">
-                                            <div class="form-group">
-                                                <label class="form-label w-100">Image</label>
-                                                <input type="file" name="image" accept="image/*">
-                                            </div>
-                                          
-
-                                        </div>
-
                                         
                                         <button type="submit" class="btn btn-primary">Sauvegarder les modifications</button>
                                     </form>

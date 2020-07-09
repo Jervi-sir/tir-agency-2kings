@@ -45,11 +45,7 @@
                                                     <img class="text-center" src="{{ secure_asset( $user->avatar) }}" width="8%" >
                                                 </div>
 
-                                                <div class="form-group col-md-12">   
-                                                    <input type="file" name="image" accept="image/*" value="{{ $user->avatar }}">
-
-                                                    <small class="form-text text-muted">Example block-level help text here.</small>
-                                                </div>    
+                                               
                                             </div>  
                                                 
                                         
