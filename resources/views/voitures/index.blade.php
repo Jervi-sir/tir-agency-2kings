@@ -194,12 +194,6 @@
 
 
 
-@foreach($voitures as $product)
-
-
-@endforeach
-{{ $voitures->appends(request()->input())->links() }}
-
 @endsection
 
 
