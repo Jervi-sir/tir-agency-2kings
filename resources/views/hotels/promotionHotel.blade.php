@@ -198,10 +198,7 @@
         $show_pagination = 0;
      ?>
 @foreach($hotels as $product)
-@if($product->chambres->where('occupe','=',0) 
-    && 
-    $product->chambres->where('occupee',0)->where('promotion_pourcentage','>',0)->count()
-    )
+@if($product->chambres->where('occupee',0)->where('promotion_pourcentage','>',0)->count())
     <?php 
         $show_pagination = $show_pagination + 1;
      ?>
