@@ -139,7 +139,7 @@
 <div class="container-flex row" style="padding: 0;">
     <div class="col-6 p-0">
         <i class="col-3 fa fa-sort-desc" aria-hidden="true"></i>
-        <a class="sort-size col-8" href="{{ route('voitures.index', ['sort'     => 'asc' ,
+        <a class="sort-size col-8" href="{{ route('voitures.promotion', ['sort'     => 'asc' ,
                                             'etoiles'   => request('etoiles'),
                                             'min_prix'  => request('min_prix'),
                                             'max_prix'  => request('max_prix')])}}">
@@ -147,7 +147,7 @@
     </div>
     <div class="col-6 p-0">
     <i class="fa fa-sort-asc col-3" aria-hidden="true"></i>
-    <a class="sort-size col-8" href="{{ route('voitures.index', ['sort'     => 'desc' ,
+    <a class="sort-size col-8" href="{{ route('voitures.promotion', ['sort'     => 'desc' ,
                                         'etoiles'   => request('etoiles'),
                                         'min_prix'  =>request('min_prix'),
                                         'max_prix'  =>request('max_prix')])}}">
@@ -200,7 +200,7 @@
 <div class="flight-list-box rt-mb-30">
     <div class="top-content d-flex flex-md-row flex-column justify-content-lg-between">
          <div class="car-thumb mr-4 mr-lg-0 mb-5 mb-md-0" style="max-width: 15em;">
-                    <img src="{{ secure_asset($product->image) }}" alt="image voiture" class="rt-border-primary2">
+                    <img src="{{ secure_asset( $product->image ) }}" alt="image voiture" class="rt-border-primary2">
                     <span class="d-block f-size-13 text-555 " style="margin-bottom: -14px;">ajoutée le : {{ $product->created_at->format('d/m/Y')  }}</span>
                 </div>
                 @if($product->promotion_pourcentage > 0)

@@ -96,9 +96,8 @@ class VoitureController extends Controller
                                                      'sort'      => request('sort') ,
                                                      'min_prix'  =>request('min_prix'),
                                                      'max_prix'  =>request('max_prix')]);
-        $type_object = 'voitures';
 
-        return view('voitures.index',['type' => $type_object])->with('voitures',$voitures);
+        return view('voitures.index')->with('voitures',$voitures);
 
     }
 
@@ -225,46 +224,47 @@ class VoitureController extends Controller
 /*----------------------------------------------------------------*/
   public function promotion() 
     {
-         $this->refreshVoiture();              //refresh Voiture
+        $this->refreshVoiture();              //refresh Voiture 
 
+        
         $voitures = new Voiture2;
+
+        $voitures = $voitures->where('occupee' , 0);
 
         if(request()->has('min_prix'))
         {
             $voitures = $voitures->whereBetween('prix',[request('min_prix'),request('max_prix')]);
         }
 
+         if(request()->has('sort'))
+        {
+            $voitures =  $voitures->orderBy('promotion_pourcentage', request('sort'))
+                                    ->orderBy('prix', request('sort'));
+        }
+        
         if(request()->has('etoiles'))
         {
             if(request('etoiles'))
             {
                 $voitures = $voitures->where('etoiles', '=',request('etoiles'))
-                                    ->where('occupee' , 0);
+                                    ->where('promotion_pourcentage', '>',0);
             }
             else
             {
-                 $voitures = $voitures->where('occupee' , 0);
+                 $voitures = $voitures->where('promotion_pourcentage', '>',0);
             }
             
         }
 
-        if(request()->has('sort'))
-        {
-            $voitures =  $voitures->where('occupee' , 0)
-                                    ->orderBy('prix', request('sort'))
-                                    ->orderBy('promotion_pourcentage', request('sort'));
-        }
-
         else                                                //like no request
         {
-            $voitures = $voitures->where('occupee' , 0)->inRandomOrder();
+            $voitures = $voitures->where('promotion_pourcentage', '>',0)
+                                    ->inRandomOrder();
         }
 
-        $voitures = $voitures->paginate(6)->appends(['etoiles'   => request('etoiles'),
-                                                     'sort'      => request('sort') ,
-                                                     'min_prix'  =>request('min_prix'),
-                                                     'max_prix'  =>request('max_prix')]);
-        $type_object = 'voitures';
+
+        $voitures = $voitures->paginate(6)->appends(['etoiels' => request('etoiles'),'sort' => request('sort')]);
+        
 
         return view('voitures.promotionVoiture')->with('voitures',$voitures);
 
