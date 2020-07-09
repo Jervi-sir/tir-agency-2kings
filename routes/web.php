@@ -38,6 +38,7 @@ Route::get('/copyrights','CopyRightController@index')->name('copyrights.index');
 
 /*================VOITURE=======================================*/
 Route::get('/voitures','VoitureController@index')->name('voitures.index');
+Route::get('/voitures','VoitureController@suggestion')->name('voitures.theIndex');
 Route::get('/voitures/{slug}','VoitureController@show')->name('voitures.show');
 
 /*Rechercher Voiture*/
@@ -119,7 +120,7 @@ Route::group(['middleware' => ['auth','role']], function () {
 	Route::get('/my/analytique', 'AdminAnalytiqueController@index')->name('adminAnaletique.index');
 	/*===============show data in dashboard==========================*/
 	Route::get('/my/profile', 'AdminProfileController@index')->name('adminProfile.index');
-	Route::get('/my/voitures', 'AdminVoitureController@index')->name('adminVoitures.index');
+	Route::get('/my/voitures', 'AdminVoitureController@index')->name('adminvoitures.index');
 	Route::get('/my/chambres', 'AdminChambreController@index')->name('adminChambres.index');
 	Route::get('/my/hotels', 'AdminHotelController@index')->name('adminHotels.index');
 	Route::get('/my/vols', 'AdminAvionController@index')->name('adminAvions.index');

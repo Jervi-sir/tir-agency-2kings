@@ -121,6 +121,55 @@ class VoitureController extends Controller
         // }
 
 /*----------------------------------------------------------------*/
+    public function suggestion()
+    {
+        $this->refreshVoiture();              //refresh Voiture
+
+        $voitures = new Voiture2;
+
+        if(request()->has('min_prix'))
+        {
+            $voitures = $voitures->whereBetween('prix',[request('min_prix'),request('max_prix')]);
+        }
+
+        if(request()->has('etoiles'))
+        {
+            if(request('etoiles'))
+            {
+                $voitures = $voitures->where('etoiles', '=',request('etoiles'))
+                                    ->where('occupee' , 0);
+            }
+            else
+            {
+                 $voitures = $voitures->where('occupee' , 0);
+            }
+            
+        }
+
+        if(request()->has('sort'))
+        {
+            $voitures =  $voitures->where('occupee' , 0)
+                                    ->orderBy('prix', request('sort'))
+                                    ->orderBy('promotion_pourcentage', request('sort'));
+        }
+
+        else                                                //like no request
+        {
+            $voitures = $voitures->where('occupee' , 0)->inRandomOrder();
+        }
+
+        $voitures = $voitures->paginate(6)->appends(['etoiles'   => request('etoiles'),
+                                                     'sort'      => request('sort') ,
+                                                     'min_prix'  =>request('min_prix'),
+                                                     'max_prix'  =>request('max_prix')]);
+
+        return view('voitures.theIndex')->with('voitures',$voitures);
+
+
+    }
+
+
+/*----------------------------------------------------------------*/
     public function show($slug) 
     {   
         $product = Voiture2::where('slug', $slug)->first();

@@ -31,7 +31,7 @@
         @endif
             <li class="sidebar-item "><a class="sidebar-link" href="{{ route('adminHotels.index') }}">Hôtels</a></li>
             <li class="sidebar-item "><a class="sidebar-link" href="{{ route('adminChambres.index') }}">Chambres</a></li>
-            <li class="sidebar-item "><a class="sidebar-link" href="{{ route('adminVoitures.index') }}">Voitures</a></li>
+            <li class="sidebar-item "><a class="sidebar-link" href="{{ route('adminvoitures.index') }}">Voitures</a></li>
             <li class="sidebar-item"><a class="sidebar-link" href="{{ route('adminAvions.index') }}">Avions</a></li>
             <li class="sidebar-item"><a class="sidebar-link" href="{{ route('adminPlaces.index') }}">Places de Vol</a></li>
             <li class="sidebar-item"><a class="sidebar-link" href="{{ route('adminOmras.index') }}">Omras</a></li>
