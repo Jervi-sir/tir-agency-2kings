@@ -133,7 +133,7 @@
 
                                     </form>
 
-                                    <button type="button" class="btn btn-md btn-danger d-flex justify-content-center align-items-center" data-toggle="modal tooltip" data-target="#modelOf{{ (string)$hotel->id }}" data-placement="top" title="supprimer">
+                                    <button type="button" class="btn btn-md btn-danger d-flex justify-content-center align-items-center" data-toggle="modal" data-target="#modelOf{{ (string)$hotel->id }}" data-placement="top" title="supprimer">
                                         <i class="align-middle" data-feather="trash"></i>
                                     </button>
 

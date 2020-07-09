@@ -148,7 +148,7 @@
                                                                                             
                                                 </form>
 
-                                                <button type="button" class="btn btn-md btn-danger d-flex justify-content-center align-items-center" data-toggle="tooltip modal" data-target="#modelOf{{ (string)$voiture->id }}" data-placement="top" title="supprimer">
+                                                <button type="button" class="btn btn-md btn-danger d-flex justify-content-center align-items-center" data-toggle="modal" data-target="#modelOf{{ (string)$voiture->id }}" data-placement="top" title="supprimer">
                                                     <i class="align-middle" data-feather="trash"></i>
                                                 </button>
 

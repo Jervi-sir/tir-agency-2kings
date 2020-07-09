@@ -1,4 +1,4 @@
-s@extends('admin.masterAdmin')
+@extends('admin.masterAdmin')
 
 
 @section('title-page-admin')
