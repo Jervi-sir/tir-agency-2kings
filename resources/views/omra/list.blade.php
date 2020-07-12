@@ -15,7 +15,7 @@
                 <h1 class="text-white">
                     Mes Rendez-vous 
                 </h1>
-                <p class="text-white link-nav"><a href="{{ route('/') }}" class="mr-3">Accueil </a> <span class="fa fa-angle-right"></span> <a href="{{ route('cart.index') }}" class="ml-3"> Rendez-vous</a></p>
+                <p class="text-white link-nav"><a href="{{ route('/') }}" class="mr-3">Accueil </a> <span class="fa fa-angle-right"></span> <a href="{{ route('omra.list') }}" class="ml-3"> Rendez-vous</a></p>
             </div>
         </div>
     </div>

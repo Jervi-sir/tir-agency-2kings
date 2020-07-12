@@ -218,9 +218,6 @@ public function searchVol()
                 ->where('b.lieu_arrivee','like',"%$arrivee%")
                 ->get();   
 
-            
-            
-
             $type_de_vol = 'Vols en Escale';
             
             return view('vols.escale',['vols'  => $avions,'type_de_vol' =>$type_de_vol ]);
