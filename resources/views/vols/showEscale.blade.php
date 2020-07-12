@@ -273,11 +273,7 @@ $heur_minute_arrivee2_avion1 = date("H:i", strtotime( $result2_avion1 ));
                                 <div class="col-sm-2 flight-logo">
                                     <img src="{{ secure_asset( $vol2->image) }}" alt="vol logo" draggable="false">
                                 </div><!-- /.flight-logo -->
-                                @if($vol2->promotion_pourcentage > 0)
-                                <div class="promotion">
-                                    réduction de {{ $vol2->promotion_pourcentage }} %
-                                </div><!-- /.inner-badge -->
-                                @endif
+                                
                                 <div class="col-sm-4 pricing text-center">
                                     <p>{{$vol2->nom_avion}} | {{$vol2->aeroport_depart}}</p>
                                     <p>{{$vol2->lieu_depart}}</p>
@@ -344,11 +340,7 @@ $heur_minute_arrivee2_avion1 = date("H:i", strtotime( $result2_avion1 ));
                                 <div class="col-sm-2 flight-logo">
                                     <img src="{{ secure_asset( $vol2->image) }}" alt="vol logo" draggable="false">
                                 </div><!-- /.flight-logo -->
-                                @if($vol2->promotion_pourcentage > 0)
-                                <div class="promotion">
-                                    réduction de {{ $vol2->promotion_pourcentage }} %
-                                </div><!-- /.inner-badge -->
-                                @endif
+                                
                                 <div class="col-sm-4 pricing text-center">
                                     <p>{{$vol2->nom_avion}} | {{$vol2->aeroport_arrivee}}</p>
                                     <p>{{$vol2->lieu_arrivee}}</p>

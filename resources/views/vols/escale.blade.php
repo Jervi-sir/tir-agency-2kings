@@ -319,11 +319,6 @@ $heur_minute_arrivee2_avion1 = date("H:i", strtotime( $result2_avion1 ));
                 <div class="col-sm-2 flight-logo">
                     <img src="{{ secure_asset( $avion1->image) }}" alt="vol logo" draggable="false">
                 </div><!-- /.flight-logo -->
-                @if($avion1->promotion_pourcentage > 0)
-                <div class="promotion">
-                    réduction de {{ $avion1->promotion_pourcentage }} %
-                </div><!-- /.inner-badge -->
-                @endif
                 <div class="col-sm-4 pricing text-center">
                     <p>{{$avion1->nom_avion}} | {{$avion1->aeroport_depart}}</p>
                     <p>{{$avion1->lieu_depart}}</p>
@@ -390,11 +385,7 @@ $heur_minute_arrivee2_avion1 = date("H:i", strtotime( $result2_avion1 ));
                 <div class="col-sm-2 flight-logo">
                     <img src="{{ secure_asset( $avion1->image) }}" alt="vol logo" draggable="false">
                 </div><!-- /.flight-logo -->
-                @if($avion1->promotion_pourcentage > 0)
-                <div class="promotion">
-                    réduction de {{ $avion1->promotion_pourcentage }} %
-                </div><!-- /.inner-badge -->
-                @endif
+                
                 <div class="col-sm-4 pricing text-center">
                     <p>{{$avion1->nom_avion}} | {{$avion1->aeroport_arrivee}}</p>
                     <p>{{$avion1->lieu_arrivee}}</p>
@@ -463,11 +454,7 @@ $heur_minute_arrivee2_avion1 = date("H:i", strtotime( $result2_avion1 ));
                 <div class="col-sm-2 flight-logo">
                     <img src="{{ secure_asset( $product->image) }}" alt="vol logo" draggable="false">
                 </div><!-- /.flight-logo -->
-                @if($product->promotion_pourcentage > 0)
-                <div class="promotion">
-                    réduction de {{ $product->promotion_pourcentage }} %
-                </div><!-- /.inner-badge -->
-                @endif
+                
                 <div class="col-sm-4 pricing text-center">
                     <p>{{$product->nom_avion}} | {{$product->aeroport_depart}}</p>
                     <p>{{$product->lieu_depart}}</p>
@@ -534,11 +521,7 @@ $heur_minute_arrivee2_avion1 = date("H:i", strtotime( $result2_avion1 ));
                 <div class="col-sm-2 flight-logo">
                     <img src="{{ secure_asset( $product->image) }}" alt="vol logo" draggable="false">
                 </div><!-- /.flight-logo -->
-                @if($product->promotion_pourcentage > 0)
-                <div class="promotion">
-                    réduction de {{ $product->promotion_pourcentage }} %
-                </div><!-- /.inner-badge -->
-                @endif
+                
                 <div class="col-sm-4 pricing text-center">
                     <p>{{$product->nom_avion}} | {{$product->aeroport_arrivee}}</p>
                     <p>{{$product->lieu_arrivee}}</p>
