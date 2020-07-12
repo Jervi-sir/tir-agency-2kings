@@ -29,12 +29,12 @@
                                         <div class="form-row">
                                             <div class="form-group col-md-12">
                                                 <label for="inputFirstName">Titre</label>
-                                                <input type="text" class="form-control" name="titre" placeholder="Titre">
+                                                <input type="text" class="form-control" name="titre" placeholder="Titre" required>
                                             </div>
                                             
                                             <div class="form-group col-md-12">
                                                 <label for="inputState">Nombres des places</label>
-                                                <select id="inputState" class="form-control" name="nb_place">
+                                                <select id="inputState" class="form-control" name="nb_place" required>
                                                     <option selected="">Choisir...</option>
                                                     <option class="row">Avion de 100 places</option>
                                                     <option class="row">Avion de 200 places</option>
@@ -49,55 +49,55 @@
                                             </div> -->
                                             <div class="form-group col-md-12">
                                                 <label for="inputFirstName">Etoiles</label>
-                                                <input type="number" min="1" max="5" class="form-control" name="etoiles" placeholder="Etoiles">
+                                                <input type="number" min="1" max="5" class="form-control" name="etoiles" placeholder="Etoiles" required>
                                             </div>
                                         <div class="form-group col-md-12">
                                                 <label for="inputFirstName">Nom d'avion</label>
-                                                <input type="text" class="form-control" name="nom_avion" placeholder="Nom d'avion">
+                                                <input type="text" class="form-control" name="nom_avion" placeholder="Nom d'avion" required>
                                         </div>
                                         <div class="form-group col-md-12">
                                                 <label for="inputFirstName">lieu de départ</label>
-                                                <input type="text" class="form-control" name="lieu_depart" placeholder="lieu de départ">
+                                                <input type="text" class="form-control" name="lieu_depart" placeholder="lieu de départ" required>
                                         </div>
                                        <div class="form-group col-md-12">
                                                 <label for="inputFirstName">lieu d'arrivée</label>
-                                                <input type="text" class="form-control" name="lieu_arrivee" placeholder="lieu d'arrivée">
+                                                <input type="text" class="form-control" name="lieu_arrivee" placeholder="lieu d'arrivée" required>
                                         </div>
                                          <div class="form-group col-md-12">
                                                 <label for="inputFirstName">Aeroport de départ</label>
-                                                <input type="text" class="form-control" name="aeroport_depart" placeholder="Aeroport de départ">
+                                                <input type="text" class="form-control" name="aeroport_depart" placeholder="Aeroport de départ" required>
                                         </div>
                                        <div class="form-group col-md-12">
                                                 <label for="inputFirstName">Aeroport d'arrivée</label>
-                                                <input type="text" class="form-control" name="aeroport_arrivee" placeholder="Aeroport d'arrivée">
+                                                <input type="text" class="form-control" name="aeroport_arrivee" placeholder="Aeroport d'arrivée" required>
                                         </div>
 
                                         <div class="form-group col-md-12">
                                                 <label for="inputFirstName">Date de départ</label>
-                                                <input type="datetime-local" class="form-control" min="<?php echo date('Y-m-d',strtotime("-1 days")) ?>T00:00" name="date_depart" placeholder="Date de depart">
+                                                <input type="datetime-local" class="form-control" min="<?php echo date('Y-m-d',strtotime("-1 days")) ?>T00:00" name="date_depart" placeholder="Date de depart" required>
                                         </div>
                                         <div class="form-group col-md-12">
                                                 <label for="inputFirstName">Date de retour</label>
-                                                <input type="datetime-local" class="form-control" min="<?php echo date('Y-m-d',strtotime("-1 days")) ?>T00:00" name="date_retour" placeholder="Date de retoure">
+                                                <input type="datetime-local" class="form-control" min="<?php echo date('Y-m-d',strtotime("-1 days")) ?>T00:00" name="date_retour" placeholder="Date de retoure" required>
                                         </div>
                                         <div class="form-group col-md-12">
                                                 <label for="inputFirstName">Heurs de Vol</label>
-                                                <input type="text" pattern="([0-1][0-9]|2[0-3]):[0-5][0-9]" class="form-control" name="duree_vol" placeholder="HH:mm" required="">
+                                                <input type="text" pattern="([0-1][0-9]|2[0-3]):[0-5][0-9]" class="form-control" name="duree_vol" placeholder="HH:mm" required >
                                         </div>
                                         
 
                                         <div class="form-group col-md-12">
                                                 <label for="inputFirstName">Prix</label>
-                                                <input type="number" min="1" class="form-control" min="1" name="prix" placeholder="Prix">
+                                                <input type="number" min="1" class="form-control" min="1" name="prix" placeholder="Prix" required>
                                         </div>
                                         <div class="form-group col-md-12">
                                                 <label for="inputFirstName">Promotion</label>
-                                                <input type="number" min="0" class="form-control"  min="1" name="promotion" placeholder="Promotion">
+                                                <input type="number" min="0" class="form-control"  min="0" name="promotion" placeholder="Promotion" value="0">
                                         </div>
 
                                         <div class="form-group col-md-12">
                                                 <label for="inputFirstName">Délai de promotion</label>
-                                                <input type="date" class="form-control" name="delai_promotion" min="<?php echo date('Y-m-d',strtotime("-1 days")) ?>" placeholder="Delai de promotion">
+                                                <input type="date" class="form-control" name="delai_promotion" min="<?php echo date('Y-m-d',strtotime("-1 days")) ?>" placeholder="Delai de promotion" value="<?php echo date('Y-m-d',strtotime("-1 days")) ?>">
                                         </div> 
                                         
                                         </div>
@@ -128,12 +128,10 @@
                                         <div class="form-group">
                                             <label class="form-label w-100">Image</label>
                                             <input type="file" name="image" accept="image/*">
-                                            <small class="form-text text-muted">Example block-level help text here.</small>
 
                                             <div class="form-group">
                                                 <label class="form-label w-100">Images</label>
                                                 <input id="images_multiple" type="file" name="images1[]" multiple="multiple" accept="image/*" />
-                                                <small class="form-text text-muted">Example block-level help text here.</small>
                                             </div>
                                         </div>
 

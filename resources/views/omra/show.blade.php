@@ -50,6 +50,16 @@
                                 @endforeach
                             @endif
                         </div>
+                        
+                            <script>
+                                var mainImage = document.querySelector('#mainImage');
+                                var thumbnails = document.querySelectorAll('.img-thumbnail');
+                                thumbnails.forEach((element) => element.addEventListener('click', changeImage));
+                                function changeImage(e) {
+                                  mainImage.src = this.src;
+                                }
+
+                          </script>
                         <div class="inner-badge badge-bg-1 f-size-14 rt-strong">
                         </div><!-- /.inner-badge -->
                         
@@ -67,7 +77,7 @@
 
                     <div class="rt-divider style-one rt-mb-30"></div><!-- /.rt-divider -->
                     <div class="d-flex flex-md-row flex-column justify-content-md-between">
-                        <span>payment par {{ $omra->type_payment }}</span>
+                        <span></span>
                             <span class="d-block f-size-12 text-878">à partir de</span>
                         <div>
                             <span class="d-block f-size-24 primary-color rt-strong">{{ getPriceHelper($omra->prix) }}</span>
@@ -102,7 +112,7 @@
     </div><!-- /.container -->
      @auth
     <div class="flight-list-box rt-mb-30 pt-30" id="reserver">
-                    <h4 class="f-size-24 text-capitalize rt-mb-30  rt-semiblod">Mes Information</h4>
+                    <h4 class="f-size-24 text-capitalize rt-mb-30  rt-semiblod">Mes Informations</h4>
                     <h6 class="text-333 rt-medium">Veuillez entrer vos information <br> pour votre nouveau ticket de réservation d'Omra</h6>
                     <br>
                     <br>
@@ -138,7 +148,7 @@
                             <input type="email" pattern="[\w._%+-]+@[\w.-]+\.[a-zA-Z]{2,3}" placeholder="email@email.com" class="form-control" name="email" value="{{Auth::user()->email }}" required>
                         </div><!-- /.col-md-6 -->
                         <div class="col-md-6 rt-mb-30">
-                            <input type="text" pattern="^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$" placeholder="telephone" class="form-control" name="telephone" required>
+                            <input type="text" pattern="^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$" placeholder="Téléphone" class="form-control" name="telephone" required>
                         </div><!-- /.col-md-6 -->
 
                     </div><!-- /.row -->

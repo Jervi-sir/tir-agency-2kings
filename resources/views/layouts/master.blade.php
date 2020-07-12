@@ -113,7 +113,7 @@
                                   Contact
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                  <a class="dropdown-item" href="{{ route('contacter.index') }}">Contacter nous</a>
+                                  <a class="dropdown-item" href="{{ route('contacter.index') }}">Contactez nous</a>
                                   <a class="dropdown-item" href="">Confidentialitées</a>
                                   <a class="dropdown-item" href="">À propos</a>
                                 </div>
@@ -169,7 +169,7 @@
                         <div class="row">
                             <div class="col">
                                 <ul>
-                                    <li><a href="{{ route('home') }}">Acceuil</a></li>
+                                    <li><a href="{{ route('home') }}">Accueil</a></li>
                                     <li><a href="#">À propos</a></li>
 
 
@@ -183,7 +183,7 @@
                                     <li><a href="{{ route('hotels.index') }}">Hotels</a></li>
                                     <li><a href="#">Confidentialitées</a></li>
                                     <li><a href="#">Conditions générales</a></li>
-                                    <li><a href="{{ route('contacter.index') }}">Contacter nous</a></li>
+                                    <li><a href="{{ route('contacter.index') }}">Contactez nous</a></li>
 
                                 </ul>
                             </div>
@@ -205,7 +205,7 @@
 
                                     @csrf
 
-                                    <input id="email" name="email" type="email" class="form-control" placeholder="Entrer votre email">
+                                    <input id="email" name="email" type="email" class="form-control" placeholder="Entrer votre email" style="font-size: 10pt;">
 
                                     @error('email')
                                         <div class="text-danger text-xs"> {{ $message }}</div>
@@ -230,11 +230,11 @@
                     <div class="single-footer-widget">
                         <h4 class="text-light mb-20">Site / devise</h4>
                         <ul class="d-flex flex-wrap">
-                            <li>
-                                <ul class="mb-2">
+                            <li class="row">
+                                <ul class="col-sm-12" style="margin-bottom: 0.7rem !important;">
                                     <div class="control d-flex">
-                                        <form action="/home" >    
-                                            <select class="bg-dark bg-outline-dark form-control text-light" id="select-1" onchange="doSomething();" name="currency" style="width: 100%;">
+                                        <form action="/" style="width:100%">    
+                                            <select class="goog-te-combo mx-0" id="select-1" onchange="doSomething();" name="currency" >
                                                 @if(session('currency') == "dzd")
                                                 <option value="0">Devise</option>
                                                 <option value="1" selected>دج  DZD</option>
@@ -270,15 +270,27 @@
                                                 <option value="4">$ USD</option>
                                                 @endif
                                             </select>
-                                            <button class="position-absolute p-1" id="test" type="submit" style="visibility: hidden;">test</button>
+                                            <button class="position-absolute p-1" id="test" type="submit" style="visibility: hidden;">test
+                                            </button>
                                         </form>
                                     </div>
                                 </ul>
-                                <ul>
-                                    
-                                <div id="google_translate_element"></div>    
-                                    
+                                <ul class="col-sm-12 mb-2">
+                                    <div>
+                                        <button type="button" id=":1.restore" class="btn btn-primary bg-dark goog-te-combo mx-0" style="border-color: white;width: 100; text-align: left;font-size: 10pt;" onclick="resetLangage()">Afficher l'original</button>
+                                    </div>
+                                    <script type="text/javascript">
+                                            function resetLangage() {
+                                                jQuery('#\\:1\\.container').contents().find('#\\:1\\.restore').click();
+                                                window.location.reload();
+                                            }
+                                    </script>
                                 </ul>
+
+                                <ul class="col-sm-12">
+                                    <div id="google_translate_element"></div>    
+                                </ul>
+                                
                             </li>
                         </ul>
                     </div>
@@ -289,8 +301,7 @@
                     Copyright &copy;
                     <script>
                         document.write(new Date().getFullYear());
-                    </script> Les Services sont creer par <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="#" target="_blank">Gacem & Aymen</a>
-                    <br>Consulter la page "<a href="{{ route('copyrights.index')}}">Copyright</a>" pour les Copyrights
+                    </script> les services sont crées par <i class="fa fa-heart-o ml-2" aria-hidden="true"> </i>  <a href="#" target="_blank">Gacem & Aymen</a>
                 </p>
                 <div class="footer-social text-center">
                     <a href="#"><i class="fa fa-facebook"></i></a>
@@ -312,7 +323,8 @@
             console.log('works');
             btn.click();
         }
-        
+
+
 
 
     </script>

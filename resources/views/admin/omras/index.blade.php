@@ -74,10 +74,10 @@
                                             <th>Titre du vol</th>
                                             <th>Titre du hôtel</th>
                                             <th>Image</th>
+                                            <th>Images</th>
                                             <th>Prix</th>
                                             <th>Lieu</th>
                                             <th>Email</th>
-                                            <th>Options</th>
                                             <th>Max jours</th>
                                             <th>Type de paiment</th>
                                             <th>Type de service</th>
@@ -96,12 +96,19 @@
                                             <td>{{ $omra->slug }}</td>
                                             <td>{{ $omra->vol_titre }}</td>
                                             <td>{{ $omra->hotel_titre }}</td>
-                                            <td ><img src="{{secure_asset($omra->image) }}" width="50"></td>
+                                            <td >
+                                                <img src="{{secure_asset($omra->image) }}" width="50"></td>
+                                            </td>
+                                            <td>
+                                                 @if($omra->images)
+                                                    @foreach(json_decode($omra->images) as $image)
+                                                        <img src="{{secure_asset( $image)}}" width="50" class="img-thumbnail">
+                                                    @endforeach
+                                                @endif
                                             </td>
                                             <td>{{ $omra->prix }}</td> 
                                             <td>{{ $omra->lieu }}</td>
                                             <td>{{ $omra->email }}</td>
-                                            <td>{{ $omra->options }}</td>
                                             <td>{{ $omra->max_jour }}</td>
                                             <td>{{ $omra->type_payment }}</td>
                                             <td>{{ $omra->type_service }}</td>

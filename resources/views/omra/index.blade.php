@@ -86,7 +86,7 @@
 
                         <div class=" footer-elements d-flex justify-content-md-between align-items-center row">
                             <div class="col-8"></div>
-                            <div class="left col-4 pr-0">
+                            <div class="left col-3">
                                  <a href="{{ route('omra.show', $product->slug) }}" class="rt-btn rt-gradient rt-sm2 pill text-uppercase"  draggable="false">Voir</a>
                             </div><!-- /.right -->
 

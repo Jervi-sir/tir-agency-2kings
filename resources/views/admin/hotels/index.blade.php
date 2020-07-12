@@ -103,7 +103,7 @@
                                 <td>{{ $hotel->langues }}</td>
                                 <td>
                                     <?php 
-                                    echo substr($hotel->description, 0, 75).'...';
+                                        echo substr($hotel->description, 0, 75).'...';
                                      ?>
                                 </td>
                                 <td>{{ $hotel->telephone }}</td>

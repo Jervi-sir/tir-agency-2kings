@@ -11,14 +11,14 @@ class AdminOmraController extends Controller
     {
         $omras = new Omra;
 
-		$omras = $omras->orderBy('id', 'desc');
+        $omras = $omras->orderBy('id', 'desc');
         
         $omras = $omras->paginate(6);
 
         return view('admin.omras.index')->with('omras', $omras);
     }
 
-     /*Delete selected VOITURE*/
+     /*Delete selected omra*/
     public function supprimer(Request $request)
     {
         Omra::destroy($request->omra_id);
@@ -38,7 +38,7 @@ class AdminOmraController extends Controller
         return back()->with('successDelete', 'Suppression réussie.');    
     }
     
-    /*Afficher selected Voiture*/
+    /*Afficher selected omra*/
     public function afficher(Request $request)
     {
         $omra    = Omra::find($request->omra_id);
@@ -46,7 +46,7 @@ class AdminOmraController extends Controller
         return view('admin.omras.show',['omra'=> $omra]);
     }
 
-    /*redirecter l page bah tzid un voiture*/
+    /*redirecter l page bah tzid un omra*/
    public function redirect_pour_ajouter()
     {
         return view('admin.omras.ajouter');
@@ -64,14 +64,24 @@ class AdminOmraController extends Controller
         $omra->type_service = "omras";
         $omra->type_payment = "espece";
         $omra->email = $request->email ;
-        $omra->options = $request->options ;
         $omra->description = $request->description ;
         $omra->prix = $request->prix ;
         $omra->max_jour = $request->max_jour ;
 
 
-        /*logiques */
-        
+        if($request->images1[0] != null)
+        {
+            $imagesPath = [];
+            $path = 'omras'.DIRECTORY_SEPARATOR;
+            foreach ($request->images1 as $file) 
+            {
+                $filename = $file;
+                array_push($imagesPath, $path . $filename);
+            }
+            $omra->images = json_encode($imagesPath) ;
+
+        }
+       
         $omra->image = 'omras'.DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR.$request->image ;
 
         $omra->save();
@@ -108,18 +118,32 @@ class AdminOmraController extends Controller
         $omra    = omra::find($request->omra_id);
 
         $omra->titre = $request->input('titre');
-       	$omra->vol_titre = $request->input('vol_titre');
-       	$omra->hotel_titre = $request->input('hotel_titre'); 
+        $omra->vol_titre = $request->input('vol_titre');
+        $omra->hotel_titre = $request->input('hotel_titre'); 
         $omra->lieu = $request->input('lieu');
         $omra->max_jour = $request->input('max_jour');
         $omra->email = $request->input('email');
-        $omra->options = $request->input('options');
         
         $omra->description = $request->input('description');
 
         $omra->prix = $request->input('prix');
-      
-        $omra->image = 'omras'.DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR.$request->input('image');
+
+        if($request->images[0] != null)
+        {
+            $imagesPath = [];
+            $path = 'omras'.DIRECTORY_SEPARATOR;
+            foreach ($request->input('images') as $file) 
+            {
+                $filename = $file;
+                array_push($imagesPath, $path . $filename);
+            }
+            $omra->images = json_encode($imagesPath);
+        }
+        
+        if($request->image != null)
+        {
+            $omra->image = 'omras'.DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR.$request->input('image');
+        }
 
         $omra->save();
 

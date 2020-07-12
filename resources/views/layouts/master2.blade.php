@@ -56,7 +56,7 @@
                             @auth
                             <div class="rt-widget widget_rating">
                                 <a href="{{ route('reserver.show') }}">
-                                    <h4>Réservation<span class="badge badge-pill badge-dark ml-2"> {{ \App\Reservation::where('user_id','=',Auth::user()->id)->count() }}</span></h4>
+                                    <h4>Réservations<span class="badge badge-pill badge-dark ml-2"> {{ \App\Reservation::where('user_id','=',Auth::user()->id)->count() }}</span></h4>
                                 </a>
                             </div>
                              @endauth
@@ -167,7 +167,14 @@
                     <!-- /end sideBar -->
 
 
-                     <!----------------------PreLoader----------------->
+                     <!--------------------------------------------------->
+
+                    <!-- start Result Offers -->
+                    <div class="col-lg-9 my-3 col-md-12">
+                        <!----------------------PreLoader----------------->
+                        <div id="pre-loader-bg" class="pre-loader pre-loader-lay" style="z-index: 200;"></div>
+
+                         <!----------------------PreLoader----------------->
                         <div id="pre-loader-infinit">
                             <svg version="1.1" id="preloader" x="0px" y="0px" width="240px" height="120px" viewBox="0 0 240 120" style="z-index: 1000;">
 
@@ -227,14 +234,7 @@
                             </svg>
                            
                         </div>
-                     <!--------------------------------------------------->
-
-                    <!-- start Result Offers -->
-                    <div class="col-lg-9 my-3 col-md-12">
-                        <!----------------------PreLoader----------------->
-                        <div id="pre-loader-bg" class="pre-loader pre-loader-lay" style="z-index: 200;"></div>
-
-                     <!--------------------------------------------------->
+                    <!--------------------------------------------------->
 
                         @yield('result')
                     </div><!-- /.col-lg-3 -->

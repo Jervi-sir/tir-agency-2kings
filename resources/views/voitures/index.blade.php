@@ -198,7 +198,7 @@
 
 <div class="flight-list-box rt-mb-30">
     <div class="top-content d-flex flex-md-row flex-column justify-content-lg-between">
-         <div class="car-thumb mr-4 mr-lg-0 mb-5 mb-md-0" style="max-width: 15em;">
+         <div class="car-thumb mr-4 mr-lg-0 mb-5 mb-md-0 col-sm-3" style="max-width: 35em;">
                     <img src="{{ secure_asset($product->image) }}" alt="image voiture" class="rt-border-primary2">
                     <span class="d-block f-size-13 text-555 " style="margin-bottom: -14px;">Ajoutée le : {{ $product->created_at->format('d/m/Y')  }}</span>
                 </div>
@@ -207,7 +207,7 @@
                            reduction de {{ $product->promotion_pourcentage }} %
                 </div><!-- /.inner-badge -->
                 @endif
-                <div class="economy mb-5 mb-md-0">
+                <div class="economy mb-5 mb-md-0 text-center col-sm-3">
                     <h5 class="f-size-16 rt-medium mt-1">{{ $product->titre }}</h5>
                     <span class="d-block f-size-13 text-555 mt-1">{{ $product->portes }} portes</span>
 
@@ -222,7 +222,7 @@
                     
             </div>
 
-        <div class="ck-list">
+        <div class="ck-list text-center col-sm-2">
             <ul class="rt-list">
                 <li class="d-block"> {{ $product->nombre_places}} Places
                 </li>
@@ -236,7 +236,7 @@
                 </li>
             </ul><!-- /.rt-list -->
         </div><!-- /.ck-list -->
-        <div class="price-mant text-lg-right row" style="display: block;">
+        <div class="price-mant text-lg-right row col-sm-4" style="display: block;">
             <div class="col-12" style="float: left; display: block;">
                         @for ($i = 0;$i < $product->etoiles;$i++)
                         <i class="fa fa-star review"></i>
@@ -245,22 +245,22 @@
             <div class="col-12">
                 <span class="d-block f-size-12 text-878 col-12" style="float: left;">1 jour pour :<br></span>
                 @if($product->promotion_pourcentage == 0)
-                <span class="d-block  f-size-24 rt-semiblod title-font col-12">{{ getPriceHelper($product->prix)}}</span>
+                <span class="d-block  f-size-24 rt-semiblod title-font col-12 px-0">{{ getPriceHelper($product->prix)}}</span>
                 @else
-                <span class="d-block  f-size-24 rt-semiblod title-font col-12"><strike style="font-size: 16px;">{{ getPriceHelper($product->prix)}}</strike><br>{{ getPriceHelper_Pourcentage($product->prix,$product->promotion_pourcentage) }}</span>
+                <span class="d-block  f-size-24 rt-semiblod title-font col-12 px-0"><strike style="font-size: 16px;">{{ getPriceHelper($product->prix)}}</strike><br>{{ getPriceHelper_Pourcentage($product->prix,$product->promotion_pourcentage) }}</span>
                 @endif
                 <a href="{{ route('voitures.show', $product->slug) }}" class="rt-btn rt-gradient pill rt-sm3 text-uppercase rt-mt-10 ">Voir</a>
             </div>
         </div><!-- /.price-mant -->
     </div><!-- /.top-content -->
     <div class="bottom-content row">
-        <div class="single-discribe col-md-4">
+        <div class="single-discribe col-md-4 text-center">
             <h3 class="f-size-16 rt-medium text-424 rt-mb-10">Lieu d'emprunt</h3>
             <p class="f-size-14 line-height-24 text-555">
                 {{ $product->lieu }}
             </p>
         </div><!-- /.single-discribe -->
-        <div class="single-discribe col-md-4">
+        <div class="single-discribe col-md-4 text-center">
             <h3 class="f-size-16 rt-medium text-424 rt-mb-10">Inclus gratuitement</h3>
             <ul class="rt-list">
                 <li class="d-block">
@@ -289,7 +289,7 @@
 
             </ul><!-- /.rt-list -->
         </div><!-- /.single-discribe -->
-        <div class="single-discribe col-md-4">
+        <div class="single-discribe col-md-4 text-center">
             <h3 class="f-size-16 rt-medium text-424 rt-mb-10">Inclus dans le prix:</h3>
             <ul class="rt-list">
                 <li class="d-block">
@@ -302,8 +302,8 @@
 
                 <li class="d-block">
                     @if($product->km_illimite)
-                    <span class="text-success rt-mr-3"><i class="fa fa-check-circle"></i> Kilométrage illimite</span>
-                    @else<span class="text-danger rt-mr-3"><i class="fa fa-times-circle"></i> Kilométrage limite</span>
+                    <span class="text-success rt-mr-3"><i class="fa fa-check-circle"></i> Kilométrage illimité</span>
+                    @else<span class="text-danger rt-mr-3"><i class="fa fa-times-circle"></i> Kilométrage limité</span>
                     @endif
                 </li>
                 <li class="d-block">

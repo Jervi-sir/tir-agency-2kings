@@ -75,18 +75,26 @@
                                             </div>
 
                                             
-                                            <div class="form-row col-md-12">
-                                                <div class="form-group col-md-12">
-                                                    <label class="form-label w-100">Image</label>
-                                                    <img class="text-center" src="{{ secure_asset( $omra->image) }}" width="8%" >
+                                            <div class="form-group">
+                                                <label class="form-label w-100">Image</label>
+                                                <div class="mb-1">
+                                                    <img src="{{secure_asset($omra->image) }}" class="img-thumbnail" width="20%">
                                                 </div>
+                                                <input type="file" name="image" value="{{ $omra->image }}">
+                                            </div>
 
-                                                <div class="form-group col-md-12">   
-                                                    <input type="file" name="image" accept="image/*" value="{{ $omra->image }}">
+                                            <div class="form-group">
+                                                <label class="form-label w-100">Images</label>
+                                                <div class="mb-1">
+                                                    @if($omra->images)
+                                                        @foreach (json_decode($omra->images, true) as $image)
+                                                            <img src="{{secure_asset( $image)}}" width="10%" class="img-thumbnail">
+                                                        @endforeach
+                                                    @endif
+                                                </div>
+                                                <input type="file" name="images[]" multiple value="{{ $omra->images }}">
+                                            </div>
 
-                                                    <small class="form-text text-muted">Vous pouvez télécharger une image ici.</small>
-                                                </div>    
-                                            </div>  
                                             
                                         
                                         <div class="form-group">

@@ -6,7 +6,7 @@ svg {
   top: 4%;
   right: 0;
   /* bottom: 0; */
-  left: 24%;
+  left: 0%;
   margin: auto;
 }
 .credit {
@@ -41,9 +41,9 @@ svg {
 /*----------------------Backgrounds---------------------*/
 .about-banner-voiture 
 {
-  background-image: url('../img/voiture.jpg');
+  background: url('../img/voiture.jpg') center;
   background-position: 35% 23%;
-  background-size: 100%;
+  background-size: cover;
 }
 
 .about-banner-voiture .overlay-bg 
@@ -52,9 +52,9 @@ svg {
 }
 .about-banner-hotel
 {
-  background-image: url('../img/hotel101.jpg');
+  background: url('../img/hotel1.jpg') center;
   background-position: 42% 59%;
-  background-size: 100%;
+  background-size: cover;
 }
 
 .about-banner-hotel .overlay-bg 
@@ -64,9 +64,9 @@ svg {
 
 .about-banner-contacter 
 {
-  background-image: url('../img/voiture.jpg');
+  background: url('../img/voiture.jpg') center;
   background-position: 35% 23%;
-  background-size: 100%;
+  background-size: cover;
 }
 
 .about-banner-contacter .overlay-bg 
@@ -75,9 +75,9 @@ svg {
 }
 .about-banner-login 
 {
-  background-image: url('../img/accueil.jpg');
+  background: url('../img/accueil.jpg') center;
   background-position: 35% 40%;;
-  background-size: 100%;
+  background-size: cover;
 }
 
 .about-banner-login .overlay-bg 
@@ -87,9 +87,9 @@ svg {
 
 .about-banner-avion 
 {
-  background-image: url('../img/avion.jpg');
+  background: url('../img/avion1.jpg') center;
   background-position: 34% 53%;
-  background-size: 100%;
+  background-size: cover;
 }
 
 .about-banner-avion .overlay-bg 
@@ -99,9 +99,9 @@ svg {
 
 .about-banner-contacer 
 {
-  background-image: url('../img/contacer.jpg');
+  background: url('../img/contacter1.jpg') center;
   background-position: 42% 50%;
-  background-size: 100%;
+  background-size: cover;
 }
 
 .about-banner-contacer .overlay-bg 
@@ -111,11 +111,23 @@ svg {
 
 .about-banner-omra 
 {
-  background-image: url('../img/omra.jpg');
+  background: url('../img/omra.jpg') center;
   background-position: 0% 67%;
 }
 
 .about-banner-omra .overlay-bg 
+{
+  background: rgba(4, 9, 30, 0.4);
+}
+
+.about-banner-reservation 
+{
+  background: url('../img/receptionist.jpg') center;
+  background-position: 15% 42%;
+  background-size: cover;
+}
+
+.about-banner-reservation .overlay-bg 
 {
   background: rgba(4, 9, 30, 0.4);
 }
@@ -232,7 +244,7 @@ h2::after {
   max-width: 100%;
   max-height: 100%;
     display: block; 
-    position: absolute;
+    /*position: absolute;*/
   bottom: 0;
   margin: auto;
   left: 0;
@@ -399,7 +411,7 @@ h2::after {
 
 /* The Transformation */
 .img-hover-zoom:hover img {
-   transform: scale(1.1, 1.02);
+    transform: scale(1.025);
     cursor: pointer;
 }
 
@@ -613,7 +625,7 @@ body
     width: 84%;
     padding: 10px;
     border-color: white;
-    width: 85%;
+    width: 100%;
 
 }
 

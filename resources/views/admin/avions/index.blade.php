@@ -118,7 +118,12 @@
                                             <td>{{ $vol->promotion_delai }}</td>
                                             <td>{{ $vol->promotion_pourcentage }}</td>
                                             <td>{{ $vol->annulation }}</td>
-                                            <td>{{ $vol->description }}</td>
+                                            <td>
+                                                <?php 
+                                                    echo substr($vol->description, 0, 75).'...';
+                                                 ?>
+                                                     
+                                            </td>
                                             <td class="d-none d-md-table-cell">{{ $vol->created_at }}</td>
                                             <td class="d-none d-md-table-cell">{{ $vol->updated_at }}</td>
                                             <td class="table-action">

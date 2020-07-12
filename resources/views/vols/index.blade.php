@@ -218,7 +218,7 @@ $heur_minute_arrivee2 = date("H:i", strtotime( $result2 ));
 ?>
 <div class="col-lg-12 col-sm-12 container px-0">
     <div class="flight-list-box rt-mb-30 row">
-        <div class="container-fluid row">
+        <div class="col-md-12 container-fluid row">
             <h5 class="col-sm-4">{{ $product->titre }} </h5>
             <span class="col-sm-4">place libres:: {{ $product->places->where('occupee','=',0)->count() }}</span>
 
@@ -228,9 +228,9 @@ $heur_minute_arrivee2 = date("H:i", strtotime( $result2 ));
                     @endfor
             </div>
         </div>
-        <div class="col-md-10 px-0 mr-3">
-            <div class="col-12 row px-0 mx-0">
-                <div class="col-sm-2 flight-logo">
+        <div class="col-md-10 px-0 mx-0 row mr-2">
+            <div class="col-md-12 px-0 mx-0 row">
+                <div class="col-sm-2 flight-logo mx-auto">
                     <img src="{{ secure_asset( $product->image) }}" alt="vol logo" draggable="false">
                 </div><!-- /.flight-logo -->
                 @if($product->promotion_pourcentage > 0)
@@ -301,9 +301,9 @@ $heur_minute_arrivee2 = date("H:i", strtotime( $result2 ));
             </div><!-- /.top-content -->
 
 
-            <div class="col-12 bottom-content row px-0 mx-0">
+            <div class="col-md-12 bottom-content px-0 mx-0 row">
 
-                <div class="col-sm-2 flight-logo">
+                <div class="col-sm-2 flight-logo mx-auto">
                     <img src="{{ secure_asset( $product->image) }}" alt="vol logo" draggable="false">
                 </div><!-- /.flight-logo -->
                 @if($product->promotion_pourcentage > 0)
@@ -332,7 +332,7 @@ $heur_minute_arrivee2 = date("H:i", strtotime( $result2 ));
 
                     </div><!-- /.left -->
 
-                    <div class=" middle">
+                    <div class="middle row">
                         <div class="col-sm-12 text-center">Retour</div>
                         <div class="col-sm-12">
                             <img src="{{ secure_asset('img/back.png')}}" alt="vol logo" draggable="false">
@@ -375,7 +375,7 @@ $heur_minute_arrivee2 = date("H:i", strtotime( $result2 ));
         </div><!-- /.bottom-content -->
         <div class="col-md-2 px-0 row">
 
-            <div class="book-now row" style=" float: left;">
+            <div class="book-now row mx-auto" style=" float: left;">
                 @if($product->promotion_pourcentage == 0)
                 <p class="trip text-center col-sm-12" style="font-size: 20px;font-weight: 600;color: rgba(255, 167, 0, 0.79);float: right;3">
                     {{ getPriceHelper($product->prix)}}
@@ -392,7 +392,7 @@ $heur_minute_arrivee2 = date("H:i", strtotime( $result2 ));
                 @endif
 
 
-                <a href="{{ route('vols.show', $product->slug) }}" class="rt-btn  pill rt-gradient text-uppercase mx-auto">Voir</a>
+                <a href="{{ route('vols.show', $product->slug) }}" class="rt-btn pill rt-gradient text-uppercase mx-auto d-flex justify-content-center align-items-center ml-2">Voir</a>
 
                 <div class="flight-detils float-right col-sm-12" style="margin-top: 4rem !important;">
                     <span class="d-block " style="float:right;">

@@ -287,7 +287,7 @@
             @if(!$voiture->occupee)
 
                 <div class="flight-list-box rt-mb-30 pt-30" >
-                    <h4 class="f-size-24 text-capitalize rt-mb-30  rt-semiblod">Mes Information</h4>
+                    <h4 class="f-size-24 text-capitalize rt-mb-30  rt-semiblod">Mes Informations</h4>
                     <h6 class="text-333 rt-medium">Veuillez entrer vos information <br> pour votre nouveau ticket de réservation</h6>
                     <br>
                     <br>
@@ -325,7 +325,7 @@
                             <input type="email" pattern="[\w._%+-]+@[\w.-]+\.[a-zA-Z]{2,3}" placeholder="email@email.com" class="form-control" name="email" value="{{Auth::user()->email }}" required>
                         </div><!-- /.col-md-6 -->
                         <div class="col-md-6 rt-mb-30">
-                            <input type="text" pattern="^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$" placeholder="telephone" class="form-control" name="Téléphone" required>
+                            <input type="text" pattern="^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$" placeholder="telephone" class="form-control" name="telephone" required>
                         </div><!-- /.col-md-6 -->
 
                     </div><!-- /.row -->

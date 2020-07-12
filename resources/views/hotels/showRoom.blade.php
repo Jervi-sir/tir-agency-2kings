@@ -60,9 +60,12 @@
                     <div class="single-main rtbgprefix-cover">
                         <img class="single-main rtbgprefix-cover" src="{{ secure_asset($chambre->image) }}" id="mainImage">
                         <div class="mt-2">
-                            @if($chambre->images)
                             <img class="img-thumbnail" src="{{ secure_asset($chambre->image) }}" width="50">
-
+                            <img class="img-thumbnail" src="{{ secure_asset($chambre->hotel->image) }}"  width="50" >
+                            @foreach (json_decode($chambre->hotel->images, true) as $image)
+                            <img src="{{secure_asset($image)}}" width="50" class="img-thumbnail">
+                            @endforeach
+                            @if($chambre->images)
                             @foreach (json_decode($chambre->images, true) as $image)
                             <img src="{{secure_asset($image)}}" width="50" class="img-thumbnail">
                             @endforeach
@@ -155,7 +158,7 @@
                             <li class="clearfix row">
 
                                 <span class="col-6">Durrée</span>
-                                <span class="float-right col-6"><input type="number" id="f" value="{{session()->get('hotel_days_search')}}" min="1" max="10" onkeydown="return false" onclick="myFunction()" style="width:36%;"><span class="f-size-12 mr-1">jour(s)</span></span>
+                                <span class="float-right col-6"><input type="number" id="f" value="{{session()->get('hotel_days_search')}}" min="1" max="10" onkeydown="return false" onclick="myFunction()" style="width:36%;"><span class="f-size-12 ml-2">jour(s)</span></span>
                             </li>
                             <li class="clearfix sub-total row">
                                 <span class="col-6">Total</span>
@@ -186,7 +189,7 @@
                                     <li class="clearfix row">
 
                                         <span class="col-6">Durrée</span>
-                                        <span class="float-right col-6"><input type="number" id="f" value="{{session()->get('hotel_days_search')}}" min="1" max="10" onkeydown="return false" onclick="myFunction()" style="width:36%;"><span class="f-size-12 mr-1">jour(s)</span></span>
+                                        <span class="float-right col-6"><input type="number" id="f" value="{{session()->get('hotel_days_search')}}" min="1" max="10" onkeydown="return false" onclick="myFunction()" style="width:36%;"><span class="f-size-12 ml-2">jour(s)</span></span>
                                     </li>
                                     <li class="clearfix sub-total row">
                                         <span class="col-6">Total</span>
@@ -247,7 +250,7 @@
                                     <li class="clearfix row">
 
                                         <span class="col-6">Durrée</span>
-                                        <span class="float-right col-6"><input type="number" id="f" value="{{ $days = 1 }}" min="1" max="10" onkeydown="return false" onclick="myFunction()" style="width:36%;"><span class="f-size-12 mr-1">jour(s)</span></span>
+                                        <span class="float-right col-6"><input type="number" id="f" value="{{ $days = 1 }}" min="1" max="10" onkeydown="return false" onclick="myFunction()" style="width:36%;"><span class="f-size-12 ml-2">jour(s)</span></span>
                                     </li>
                                     <li class="clearfix sub-total row">
 
@@ -367,7 +370,7 @@
         @if(!$chambre->occupee)
         <div class="row">
             <div class="flight-list-box rt-mb-30 pt-30">
-                <h4 class="f-size-24 text-capitalize rt-mb-30  rt-semiblod">Mes Information</h4>
+                <h4 class="f-size-24 text-capitalize rt-mb-30  rt-semiblod">Mes Informations</h4>
                 <h6 class="text-333 rt-medium">Veuillez entrer vos information <br> pour votre nouveau ticket de réservation</h6>
                 <br>
                 <br>

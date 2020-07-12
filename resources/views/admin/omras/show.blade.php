@@ -39,9 +39,18 @@
                                             </tr>
                                             <tr>
                                                 <td>Image</td>
-                                                <td><img src="{{ secure_asset( $omra->image) }}"></td>
+                                                <td><img src="{{ secure_asset( $omra->image) }}" width="50%"></td>
                                             </tr>
-
+                                            <tr>
+                                                <td>Images</td>
+                                                 <td>
+                                                 @if($omra->images)
+                                                    @foreach(json_decode($omra->images) as $image)
+                                                        <img src="{{secure_asset( $image)}}" width="20%" class="img-thumbnail">
+                                                    @endforeach
+                                                @endif
+                                                </td>
+                                            </tr>
                                             <tr>
                                                 <td>Prix</td>
                                                 <td>{{ $omra->prix }}</td>

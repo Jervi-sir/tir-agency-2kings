@@ -7,7 +7,7 @@
 
 @section('bannerArea')
 <!-- start banner Area -->
-<section class="about-banner relative">
+<section class="about-banner-reservation relative">
     <div class="overlay overlay-bg"></div>
     <div class="container">
         <div class="row d-flex align-items-center justify-content-center">
@@ -15,7 +15,7 @@
                 <h1 class="text-white">
                     Mes Réservations
                 </h1>
-                <p class="text-white link-nav"><a href="{{ route('/') }}" class="mr-3">Accueil </a> <span class="fa fa-angle-right"></span> <a href="{{ route('cart.index') }}" class="ml-3"> Réservations</a></p>
+                <p class="text-white link-nav"><a href="{{ route('/') }}" class="mr-3">Accueil </a> <span class="fa fa-angle-right"></span> <a href="{{ route('reserver.show') }}" class="ml-3"> Réservations</a></p>
             </div>
         </div>
     </div>
@@ -33,7 +33,7 @@
             <div class="row">
                 <div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5">
                     <!-- Shopping cart table -->
-                    <div class="table-responsive" style="overflow-x: hidden;">
+                    <div class="table-responsive" style="overflow-x: scroll;display: block;">
                         <table class="table">
                             <thead>
                                 <tr>
@@ -66,7 +66,7 @@
                                                 <h5 class="mb-0"> 
                                                     <a href="{{ route('voitures.show', ['slug' => $order->voiture->slug]) }}" class="text-dark d-inline-block align-middle">
                                                                     <?php 
-                                                        echo substr($order->voiture->titre, 0, 30).'...';
+                                                        echo substr($order->voiture->titre, 0, 22).'...';
                                                          ?>
                                                         </a>
                                                 </h5><span class="text-muted font-weight-normal font-italic d-block">Category: Voiture</span>
@@ -127,7 +127,7 @@
                                                 <h5 class="mb-0"> 
                                                     <a href="{{ route('vols.show', ['slug' => $order->place->avion->slug]) }}" class="text-dark d-inline-block align-middle">
                                                         <?php 
-                                                        echo substr($order->place->avion->titre, 0, 30).'...';
+                                                        echo substr($order->place->avion->titre, 0, 22).'...';
                                                          ?>
 
                                                     </a>
@@ -191,7 +191,7 @@
                                                 <h5 class="mb-0"> 
                                                     <a href="{{ route('hotels.show', ['slug' => $order->chambre->slug]) }}" class="text-dark d-inline-block align-middle">
                                                          <?php 
-                                                        echo substr($order->chambre->titre, 0, 30).'...';
+                                                        echo substr($order->chambre->titre, 0, 22).'...';
                                                          ?>
                                                     </a>
                                                 </h5>

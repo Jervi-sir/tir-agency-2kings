@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('titleSite')
-    <title>{{ \App\Agence::first()->nom_agence}} - Contacter Nous</title>
+    <title>{{ \App\Agence::first()->nom_agence}} - Contactez Nous</title>
 @endsection
 
 
@@ -13,9 +13,9 @@
         <div class="row d-flex align-items-center justify-content-center">
             <div class="about-content col-lg-12">
                 <h1 class="text-white">
-                    Contacter Nous
+                    Contactez Nous
                 </h1>
-                <p class="text-white link-nav"><a href="{{ route('home') }}" class="mr-3">Accueil </a> <span class="fa fa-angle-right"></span> <a href="{{ route('contacter.index') }}" class="ml-3"> Contacter Nous</a></p>
+                <p class="text-white link-nav"><a href="{{ route('home') }}" class="mr-3">Accueil </a> <span class="fa fa-angle-right"></span> <a href="{{ route('contacter.index') }}" class="ml-3"> Contactez Nous</a></p>
             </div>
         </div>
     </div>
@@ -39,9 +39,9 @@
 						<span class="lnr lnr-home"></span>
 					</div>
 					<div class="contact-details">
-						<h5>Binghamton, New York</h5>
+						<h5>Algérie, Ain Temouchent</h5>
 						<p>
-							4343 Hinkle Deegan Lake Road
+							46000, Université d'Ain Temouchent
 						</p>
 					</div>
 				</div>
@@ -50,8 +50,8 @@
 						<span class="lnr lnr-phone-handset"></span>
 					</div>
 					<div class="contact-details">
-						<h5>+213 000000000</h5>
-						<p>Mon to Fri 9am to 6 pm</p>
+						<h5>{{ \App\Agence::first()->telephone }}</h5>
+						<p>Lundi to Mercredi de 9:00 à 14:00</p>
 					</div>
 				</div>
 				<div class="single-contact-address d-flex flex-row">
@@ -59,8 +59,8 @@
 						<span class="lnr lnr-envelope"></span>
 					</div>
 					<div class="contact-details">
-						<h5>admin@example.com</h5>
-						<p>Send us your query anytime!</p>
+						<h5>{{ \App\Agence::first()->email }}</h5>
+						<p>Envoyez-nous votre requête à tout moment!</p>
 					</div>
 				</div>														
 			</div>

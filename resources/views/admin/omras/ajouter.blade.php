@@ -86,8 +86,12 @@
                             <div class="form-group">
                                 <label class="form-label w-100">Image</label>
                                 <input type="file" name="image" accept="image/*">
-                                <small class="form-text text-muted">Example block-level help text here.</small>
 
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label w-100">Images</label>
+                                <input id="images_multiple" type="file" name="images1[]" multiple="multiple" accept="image/*" />
                             </div>
 
                             <div class="form-group">

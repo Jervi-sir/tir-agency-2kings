@@ -121,7 +121,7 @@
                                             <td>{{ $voiture->type_voiture }}</td>
                                             <td>
                                                 <?php 
-                                                echo substr($voiture->description, 0, 50).'...';
+                                                    echo substr($voiture->description, 0, 50).'...';
                                                  ?>
                                             </td>
                                             <td>{{ $voiture->annee }}</td>

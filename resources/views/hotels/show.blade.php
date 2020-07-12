@@ -199,21 +199,15 @@
                                     <div class="row">
                                         
                                         <div class="col-md-12 col-lg-12"> 
-                                                     <div class="d-flex flex-md-row flex-column justify-content-md-between rt-mb-20 rt-mt-10 row">
-                                                        <span class="f-size-16 text-656 title-font rt-medium text-uppercase col-3">Aperçu</span>
-                                                        <span class="f-size-16 text-656 title-font rt-medium text-uppercase col-3">Options</span>
-                                                        <span class="f-size-16 text-656 title-font rt-medium text-uppercase col-2">Règles</span>
-                                                        <span class="f-size-16 text-656 title-font rt-medium text-uppercase col-2">Prix par nuit</span>
-                                                        <span class="f-size-16 text-656 title-font rt-medium text-uppercase col-2">Voir les details</span>
-                                                     </div>
                                                   
                                                     <div class="row">
+                                                        
                                                         @foreach($chambres as $product)
 
-                                                        <div class="col-lg-12 col-md-6">
-                                                            <ul class="rt-list d-flex flex-lg-row flex-column justify-content-md-between box-style__1 rt-light-bg rt-mb-10">
+                                                        <div class="col-md-12 container">
+                                                            <ul class="rt-list d-flex flex-lg-row flex-column justify-content-md-between box-style__1 rt-light-bg rt-mb-10 row px-0">
                                                                 
-                                                                <li class="rt-pt-8 col-3">
+                                                                <li class="col-md-3">
                                                                     <span class="d-block">
                                                                         <img src="{{secure_asset( $product->image)}}" alt="hotel iamge" draggable="false" width="100%">
                                                                         <span class="text-333"><i class="icofont-bed"></i> <i class="icofont-bed"></i></span>
@@ -224,7 +218,7 @@
                                                                     </div><!-- /.inner-badge -->
                                                                     @endif 
                                                                 </li>
-                                                                <li class="rt-pt-8 col-3">
+                                                                <li class="col-md-2">
                                                                      <p>   
                                                                         <span class="f-size-13 text-333"> {{$product->nb_lit}} lit(s)</span>
                                                                     </p>
@@ -252,7 +246,7 @@
                                                                     @endif
                                                                         
                                                                 </li>
-                                                                <li class="rt-pt-8 col-2">
+                                                                <li class="col-md-2">
                                                                     <p class="f-size-13 text-333 line-height-20">
                                                                         <span class="rt-pr-4">
                                                                         @if($product->annulation)
@@ -268,7 +262,7 @@
                                                             
                                                                 </li>
                                            @if($product->promotion_pourcentage == 0)
-                                            <li class="rt-pt-8 col-2">
+                                            <li class="col-md-2">
                                                 <span class="d-block f-size-12 text-878">pour une nuite</span>
                                                 <span class="d-block f-size-24 primary-color rt-strong"> </span>
                                                 <span class="d-d-block f-size-24 primary-color rt-strong" style="font-weight: 700;font-size: 21px;color: #f8b600; float: right;">{{ getPriceHelper($product->prix)}}</span>
@@ -278,7 +272,7 @@
                                                 @endif
                                             </li>
                                             @else              
-                                            <li class="rt-pt-8 col-2">
+                                            <li class="col-md-2">
                                                 <span class="d-block f-size-12 text-878">pour une nuite</span>
                                                 <span class="d-block f-size-24 primary-color rt-strong"> </span>
                                                 <span class="d-d-block f-size-24 primary-color rt-strong" style="font-weight: 700;font-size: 21px;color: #f8b600; float: right;">
@@ -305,7 +299,7 @@
                                             @endif
            
 
-                                                                <li class="rt-pt-8 col-2">
+                                                                <li class="col-md-2">
                                                                     <a href="{{ route('hotels.showRoom', $product->slug) }}" class="rt-btn rt-gradient rt-sm2 pill text-uppercase">Voir</a>
                                                                     <p class="f-size-13 text-2f7"><span class="rt-pr-5"><i class="icofont-check"></i></span></p>
                                                                 </li>

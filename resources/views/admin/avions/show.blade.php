@@ -42,11 +42,18 @@
                                             </tr>
                                             <tr>
                                                 <td >Image</td>
-                                                <td>{{ $vol->image }}</td>
+                                                <td ><img src="{{secure_asset($vol->image) }}" width="100"></td>
+                                                
                                             </tr>
                                             <tr>
                                                 <td >Images</td>
-                                                <td>{{ $vol->images }}</td>
+                                                <td>
+                                                @if($vol->images)
+                                                    @foreach (json_decode($vol->images, true) as $image)
+                                                        <img src="{{secure_asset( $image)}}" width="50" class="img-thumbnail">
+                                                    @endforeach
+                                                @endif
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <td >Type de vol</td>

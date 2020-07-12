@@ -31,17 +31,17 @@
                             <div class="form-row">
                                 <div class="form-group col-md-12">
                                     <label for="inputFirstName">Titre</label>
-                                    <input type="text" class="form-control" name="titre" placeholder="Titre">
+                                    <input type="text" class="form-control" name="titre" placeholder="Titre" required>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputAddress">Lieu</label>
-                                <input type="text" class="form-control" name="lieu" placeholder="Lieu">
+                                <input type="text" class="form-control" name="lieu" placeholder="Lieu" required>
                             </div>
 
                             <div class="form-group">
                                 <label for="inputAddress2">Etoiles</label>
-                                <input type="number" min="1" max="5" class="form-control" name="etoiles" placeholder="Etoiles">
+                                <input type="number" min="1" max="5" class="form-control" name="etoiles" placeholder="Etoiles" required>
                             </div>
 
                             <div class="form-group">
@@ -57,12 +57,10 @@
                             <div class="form-group">
                                 <label class="form-label w-100">Image</label>
                                 <input type="file" name="image" accept="image/*">
-                                <small class="form-text text-muted">Example block-level help text here.</small>
 
                                 <div class="form-group">
                                     <label class="form-label w-100">Images</label>
                                     <input id="images_multiple" type="file" name="images1[]" multiple="multiple" accept="image/*" />
-                                    <small class="form-text text-muted">Example block-level help text here.</small>
                                 </div>
                             </div>
 

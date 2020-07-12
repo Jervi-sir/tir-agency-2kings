@@ -16,7 +16,7 @@
                 <div class="container-fluid p-0">
 
                     <h1 class="h2 mb-3">Places d'Avion</h1>
-                    <h4>total des places enrengistrees : {{\App\Place::count()}} place, de {{\App\Avion::count()}} avions</h4>
+                    <h4>total des places enrengistrées : {{\App\Place::count()}} place, de {{\App\Avion::count()}} avions</h4>
                     <!-- Bulk delete -->    
                     <div class="modal fade" id="bulkPopup" tabindex="-1" role="dialog" aria-labelledby="confirmer-suppression" aria-hidden="true">
                         <div class="modal-dialog" role="document">

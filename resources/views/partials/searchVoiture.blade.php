@@ -14,13 +14,13 @@
        
       <!-- /.single-input -->
        <div class="single-input  col-rt-in-3">
-           <input type="text" id="demo-3_1" class="form-control has-icon" 
+           <input type="text" id="demo-3_1" class="form-control" 
                placeholder="Date de début" name="date_debut" value="{{ request()->date_debut ?? '' }}">
            <span class="input-iconbadge"><i class="icofont-ui-calendar"></i></span>
        </div><!-- /.single-input -->
 
        <div class="single-input  col-rt-in-3">
-           <input type="text" id="demo-3_2" class="form-control rt-date-picker has-icon"
+           <input type="text" id="demo-3_2" class="form-control rt-date-picker"
                placeholder="Date de fin" name="date_fin" value="{{ request()->date_fin ?? '' }}">
            <span class="input-iconbadge"><i class="icofont-ui-calendar"></i></span>
        </div><!-- /.single-input -->

@@ -30,12 +30,12 @@
                             <div class="form-row">
                                 <div class="form-group col-md-12">
                                     <label for="inputFirstName">Titre</label>
-                                    <input type="text" class="form-control" name="titre" placeholder="Titre">
+                                    <input type="text" class="form-control" name="titre" placeholder="Titre" required>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputAddress2">Etoiles</label>
-                                <input type="number" min="1" max="5" class="form-control" name="etoiles" placeholder="Etoiles">
+                                <input type="number" min="1" max="5" class="form-control" name="etoiles" placeholder="Etoiles" required>
                             </div>
                             <div class="form-group">
                                 <label for="inputAddress2">Annee</label>
@@ -44,29 +44,29 @@
 
                             <div class="form-group">
                                 <label for="inputAddress">Lieu</label>
-                                <input type="text" class="form-control" name="lieu" placeholder="Lieu">
+                                <input type="text" class="form-control" name="lieu" placeholder="Lieu" required>
                             </div>
                             <div class="form-group">
                                 <label for="inputAddress2">Portes</label>
-                                <input type="number" min="1" class="form-control" name="portes" placeholder="Portes">
+                                <input type="number" min="2" class="form-control" name="portes" placeholder="Portes" value="2">
                             </div>
                             <div class="form-group">
                                 <label for="inputAddress2">Places</label>
-                                <input type="number" min="1" class="form-control" name="places" placeholder="Places">
+                                <input type="number" min="1" class="form-control" name="places" placeholder="Places" value="2">
                             </div>
 
                             <div class="form-group">
                                 <label for="inputLastName">Prix</label>
-                                <input type="number" min="1" class="form-control" name="prix" placeholder="Prix">
+                                <input type="number" min="1" class="form-control" name="prix" placeholder="Prix" required>
                             </div>
                             <div class="form-group">
 
                                 <label for="inputLastName">Promotion</label>
-                                <input type="number" min="0" class="form-control" name="promotion" placeholder="Promotion">
+                                <input type="number" min="0" class="form-control" name="promotion" placeholder="Promotion" value="0" >
                             </div>
                             <div class="form-group">
                                 <label for="inputEmail4">Délai de promotion</label>
-                                <input type="date" class="form-control" min="<?php echo date('Y-m-d',strtotime("-1 days")) ?>" name="delai_promotion" placeholder="Delai de promotion">
+                                <input type="date" class="form-control" min="<?php echo date('Y-m-d',strtotime("-1 days")) ?>" value="<?php echo date('Y-m-d',strtotime("-1 days")) ?>" name="delai_promotion" placeholder="Delai de promotion">
                             </div>
 
                             <!--mazal-->
@@ -84,13 +84,11 @@
                             <div class="form-group">
                                 <label class="form-label w-100">Image</label>
                                 <input type="file" name="image" accept="image/*">
-                                <small class="form-text text-muted">Example block-level help text here.</small>
 
                             </div>
                             <div class="form-group">
                                 <label class="form-label w-100">Images</label>
                                 <input id="images_multiple" type="file" name="images1[]" multiple="multiple" accept="image/*" />
-                                <small class="form-text text-muted">Example block-level help text here.</small>
                             </div>
 
 

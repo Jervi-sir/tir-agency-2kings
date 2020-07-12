@@ -47,7 +47,7 @@
           <div class="flight-list-box rt-mb-30 mx-auto" style="width: 800px;">
               <div class="top-content d-flex flex-md-row flex-column justify-content-lg-between row">
                   <div class="car-thumb mr-4 mr-lg-0 mb-5 mb-md-0 col-md-4">
-                      <img src="{{ secure_asset( $voiture->image) }}" alt="car image" class="rt-border-primary2">
+                      <img src="{{ secure_asset( $voiture->image) }}" alt="car image" id="mainImage" class="rt-border-primary2">
                   </div>
                   <div class="economy mb-5 mb-md-0 col-md-5">
                       <h5 class="f-size-16 rt-medium">{{ $voiture->titre }}</h5>
@@ -62,6 +62,24 @@
                       </span>
                       <span class="f-size-12 text-878"></span>
                       <span class="d-block f-size-13 text-555">ajoutée le : {{ $voiture->created_at->format('d/m/Y')  }}</span>
+                      <span class="mt-2">
+                          @if($voiture->images)
+                          <img class="img-thumbnail" src="{{ secure_asset($voiture->image) }}"  width="50" >
+                              @foreach (json_decode($voiture->images, true) as $image)
+                                  <img src="{{secure_asset($image)}}" width="50" class="img-thumbnail">
+                              @endforeach
+                          @endif
+                      </span>
+                      <script>
+                                var mainImage = document.querySelector('#mainImage');
+                                var thumbnails = document.querySelectorAll('.img-thumbnail');
+                                thumbnails.forEach((element) => element.addEventListener('click', changeImage));
+                                function changeImage(e) {
+                                  mainImage.src = this.src;
+                                }
+
+                      </script>
+
 
                   </div>
 
@@ -156,7 +174,7 @@
 
 <div class="container" id="ticket-print">
   <div class="row" >
-    <div class="boarding-pass mx-auto" style="height: 355px;">
+    <div class="boarding-pass" style="height: 355px;margin-left: 22%;margin-right: 7%;">
         <header>
             <div class="flight left">
               <div class="row">
@@ -165,7 +183,7 @@
                 </div>
             </div>
             <div class="flight right">
-                <strong>Tir</strong>
+                <strong>{{ \App\Agence::first()->nom_agence}}</strong>
             </div>
         </header>
         <section class="cities row">
@@ -208,22 +226,26 @@
                     <div id="qrcode" class="barcode"></div>
                 </div>
                 <div class="box">
-                    <small>N&deg; IMMATRICULATION</small>
-                    <strong>E</strong>
+                    <small>Date de paiement</small>
+                    <strong>{{ $order->paiment_cree_a}}</strong>
                 </div>
             </div>
             <div class="times">
                 <div class="box">
-                    <small>Date debut</small>
-                </div>
-                <div class="box">
-                    <small>Departure</small>
+                    <small>Date début</small>
+                    <strong>
+                          <?php 
+                              echo substr($order->date_debut, 0, 10);
+                           ?>
+                    </strong>
                 </div>
                 <div class="box">
                     <small>Date fin</small>
-                </div>
-                <div class="box">
-                    <small>Arrival</small>
+                    <strong>
+                          <?php 
+                              echo substr($order->date_fin, 0, 10);
+                           ?>
+                    </strong>
                 </div>
             </div>
 
@@ -231,14 +253,12 @@
           
     </div>
          <div class="row mx-auto">
-           <div class="watermark">GACEM'AYMEN</div>
-          <div class="watermark">theYeeeBoii-s</div>
          </div>          
   </div>
   </div>
 
   <div class="row">
-        <button type="button" class="btn btn-outline-warning d-inline-block mx-auto print-button mb-5" onclick="printDiv('ticket-print')">Imprimer mon Ticket</button>
+        <button type="button" class="btn btn-outline-warning d-inline-block mx-auto print-button mb-5" onclick="printDiv('ticket-print')" style="font-size: 10pt;">Imprimer mon Ticket</button>
   </div>
 
 </div>

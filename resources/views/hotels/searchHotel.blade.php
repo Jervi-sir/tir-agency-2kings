@@ -243,7 +243,7 @@
 @if($product->chambres->where('occupe','=',0))
 <div class="box-style__1 rt-mb-30">
     <div class="hotel-inner-content row">
-        <div class="hotel-thumb col-md-4 mb-4 mb-md-0">
+        <div class="hotel-thumb col-md-4 mb-4 mb-md-0 mx-auto">
             <div  class="mb-0">
 
                 <img src="{{ secure_asset($product->image) }}" class="hotel-bg rtbgprefix-cover">
@@ -265,7 +265,7 @@
 
         </div><!-- /.hotel-thumb -->
         <div class="hotel-text col-md-5">
-            <div class="row top mb-4 mb-md-0">
+            <div class="row top mb-4 mb-md-0 text-center">
                 
                 <div class="col-12 mb-2">
                     <h5 class="left mb-1">{{ $product->titre }} </h5>
@@ -333,7 +333,7 @@
 
         </div><!-- /.hotel-text -->
         <div class="hotel-text col-md-3">
-             <div class="right text-left text-md-right mt-md-0">
+             <div class="right text-left text-md-right mt-md-0 text-center">
                     <div class="col-12">
                         <div class="right" style="float: left;">
                             @for ($i = 0;$i < $product->etoiles;$i++)

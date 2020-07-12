@@ -35,11 +35,11 @@
                                 </div>
                                 <div class="form-group col-md-12">
                                     <label for="inputFirstName">Titre</label>
-                                    <input type="text" class="form-control" name="titre" placeholder="Titre">
+                                    <input type="text" class="form-control" name="titre" placeholder="Titre" required>
                                 </div>
                                 <div class="form-group col-md-12">
                                     <label for="inputAddress2">Lits</label>
-                                    <input type="number" min="1" class="form-control" name="nb_lit" placeholder="Lits">
+                                    <input type="number" min="1" class="form-control" name="nb_lit" placeholder="Lits" required>
                                 </div>
                                 <div class="form-group col-md-12">
                                     <label for="inputAddress2">Superficie</label>
@@ -49,7 +49,7 @@
 
                                 <div class="form-group col-md-12">
                                     <label for="inputLastName">Prix</label>
-                                    <input type="number" min="1" class="form-control" name="prix" placeholder="Prix">
+                                    <input type="number" min="1" class="form-control" name="prix" placeholder="Prix" required>
                                 </div>
                             
                             <div class="form-group col-md-12">
@@ -58,13 +58,13 @@
                             </div>
                             <div class="form-group col-md-12">
                                 <label for="inputEmail4">Délai de promotion</label>
-                                <input type="date" class="form-control" name="delai_promotion" min="<?php echo date('Y-m-d',strtotime("-1 days")) ?>" placeholder="Delai de promotion">
+                                <input type="date" class="form-control" name="delai_promotion" min="<?php echo date('Y-m-d',strtotime("-1 days")) ?>" value="<?php echo date('Y-m-d',strtotime("-1 days")) ?>" placeholder="Delai de promotion">
                             </div>
 
 
                                 <div class="form-group col-md-12">
                                     <label for="inputState">Hôtel</label>
-                                    <select id="inputState" class="form-control" name="hotel_id">
+                                    <select id="inputState" class="form-control" name="hotel_id" required>
                                         <option selected="">Choisir...</option>
                                         @foreach($hotels as $hotel)
                                         <option class="row"><div class="col-5">{{ $hotel->id}} ..</div><div class="col-7">{{ $hotel->titre}}</div></option>
@@ -81,7 +81,6 @@
                                 <div class="form-group">
                                     <label class="form-label w-100">Images</label>
                                     <input id="images_multiple" type="file" name="images1[]" multiple="multiple" accept="image/*" />
-                                    <small class="form-text text-muted">Vous pouvez télécharger des fichiers ici.</small>
                                 </div>
                             </div>
 

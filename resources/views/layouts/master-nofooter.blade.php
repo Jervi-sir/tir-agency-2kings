@@ -113,7 +113,7 @@
                                   Contact
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                  <a class="dropdown-item" href="{{ route('contacter.index') }}">Contacter nous</a>
+                                  <a class="dropdown-item" href="{{ route('contacter.index') }}">Contactez nous</a>
                                   <a class="dropdown-item" href="">Confidentialitées</a>
                                   <a class="dropdown-item" href="">À propos</a>
                                 </div>

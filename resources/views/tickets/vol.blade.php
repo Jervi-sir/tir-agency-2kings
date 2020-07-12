@@ -8,7 +8,7 @@
 
 @section('bannerArea')
 <!-- start banner Area -->
-<section class="about-banner relative">
+<section class="about-banner-avion relative">
     <div class="overlay overlay-bg"></div>
     <div class="container">
         <div class="row d-flex align-items-center justify-content-center">
@@ -143,7 +143,7 @@
 
                        <div class="col-12 bottom-content top-content d-flex flex-lg-row flex-column align-items-lg-center justify-content-left  justify-content-lg-between">
                            <div class="flight-logo">
-                               <img src="{{secure_asset('storage/'.$vol->image  ) }}" alt="flt logo" draggable="false">
+                               <img src="{{secure_asset($vol->image  ) }}" alt="flt logo" draggable="false">
                            </div><!-- /.flight-logo -->
                             <div class="pricing">
                                       <p>{{$vol->nom_avion}} | {{$vol->aeroport_arrivee}}</p>
@@ -281,6 +281,15 @@
                                     @endforeach
                             </div>
                         </div>
+                        <script>
+                                var mainImage = document.querySelector('#mainImage');
+                                var thumbnails = document.querySelectorAll('.img-thumbnail');
+                                thumbnails.forEach((element) => element.addEventListener('click', changeImage));
+                                function changeImage(e) {
+                                  mainImage.src = this.src;
+                                }
+
+                          </script>
                        @endif
 
                       </div>
@@ -296,14 +305,21 @@
                     <span class="airline">{{ $vol->titre }}</span>
                     <span class="airline airlineslip">
                       <?php echo $nom_avion[1] ?>
-                      <img src="{{secure_asset('storage/'.$vol->image)}}" width="20%" style="transform: translate(16px, -6px);">
+                      <img src="{{secure_asset($vol->image)}}" width="20%" style="transform: translate(16px, -6px);">
                     </span>
                     <span class="boarding">{{\App\Agence::first()->nom_agence}}</span>
                     <div class="content">
                       <span class="jfk">
                         <div class="col-6">{{ $vol->aeroport_depart}}</div>
                       </span>
-                      <span class="plane"><?xml version="1.0" ?><svg clip-rule="evenodd" fill-rule="evenodd" height="60" width="60" image-rendering="optimizeQuality" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg"><g stroke="#222"><line fill="none" stroke-linecap="round" stroke-width="30" x1="300" x2="55" y1="390" y2="390"/><path d="M98 325c-9 10 10 16 25 6l311-156c24-17 35-25 42-50 2-15-46-11-78-7-15 1-34 10-42 16l-56 35 1-1-169-31c-14-3-24-5-37-1-10 5-18 10-27 18l122 72c4 3 5 7 1 9l-44 27-75-15c-10-2-18-4-28 0-8 4-14 9-20 15l74 63z" fill="#222" stroke-linejoin="round" stroke-width="10"/></g></svg></span>
+                      <span class="plane">
+                        <svg clip-rule="evenodd" fill-rule="evenodd" height="60" width="60" image-rendering="optimizeQuality" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+                          <g stroke="#222">
+                            <line fill="none" stroke-linecap="round" stroke-width="30" x1="300" x2="55" y1="390" y2="390"/>
+                            <path d="M98 325c-9 10 10 16 25 6l311-156c24-17 35-25 42-50 2-15-46-11-78-7-15 1-34 10-42 16l-56 35 1-1-169-31c-14-3-24-5-37-1-10 5-18 10-27 18l122 72c4 3 5 7 1 9l-44 27-75-15c-10-2-18-4-28 0-8 4-14 9-20 15l74 63z" fill="#222" stroke-linejoin="round" stroke-width="10"/>
+                          </g>
+                        </svg>
+                      </span>
                       <span class="sfo">
                         <div class="col-6">{{ $vol->aeroport_arrivee}}</div>
                       </span>
@@ -311,7 +327,14 @@
                       <span class="jfk1 jfkslip">
                         <div class="col-6">{{ $vol->aeroport_depart}}</div>
                       </span>
-                      <span class="plane1 planeslip"><?xml version="1.0" ?><svg clip-rule="evenodd" fill-rule="evenodd" height="50" width="50" image-rendering="optimizeQuality" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg"><g stroke="#222"><line fill="none" stroke-linecap="round" stroke-width="30" x1="300" x2="55" y1="390" y2="390"/><path d="M98 325c-9 10 10 16 25 6l311-156c24-17 35-25 42-50 2-15-46-11-78-7-15 1-34 10-42 16l-56 35 1-1-169-31c-14-3-24-5-37-1-10 5-18 10-27 18l122 72c4 3 5 7 1 9l-44 27-75-15c-10-2-18-4-28 0-8 4-14 9-20 15l74 63z" fill="#222" stroke-linejoin="round" stroke-width="10"/></g></svg></span>
+                      <span class="plane1 planeslip">
+                        <svg clip-rule="evenodd" fill-rule="evenodd" height="50" width="50" image-rendering="optimizeQuality" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+                          <g stroke="#222">
+                            <line fill="none" stroke-linecap="round" stroke-width="30" x1="300" x2="55" y1="390" y2="390"/>
+                            <path d="M98 325c-9 10 10 16 25 6l311-156c24-17 35-25 42-50 2-15-46-11-78-7-15 1-34 10-42 16l-56 35 1-1-169-31c-14-3-24-5-37-1-10 5-18 10-27 18l122 72c4 3 5 7 1 9l-44 27-75-15c-10-2-18-4-28 0-8 4-14 9-20 15l74 63z" fill="#222" stroke-linejoin="round" stroke-width="10"/>
+                          </g>
+                        </svg>
+                      </span>
                       <span class="sfo1 sfoslip">
                         <div class="col-6">{{ $vol->aeroport_arrivee}}</div>
                       </span>
@@ -339,7 +362,7 @@
         </div>
 
         <div class="row col-12">
-        <button type="button" class="btn btn-outline-warning d-inline-block mx-auto print-button mb-5 mt-5" onclick="printDiv('ticket-print')">Imprimer mon Ticket</button>
+        <button type="button" class="btn btn-outline-warning d-inline-block mx-auto print-button mb-5 mt-5" onclick="printDiv('ticket-print')" style="font-size: 10pt;">Imprimer mon Ticket</button>
       </div>
 
     </div>

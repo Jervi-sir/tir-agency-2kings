@@ -1,0 +1,22 @@
+account
+gacembekhira@gmail.com 			Rahan@175
+
+old
+url
+mysql://tbhhw4vgxub9h7ft:i9ms12eex3xe0ufj@u3r5w4ayhxzdrw87.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/zrbr1yett1wk40jm
+
+host/socket 	u3r5w4ayhxzdrw87.cbetxkdyhwsb.us-east-1.rds.amazonaws.com
+user		tbhhw4vgxub9h7ft
+password	i9ms12eex3xe0uf
+port 		3306
+database 	zrbr1yett1wk40jm
+
+
+other database
+mysql://lhirsvi9eq3qxc8y:bpokswh882k8c7vf@u3r5w4ayhxzdrw87.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/yl9znyboyk9re9wm
+
+host/socket 	u3r5w4ayhxzdrw87.cbetxkdyhwsb.us-east-1.rds.amazonaws.com
+user		lhirsvi9eq3qxc8y
+password	bpokswh882k8c7vf
+port 		3306
+database 	yl9znyboyk9re9wm

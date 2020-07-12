@@ -1,3 +1,61 @@
+        <style type="text/css">
+            .up-mic
+            {
+                 position: absolute;
+                 top: 25%;
+                 right: 13%;
+                 font-size: 1.4em;
+            }
+            .down-mic
+            {
+                position: absolute;
+                top: 38%;
+                right: 13%;
+                font-size: 1.4em;
+            }
+
+             @media only screen and (max-width: 1200px) 
+                {
+                    .up-mic
+                    {
+                         position: absolute;
+                         top: 79px;
+                         right: 15%;
+                         font-size: 1.4em;
+                    }
+                    .down-mic
+                    {
+                        position: absolute;
+                        top: 120px;
+                        right: 15%;
+                        font-size: 1.4em;
+                    }
+
+                }
+
+            @media only screen and (max-width: 768px) 
+                {
+                    .up-mic
+                    {
+                         position: absolute;
+                         top: 79px;
+                         right: 12%;
+                         font-size: 1.4em;
+                    }
+                    .down-mic
+                    {
+                        position: absolute;
+                        top: 120px;
+                        right: 12%;
+                        font-size: 1.4em;
+                    }
+
+                }
+            
+           
+
+        </style>
+
 <div class="col-lg-4 col-md-6 banner-right  mt-lg-5" style="padding-right: 10px;    text-align: center;">
     <ul class="nav nav-tabs col-12" id="myTab" role="tablist">
         <li class="nav-item col-3 ">
@@ -16,10 +74,10 @@
     <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="vols" role="tabpanel" aria-labelledby="flight-tab">
             <form action="{{ route('vols.searchVol')}}" class="form-wrap">
-                <input type="text" class="form-control" name="search_vol" placeholder="Depart " id="DepartVol" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Depart '">
-                <i class="fa fa-microphone" onclick="recordVol()" aria-hidden="true" style="top: 25%;position: absolute;right: 13%;font-size: 1.4em;"></i>
-                <input type="text" class="form-control" name="to" placeholder="Arrive " id="ArriveVol" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Arrive '">
-                <i class="fa fa-microphone" onclick="recordVol2()" aria-hidden="true" style="top: 38%;position: absolute;right: 13%;font-size: 1.4em;"></i>
+                <input type="text" class="form-control" name="search_vol" placeholder="Départ " id="DepartVol" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Départ '">
+                <i class="fa fa-microphone up-mic" onclick="recordVol()" aria-hidden="true"></i>
+                <input type="text" class="form-control" name="to" placeholder="Arrivée " id="ArriveVol" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Arrivée '">
+                <i class="fa fa-microphone down-mic" onclick="recordVol2()" aria-hidden="true" ></i>
 
                 <input type="text" id="demo-5_1" class="form-control" name="date_depart" placeholder="Date d'allée " onfocus="this.placeholder = ''" onblur="this.placeholder = 'Date d\'allée '">
                 <input type="text" id="demo-5_2" class="form-control" name="date_retour" placeholder="Date de retour " onfocus="this.placeholder = ''" onblur="this.placeholder = 'Date de retour '">
@@ -52,11 +110,11 @@
         </div>
         <div class="tab-pane fade" id="hotel" role="tabpanel" aria-labelledby="hotel-tab">
             <form action="{{ route('hotels.searchHotel') }}" class="form-wrap">
-                <input type="text" class="form-control" name="search_hotel_location" placeholder="Location " id="LocationHotel" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Location '" required>
-                <i class="fa fa-microphone" onclick="recordHotel()" aria-hidden="true" style="top: 25%;position: absolute;right: 13%;font-size: 1.4em;"></i>
+                <input type="text" class="form-control" name="search_hotel_location" placeholder="Lieu " id="LocationHotel" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Lieu '" required>
+                <i class="fa fa-microphone up-mic" onclick="recordHotel()" aria-hidden="true" ></i>
                 <input type="number" min="1" max="10" class="form-control" name="nb_personne" placeholder="Personnes " onfocus="this.placeholder = ''" onblur="this.placeholder = 'Personnes '" onkeydown="return false" required>
 
-                <input type="text" id="demo-4_1" class="form-control" name="date_debut" placeholder="Date d'alle " onfocus="this.placeholder = ''" onblur="this.placeholder = 'Date d\'alle '">
+                <input type="text" id="demo-4_1" class="form-control" name="date_debut" placeholder="Date d'allée " onfocus="this.placeholder = ''" onblur="this.placeholder = 'Date d\'allée '">
                 <input type="text" id="demo-4_2" class="form-control" name="date_fin" placeholder="Date de retour " onfocus="this.placeholder = ''" onblur="this.placeholder = 'Date de retour '">
 
                 <button type="submit" class="primary-btn text-uppercase">Trouver un hôtel</button>
@@ -66,10 +124,10 @@
         <div class="tab-pane fade" id="voiture" role="tabpanel" aria-labelledby="voiture-tab">
             <form action="{{ route('voitures.searchVoiture')}}" class="form-wrap">
                 <input type="text" class="form-control" name="search_voiture_location" placeholder="Location " id="LoactionVoiture" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Location '">
-                <i class="fa fa-microphone" onclick="recordVoiture()" aria-hidden="true" style="top: 25%;position: absolute;right: 13%;font-size: 1.4em;"></i>
+                <i class="fa fa-microphone up-mic" onclick="recordVoiture()" aria-hidden="true"></i>
                 <input type="text" class="form-control" name="search_voiture" placeholder="Marque " id="MaruqeVoiture" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Marque '">
-                <i class="fa fa-microphone" onclick="recordVoiture2()" aria-hidden="true" style="top: 38%;position: absolute;right: 13%;font-size: 1.4em;"></i>
-                <input type="text" id="demo-3_1" class="form-control" name="date_debut" placeholder="Date d'alle " onfocus="this.placeholder = ''" onblur="this.placeholder = 'Date d\'alle '">
+                <i class="fa fa-microphone down-mic" onclick="recordVoiture2()" aria-hidden="true"></i>
+                <input type="text" id="demo-3_1" class="form-control" name="date_debut" placeholder="Date d'allée " onfocus="this.placeholder = ''" onblur="this.placeholder = 'Date d\'allée '">
                 <input type="text" id="demo-3_2" class="form-control" name="date_fin" placeholder="Date de retour " onfocus="this.placeholder = ''" onblur="this.placeholder = 'Date de retour '">
 
                 <button type="submit" class="primary-btn text-uppercase">Trouver une voiture</button>

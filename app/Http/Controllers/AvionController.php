@@ -108,19 +108,19 @@ class AvionController extends Controller
 
   
 /*----------------------------------------------------------------*/
-	public function show($slug) 
+    public function show($slug) 
     {
-	   $product = Avion::where('slug', $slug)->first();
+       $product = Avion::where('slug', $slug)->first();
 
         if(!$product)
         {
             abort(404, 'le service n existe pas.');
         }
-	  
+      
        return view('vols.show')->with('vol', $product);
-	}
+    }
 /*----------------------------------------------------------------*/
-    public function showEscale($slug,$id) 
+public function showEscale($slug,$id) 
     {
        $product1 = Avion::where('slug', $slug)->first();
        $product2 = Avion::where('id', $id)->first();
@@ -145,9 +145,9 @@ public function searchVol()
         $avions = new Avion;
 
         $avions = $avions->where('nombre_places_libres','>',0);
-    	//request()->validate(['search_vol_depart' => 'required|min:3']);
+        //request()->validate(['search_vol_depart' => 'required|min:3']);
 
-		$depart             = request()->input('search_vol_depart');
+        $depart             = request()->input('search_vol_depart');
         $arrivee            = request()->input('search_vol_arrivee');
         $date_depart        = request()->input('date_depart');
         $date_retour        = request()->input('date_retour');    
@@ -166,46 +166,50 @@ public function searchVol()
             // $avions        = $avions->whereDate('date_depart','>',$date_depart) 
             //                 ->whereDate('date_retour','<',$date_retour);
           
-            if(request()->has('min_prix'))
+        if(request()->has('min_prix'))
+        {
+            $avions = $avions->whereBetween('prix',[request('min_prix'),request('max_prix')]);
+        }   
+        if(request()->has('etoiles'))
+        {
+            if(request('etoiles'))
             {
-                $avions = $avions->whereBetween('prix',[request('min_prix'),request('max_prix')]);
-            }   
-            if(request()->has('etoiles'))
-            {
-                if(request('etoiles'))
-                {
-                    $avions = $avions->where('etoiles', '=',request('etoiles'));
-                }
-                else
-                {
-                     $avions = $avions;
-                }
+                $avions = $avions->where('etoiles', '=',request('etoiles'));
             }
-            if(request()->has('sort'))
+            else
             {
-                $avions =  $avions->orderBy('promotion_pourcentage', request('sort'))
-                                        ->orderBy('prix', request('sort'));
+                 $avions = $avions;
             }
-            else                                                //like no request
-            {
-                $avions = $avions->inRandomOrder();
-            }
-            
-            $avions = $avions->paginate(6);
-
-            session(['vols_dapart_search'               => $depart]);
-            session(['vols_arrivee_retour_search'       => $arrivee]);
-            session(['vols_date_depart_search'          => $date_depart]);
-            session(['vols_date_retour_search'          => $date_retour]);
-            session(['vols_days_search'                 => $days]);
-
-            $type_de_vol = 'Vols directs';
-
-        
-            return view('vols.searchVol',['vols'  => $avions,'type_de_vol' =>$type_de_vol ]);
-
+        }
+        if(request()->has('sort'))
+        {
+            $avions =  $avions->orderBy('promotion_pourcentage', request('sort'))
+                                    ->orderBy('prix', request('sort'));
+        }
+        else                                                //like no request
+        {
+            $avions = $avions->inRandomOrder();
         }
         
+        $avions = $avions->paginate(6);
+
+        session(['vols_dapart_search'               => $depart]);
+        session(['vols_arrivee_retour_search'       => $arrivee]);
+        session(['vols_date_depart_search'          => $date_depart]);
+        session(['vols_date_retour_search'          => $date_retour]);
+        session(['vols_days_search'                 => $days]);
+
+        $type_de_vol = 'Vols directs';
+
+        if($avions->count() == 0)  
+        {
+            $type_de_vol = '';
+        }
+
+
+        return view('vols.searchVol',['vols'  => $avions,'type_de_vol' =>$type_de_vol ]);
+
+        }
         else
         {   
 
@@ -284,7 +288,19 @@ public function searchVol()
 
         $type_object = 'avions';
 
-        return view('vols.promotionVol')->with('vols',$avions);
+        if($avions->count())
+        {
+            $exist = 1;
+            return view('vols.promotionVol',['exist' => $exist])->with('vols',$avions);
+        }
+        
+        else
+        {
+            $exist = 0;
+            return view('vols.promotionVol',['exist' => $exist])->with('vols',$avions);
+        }
+
+
 
     }
 

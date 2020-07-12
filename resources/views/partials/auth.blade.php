@@ -2,7 +2,7 @@
                                 <a href="{{ route('login') }}">{{ __('s\'identifier') }}</a>
                                 <a> | </a>
                             @if (Route::has('register'))
-                                <a href="{{ route('register') }}">{{ __('s\'enrengistrer') }}</a>
+                                <a href="{{ route('register') }}">{{ __('s\'inscrire') }}</a>
                             @endif
                         @else
                             <li class="nav-item dropdown" style="list-style-type:none;"
@@ -18,12 +18,12 @@
                                     @endif
                                     <a class="dropdown-item" href="{{ route('reserver.show')}}">Mes commandes</a>
                                     @if(\App\OmraRendezVous::where('user_id',Auth::user()->id)->count())
-                                    <a class="dropdown-item" href="{{ route('omra.list')}}">Ma reservation d'Omra</a>
+                                    <a class="dropdown-item" href="{{ route('omra.list')}}">Ma réservation d'Omra</a>
                                     @endif
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{ __('Se déconnecter') }}
                                     </a>
 <!-- {{ route('home') }} -->
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

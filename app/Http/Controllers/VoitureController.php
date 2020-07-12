@@ -226,7 +226,9 @@ class VoitureController extends Controller
     {
         $this->refreshVoiture();              //refresh Voiture
 
-        $voitures = new Voiture2;
+
+        $voitures = Voiture2::where('promotion_pourcentage', '>' ,0);
+
 
         if(request()->has('min_prix'))
         {
@@ -259,13 +261,28 @@ class VoitureController extends Controller
             $voitures = $voitures->where('occupee' , 0)->inRandomOrder();
         }
 
-        $voitures = $voitures->paginate(6)->appends(['etoiles'   => request('etoiles'),
+        
+        
+        if($voitures->count())
+        {
+            $exist = 1;
+            $voitures = $voitures->paginate(6)->appends(['etoiles'   => request('etoiles'),
                                                      'sort'      => request('sort') ,
                                                      'min_prix'  =>request('min_prix'),
                                                      'max_prix'  =>request('max_prix')]);
+            return view('voitures.promotionVoiture',['exist' => $exist])->with('voitures',$voitures);
+        }
         
+        else
+        {
+            $exist = 0;
+            $voitures = $voitures->paginate(6)->appends(['etoiles'   => request('etoiles'),
+                                                     'sort'      => request('sort') ,
+                                                     'min_prix'  =>request('min_prix'),
+                                                     'max_prix'  =>request('max_prix')]);
+            return view('voitures.promotionVoiture',['exist' => $exist])->with('voitures',$voitures);
+        }
 
-        return view('voitures.promotionVoiture')->with('voitures',$voitures);
 
     }
 

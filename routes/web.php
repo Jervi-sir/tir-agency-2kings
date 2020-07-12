@@ -83,18 +83,12 @@ Route::group(['middleware' => ['auth']], function () {
 	Route::get('/store', 'ReservationController@store')->name('paiement.store');
 });
 
-
-/*===============[our Panier]======================================*/
-Route::post('/ajouterPanier/Voiture','PanierController@ajouterVoiture')->name('panier.ajouterVoiture');
-Route::post('/ajouterPanier/Vol','PanierController@ajouterVol')->name('panier.ajouterVol');
-Route::post('/ajouterPanier/Chambre','PanierController@ajouterChambre')->name('panier.ajouterChambre');
-Route::get('/voirPanier', 'PanierController@index')->name('panier.index');
-Route::delete('/supprimerPanier/{slug}', 'PanierController@supprimerService')->name('panier.supprimerService');
-
 /*===============[TICKETS]=========================================*/
-Route::get('/ticketVol/{slug}/id={id}','TicketController@showPlace')->name('ticket.showPlace');
-Route::get('/ticketVoiture/{slug}','TicketController@showVoiture')->name('ticket.showVoiture');
-Route::get('/ticketChambre/{slug}','TicketController@showChambre')->name('ticket.showChambre');
+Route::group(['middleware' => ['auth']], function () {
+	Route::get('/ticketVol/{slug}/id={id}','TicketController@showPlace')->name('ticket.showPlace');
+	Route::get('/ticketVoiture/{slug}','TicketController@showVoiture')->name('ticket.showVoiture');
+	Route::get('/ticketChambre/{slug}','TicketController@showChambre')->name('ticket.showChambre');
+});
 
 /*===============[Contacter nous]==========================================*/
 Route::get('/contacter_nous', 'ContacterController@index')->name('contacter.index');
@@ -113,7 +107,7 @@ Route::post('/rendezvous/annulerRendezVous', 'OmraController@annulerRendezVous')
 	Route::post('/my/sidentifier/request', 'AdminIdentificationController@index')->name('adminIdentification.sidentifier');
 // });
 
-/*===============[ OUR ADMIN PANEL]===============================*/
+/*===============[ ADMIN PANEL]===============================*/
 Route::group(['middleware' => ['auth','role']], function () {
 
 	Route::get('/my/analytique', 'AdminAnalytiqueController@index')->name('adminAnaletique.index');
@@ -223,23 +217,6 @@ Route::group(['middleware' => ['auth','roleAdmin']], function () {
 });
 
 
-
-
-//OLD SHits
-/*Panier*/
-Route::group(['middleware' => ['auth']], function () {
-		Route::get('/panier', 'CartController@index')->name('cart.index');
-		Route::post('/panier/ajouterVoiture','CartController@storeVoiture')->name('cart.storeVoiture');
-		Route::post('/panier/ajouterHotel','CartController@storeHotel')->name('cart.storeHotel');
-		Route::post('/panier/ajouterVol','CartController@storeVol')->name('cart.storeVol');
-		Route::delete('/panier/{rowId}', 'CartController@destroy')->name('cart.destroy');
-		Route::get('/videpanier', function () {Cart::destroy();});
-});
-Route::group(['middleware' => ['auth']], function () {
-		Route::get('/paiement1', 'CheckoutController@index')->name('checkout.index');
-		Route::post('/paiement1','CheckoutController@store')->name('checkout.store');
-		Route::get('/merci1', 'CheckoutController@thankyou')->name('checkout.thankyou');
-});
 // Auth::routes();
 // Route::get('/home', 'HomeController@index')->name('home');
 

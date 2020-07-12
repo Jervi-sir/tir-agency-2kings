@@ -239,6 +239,7 @@
 @endif
 @endif
 
+
     <h2 style="margin: 1.2em;margin-top: 0;">{{$type_de_vol}}</h2>
 @foreach($vols as $product)
 

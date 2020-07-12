@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Str;
 
-$DATABASE_URL=parse_url('mysql://eojaj4t26cpcjnvq:d58el42wv9h5xn7s@u3r5w4ayhxzdrw87.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/s1uv6n1mfnziq911');
+$DATABASE_URL=parse_url('mysql://tbhhw4vgxub9h7ft:i9ms12eex3xe0ufj@u3r5w4ayhxzdrw87.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/zrbr1yett1wk40jm');
 
 return [
 
@@ -50,9 +50,9 @@ return [
             'url' => env('DATABASE_URL'),
             'host' => env('DB_HOST', 'u3r5w4ayhxzdrw87.cbetxkdyhwsb.us-east-1.rds.amazonaws.com'),
             'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 's1uv6n1mfnziq911'),
-            'username' => env('DB_USERNAME', 'eojaj4t26cpcjnvq'),
-            'password' => env('DB_PASSWORD', 'd58el42wv9h5xn7s'),
+            'database' => env('DB_DATABASE', 'zrbr1yett1wk40jm'),
+            'username' => env('DB_USERNAME', 'tbhhw4vgxub9h7ft'),
+            'password' => env('DB_PASSWORD', 'i9ms12eex3xe0ufj'),
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',

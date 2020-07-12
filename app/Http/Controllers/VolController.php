@@ -237,13 +237,29 @@ class VolController extends Controller
         
 
 
-        $vols = $vols->paginate(6)->appends(['etoiels' => request('etoiles'),
-                                             'min_prix' => request('min_prix'),
-                                             'max_prix' => request('max_prix')]);
+        
 
         $type_object = 'vols';
 
-        return view('vols.promotionVol')->with('vols',$vols);
+        if($voitures->count())
+        {
+            $exist = 1;
+            $vols = $vols->paginate(6)->appends(['etoiels' => request('etoiles'),
+                                             'min_prix' => request('min_prix'),
+                                             'max_prix' => request('max_prix')]);
+            return view('vols.promotionVol',['exist' => $exist])->with('vols',$vols);
+        }
+        
+        else
+        {
+            $exist = 0;
+            $vols = $vols->paginate(6)->appends(['etoiels' => request('etoiles'),
+                                             'min_prix' => request('min_prix'),
+                                             'max_prix' => request('max_prix')]);
+            return view('vols.promotionVol',['exist' => $exist])->with('vols',$vols);
+        }
+
+
 
     }
 

@@ -2,7 +2,7 @@
 /*
 HotelController that views the index and voiture and searchVoiture pages
 
-Hotel --one------to---------many--- Chambre 		hotel->chambres 		rls
+Hotel --one------to---------many--- Chambre         hotel->chambres         rls
 
 index()     .search for hotel that has chambre non occupee then displays them
             --->return  [
@@ -29,8 +29,8 @@ show($slug)         .will take the slug , search it in db get the first object
                                     .404 if somethiing went wrong
                                 ]  
 
-showAfterSearch($slug) 			.//aborted//
-								.but in general it return the hotel after search requests
+showAfterSearch($slug)          .//aborted//
+                                .but in general it return the hotel after search requests
 */
 namespace App\Http\Controllers;
 
@@ -44,53 +44,53 @@ use Illuminate\Database\Eloquent\Collection;
 
 class HotelController extends Controller
 {
-		/*update hotels table*/
+        /*update hotels table*/
 
 /*------------------side functions----------------------------------------------*/
 //just to update the table i side of min price of each hotel related with its all chambres
          function refreshHotel()
         {
-	        $hotels_refresh = \App\Hotel::all();	
-			 										//since eloquent rls dont work in the mass object at once 
-	        foreach($hotels_refresh as $hotel) 	
-	        {
-	             $min_of_chambres = $hotel->chambres->min('prix') ?? 0;			//got to turn max_jour , to prix_min in db table
-	             $hotel->prix = $min_of_chambres;
+            $hotels_refresh = \App\Hotel::all();    
+                                                    //since eloquent rls dont work in the mass object at once 
+            foreach($hotels_refresh as $hotel)  
+            {
+                 $min_of_chambres = $hotel->chambres->min('prix') ?? 0;         //got to turn max_jour , to prix_min in db table
+                 $hotel->prix = $min_of_chambres;
 
-	             $count_chambres_libre = $hotel->chambres->where('occupee','=',0)->count();
-	             $hotel->chambres_disponible  = $count_chambres_libre;
-
-
-	             foreach($hotel->chambres->all() as $chambre)
-	             {
-	             	$date = $chambre->promotion_delai;
-
-		             if($chambre->promotion_delai < \Carbon\Carbon::now())
-		             {
-		                $chambre->promotion_pourcentage = 0;
-		             }       
-
-		             $chambre->save();
-	             }
+                 $count_chambres_libre = $hotel->chambres->where('occupee','=',0)->count();
+                 $hotel->chambres_disponible  = $count_chambres_libre;
 
 
-	             $hotel->save();
-	        }
+                 foreach($hotel->chambres->all() as $chambre)
+                 {
+                    $date = $chambre->promotion_delai;
+
+                     if($chambre->promotion_delai < \Carbon\Carbon::now())
+                     {
+                        $chambre->promotion_pourcentage = 0;
+                     }       
+
+                     $chambre->save();
+                 }
+
+
+                 $hotel->save();
+            }
         }
 
 /*-------------Controller index-------------------------------------------------------*/
-	public function index() 
-	{	
-		$this->refreshHotel(); 				//refresh Hotel 
+    public function index() 
+    {   
+        $this->refreshHotel();              //refresh Hotel 
 
         /*the manipulation*/
-		$hotels = new Hotel;
-		$hotels = $hotels->has('chambres');
+        $hotels = new Hotel;
+        $hotels = $hotels->where('chambres_disponible','>',0);
 
-		if(request()->has('min_prix'))						//if there is min_prix
+        if(request()->has('min_prix'))                      //if there is min_prix
         {
-			$hotels = $hotels->whereBetween('prix',[request('min_prix'),request('max_prix')]);
-		}	
+            $hotels = $hotels->whereBetween('prix',[request('min_prix'),request('max_prix')]);
+        }   
 
         if(request()->has('etoiles'))
         {
@@ -107,12 +107,12 @@ class HotelController extends Controller
         }
 
 
-        if(request()->has('sort'))							//if sort is requested 
+        if(request()->has('sort'))                          //if sort is requested 
         {
-			$hotels = $hotels->orderBy('prix', request('sort'));
+            $hotels = $hotels->orderBy('prix', request('sort'));
         }
 
-		else                                                //like no request
+        else                                                //like no request
         {
             $hotels = $hotels->inRandomOrder();
         }
@@ -122,67 +122,67 @@ class HotelController extends Controller
         $type_object = 'hotels';
 
         return view('hotels.index',['type' => $type_object])->with('hotels',$hotels);
-		
-	}
+        
+    }
 
 
 /*------------------------------------------------------------------------------*/
-	public function show(Request $request) 
-	{
-		$hotel = Hotel::where('slug', $request->slug)->first();						//get the first result only
-		
-		if(!$hotel)																
-        {	
-        	abort(404, 'le service n existe pas.');	
+    public function show(Request $request) 
+    {
+        $hotel = Hotel::where('slug', $request->slug)->first();                     //get the first result only
+        
+        if(!$hotel)                                                             
+        {   
+            abort(404, 'le service n existe pas.'); 
         }
-		
-		$hotel_id = $hotel->id;		
-		$chambres = Chambre::where('hotel_id', $hotel_id)
-								->where('occupee',0)
-								->orderBy('promotion_pourcentage','desc')
-								->paginate(4);
-		
-		return view('hotels.show',['hotel' 		=> $hotel,
-									'chambres' 	=> $chambres 
-									]);
-	}
+        
+        $hotel_id = $hotel->id;     
+        $chambres = Chambre::where('hotel_id', $hotel_id)
+                                ->where('occupee',0)
+                                ->orderBy('promotion_pourcentage','desc')
+                                ->paginate(4);
+        
+        return view('hotels.show',['hotel'      => $hotel,
+                                    'chambres'  => $chambres 
+                                    ]);
+    }
 
 
 /*------------------------------------------------------------------------------*/
-	public function searchHotel () 
-	{
-		$this->refreshHotel(); 				//refresh Hotel 
-		//request()->validate(['search_hotel_location' => 'required|min:2']); 		//make the field required min 2 letter
+    public function searchHotel () 
+    {
+        $this->refreshHotel();              //refresh Hotel 
+        //request()->validate(['search_hotel_location' => 'required|min:2']);       //make the field required min 2 letter
 
-		$nb_personne 	= request()->input('nb_personne');	 					//numbers of lit in room
-		$location 		= request()->input('search_hotel_location');				//serach the location
+        $nb_personne    = request()->input('nb_personne');                      //numbers of lit in room
+        $location       = request()->input('search_hotel_location');                //serach the location
 
-		/*get number of days client want to stay, and show appropriate price and hotel that can handle it*/
-		$date_fin 		= request()->input('date_fin');
-		$date_debut 	= request()->input('date_debut'); 				
-		$days_seconds 	= strtotime($date_fin) - strtotime($date_debut);		//calculate by seconds
+        /*get number of days client want to stay, and show appropriate price and hotel that can handle it*/
+        $date_fin       = request()->input('date_fin');
+        $date_debut     = request()->input('date_debut');               
+        $days_seconds   = strtotime($date_fin) - strtotime($date_debut);        //calculate by seconds
 
-		if($date_debut == null)
+        if($date_debut == null)
         {
             $days = 1;
         }
 
         else
         {
-            $days_seconds 	= strtotime($date_fin) - strtotime($date_debut);      //calculate by seconds
-            $days 			= (int)($days_seconds / (60 * 60 * 24));                      //seconds to number of days
+            $days_seconds   = strtotime($date_fin) - strtotime($date_debut);      //calculate by seconds
+            $days           = (int)($days_seconds / (60 * 60 * 24));                      //seconds to number of days
         }
 
-        if($nb_personne == null)												// if client didnt enter nb_person
+        if($nb_personne == null)                                                // if client didnt enter nb_person
         {
              $nb_personne = 1;
         }
 
 
-		$check = request()->input('check');									//idk
-		//result of the search
-		$results = Hotel::where('lieu' , 'like', "%$location%")
-							->where('prix' , '>' , $days);							
+        $check = request()->input('check');                                 //idk
+        //result of the search
+        $results = Hotel::where('lieu' , 'like', "%$location%")
+                            ->where('chambres_disponible','>',0);                           
        
 
         if(request()->has('min_prix'))
@@ -190,13 +190,13 @@ class HotelController extends Controller
             $hotels = $hotels->whereBetween('prix',[request('min_prix'),request('max_prix')]);
         }
 
-		if(request()->has('sort'))
+        if(request()->has('sort'))
         {
-			$hotels = $hotels->orderBy('prix', request('sort'));
-			
+            $hotels = $hotels->orderBy('prix', request('sort'));
+            
         }
         
-		if(request()->has('etoiles'))
+        if(request()->has('etoiles'))
         {
             if(request('etoiles'))
             {
@@ -210,98 +210,115 @@ class HotelController extends Controller
             
         }
 
-		else                                                //like no request
+        else                                                //like no request
         {
             $results = $results->inRandomOrder();
         }
 
         $results = $results->paginate(6);
 
-		session(['hotel_days_search'		=> $days]);
-        session(['hotel_date_fin_search'	=> $date_fin]);
-		session(['hotel_location_search' 	=> $location]);
-        session(['hotel_date_debut_search'	=> $date_debut]);
-        session(['hotel_nb_personne_search'	=> $nb_personne]);
+        session(['hotel_days_search'        => $days]);
+        session(['hotel_date_fin_search'    => $date_fin]);
+        session(['hotel_location_search'    => $location]);
+        session(['hotel_date_debut_search'  => $date_debut]);
+        session(['hotel_nb_personne_search' => $nb_personne]);
 
-		return view('hotels.searchHotel',['hotels' 	=> $results,'days' => $days]); 	// without rls
+        return view('hotels.searchHotel',['hotels'  => $results,'days' => $days]);  // without rls
 
-					//->orWhere('description' , 'like' , "%$location%")
-					//->orwhere('etoiles', '=', "$nb_personne")
-					//wherseDate('date_debut', '=', date($date_debut))
-					//->whereDate('date_fin', '<=', date($date_fin))
-					//where('annulation', '=', "$check")
-	}
+                    //->orWhere('description' , 'like' , "%$location%")
+                    //->orwhere('etoiles', '=', "$nb_personne")
+                    //wherseDate('date_debut', '=', date($date_debut))
+                    //->whereDate('date_fin', '<=', date($date_fin))
+                    //where('annulation', '=', "$check")
+    }
 
 
 
 /*------------------------------------------------------------------------------*/
-	public function promotion() 
-	{	
-		$this->refreshHotel(); 				//refresh Hotel 
+    public function promotion() 
+    {   
+        $this->refreshHotel();              //refresh Hotel 
 
-		$hotels = new Hotel;
+        $items = new Hotel;
 
-		$hotels = $hotels->has('chambres');
+        $collection = new Collection([]);
+        
+        $hotels = Hotel::where('chambres_disponible','>',0)->get();
 
-		if(request()->has('min_prix'))
-        {
-            $hotels = $hotels->whereBetween('prix',[request('min_prix'),request('max_prix')]);
+
+        foreach ($hotels as $hotel) {
+            $nb_promo = $hotel->chambres->where('promotion_pourcentage','>',0)->count();
+            if($nb_promo)
+            {
+                $collection->push($hotel);
+            }
         }
 
-		if(request()->has('etoiles'))
+        if(request()->has('min_prix'))
+        {
+            $collection = $collection->whereBetween('prix',[request('min_prix'),request('max_prix')]);
+        }
+
+        if(request()->has('etoiles'))
         {
             if(request('etoiles'))
             {
-                $hotels = $hotels->where('etoiles','=', request('etoiles'));
+                $collection = $collection->where('etoiles','=', request('etoiles'));
                                    
             }
             else
             {
-                 $hotels = $hotels;
+                 $collection = $collection;
             }
             
         }
 
-		if(request()->has('sort'))
+        if(request()->has('sort'))
         {
-			$hotels = $hotels->orderBy('prix', request('sort'));
-			
+            $collection = $collection->orderBy('prix', request('sort'));
+            
         }
 
-		else                                                //like no request
+
+
+
+        if($collection->count())
         {
-            $hotels = $hotels->inRandomOrder();
+            $exist = 1;
+            $collection = $collection;
+            return view('hotels.promotionHotel',['exist' => $exist])->with('hotels',$collection);
+        }
+        
+        else
+        {
+            $exist = 0;
+            return view('hotels.promotionHotel',['exist' => $exist])->with('hotels',$collection);
         }
 
-        $hotels = $hotels->paginate(6)->appends(['etoiels' => request('etoiles')]);
 
-        $type_object = 'hotels';
-
-        return view('hotels.promotionHotel')->with('hotels',$hotels);
-
-	}
+    }
         
 
 /*------------------------------------------------------------------------------*/
-	public function showAfterSearch(Request $request) 
-	{
-		$hotel = Hotel::where('slug', $request->slug)->first();		//get the first result only
-		
-		$hotel_id = $hotel->id;		//without relations
-		$chambres = Chambre::where('hotel_id', $hotel_id)
-								->where('occupee',0)
-								->inRandomOrder()->paginate(4);
-		//get the appropriate rooms without rls
-        if(!$hotel)
-        {
-            abort(404, 'le service n existe pas.');
-        }
-		//return view('hotels.show',['hotel' => $hotel]);
-		return view('hotels.showAfterSearch',['hotel' 		=> $hotel,
-											 'days' 		=> $request->days ,
-											 'chambres' 	=> $chambres ,
-											 'nb_personne' 	=> $request->nb_personne]); // without rls
-	}
+    // public function showAfterSearch(Request $request) 
+    // {
+    //  $hotel = Hotel::where('slug', $request->slug)->first();     //get the first result only
+        
+    //  $hotel_id = $hotel->id;     //without relations
+    //  $chambres = Chambre::where('hotel_id', $hotel_id)
+    //                          ->where('occupee',0)
+    //                          ->inRandomOrder()->paginate(4);
+    //  //get the appropriate rooms without rls
+ //        if(!$hotel)
+ //        {
+ //            abort(404, 'le service n existe pas.');
+ //        }
+    //  //return view('hotels.show',['hotel' => $hotel]);
+    //  return view('hotels.showAfterSearch',['hotel'       => $hotel,
+    //                                       'days'         => $request->days ,
+    //                                       'chambres'     => $chambres ,
+    //                                       'nb_personne'  => $request->nb_personne]); // without rls
+    // }
 
 
 
@@ -310,46 +327,46 @@ class HotelController extends Controller
 
 /*OLD shits*/
 
-     	//$hotels = DB::select(DB::raw("SELECT * FROM `hotels` INEER JOIN `chambres` ON chambres.hotel_id = `hotels.id` AND `chambres`.`occupee` = 0"))->inRandomOrder()->paginate(6);
-     	//$hotels = DB::table('hotels')->select(DB::raw("SELECT * FROM `hotels` INEER JOIN `chambres` ON chambres.hotel_id = hotels.id AND chambres.occupee = 0"))->inRandomOrder()->paginate(6);
-     	//$hotels = Hotel::inRandomOrder()->paginate(6);
+        //$hotels = DB::select(DB::raw("SELECT * FROM `hotels` INEER JOIN `chambres` ON chambres.hotel_id = `hotels.id` AND `chambres`.`occupee` = 0"))->inRandomOrder()->paginate(6);
+        //$hotels = DB::table('hotels')->select(DB::raw("SELECT * FROM `hotels` INEER JOIN `chambres` ON chambres.hotel_id = hotels.id AND chambres.occupee = 0"))->inRandomOrder()->paginate(6);
+        //$hotels = Hotel::inRandomOrder()->paginate(6);
 
-     	// $hotels = Hotel::leftjoin('chambres', 'hotels.id', '=', 'chambres.hotel_id')
-     	// 	->where('')
+        // $hotels = Hotel::leftjoin('chambres', 'hotels.id', '=', 'chambres.hotel_id')
+        //  ->where('')
       //       ->select('users.*', 'contacts.phone', 'orders.price')
       //       ->get();
 
-     	// $hotels = DB::table('hotels')
-				  //       ->join('chambres', function ($join) {
-				  //           $join->on('hotels.id', '=', 'chambres.hotel_id')
-				  //                ->where('chambres.occupee', '=', 0);
-				  //       })
-				  //       ->get();
-		// $hotels = DB::table('hotels')
-		// 		->join('chambres', 'hotels.id', '=' , 'chambres.hotel_id')
-		// 		->where('chambres.occupee', '=', '0')
-		// 		->inRandomOrder()->paginate(6);
+        // $hotels = DB::table('hotels')
+                  //       ->join('chambres', function ($join) {
+                  //           $join->on('hotels.id', '=', 'chambres.hotel_id')
+                  //                ->where('chambres.occupee', '=', 0);
+                  //       })
+                  //       ->get();
+        // $hotels = DB::table('hotels')
+        //      ->join('chambres', 'hotels.id', '=' , 'chambres.hotel_id')
+        //      ->where('chambres.occupee', '=', '0')
+        //      ->inRandomOrder()->paginate(6);
 
-		// 		$hotels = DB::table('hotels')
+        //      $hotels = DB::table('hotels')
   //           ->join('chambres','hotels.id','=','chambres.hotel_id')
   //           ->where('chambres.occupee', '=' ,0)
   //           ->inRandomOrder()->paginate(6);
-		// DB::table('hotels')
+        // DB::table('hotels')
   //           ->join('chambres','chambres.hotel_id','=','hotels.id')
   //           ->where('chambres.occupee', '=' ,0)
-  //           ->inRandomOrder()->paginate(6); 		 
+  //           ->inRandomOrder()->paginate(6);       
 
 
-// 	public function show($slug) 
-// 	{
-		
-// 		$hotel = Hotel::where('slug', $slug)->first();		//get the first result only
+//  public function show($slug) 
+//  {
+        
+//      $hotel = Hotel::where('slug', $slug)->first();      //get the first result only
 
-// 		$hotel_id = $hotel->id;		//without relations
+//      $hotel_id = $hotel->id;     //without relations
 
-// 		$chambres = Chambre::where('hotel_id', $hotel_id)
-// 					->where('occupee',0)
-// 					->inRandomOrder()->paginate(4);
+//      $chambres = Chambre::where('hotel_id', $hotel_id)
+//                  ->where('occupee',0)
+//                  ->inRandomOrder()->paginate(4);
 // //get the appropriate rooms without rls
 
 //         if(!$hotel)
@@ -357,6 +374,6 @@ class HotelController extends Controller
 //             abort(404, 'le service n existe pas.');
 //         }
 
-// 		//return view('hotels.show',['hotel' => $hotel]);
-// 		return view('hotels.show',['hotel' => $hotel, 'chambres' => $chambres]); // without rls
-// 	}
+//      //return view('hotels.show',['hotel' => $hotel]);
+//      return view('hotels.show',['hotel' => $hotel, 'chambres' => $chambres]); // without rls
+//  }

@@ -24,7 +24,7 @@
 
                 </p>
                 @guest
-                <a href="{{ route('register') }}" class="rt-gradient3 primary-btn  text-uppercase" style="color: rgb(0, 0, 0); font-weight: 750;border-radius: 5px;">Créer un compte Maintenant</a>
+                <a href="{{ route('register') }}" class="rt-gradient3 primary-btn  text-uppercase text-center" style="color: rgb(0, 0, 0); font-weight: 750;border-radius: 5px;">Créer un compte Maintenant</a>
                 @endguest
             </div>
             <!-- the searchform -->
@@ -51,7 +51,7 @@
 
                                         <div class="img-box img-hover-zoom" >
                                                  <img src="{{ secure_asset( $product->image) }}" class="img-fluid" alt="">
-                                                 <div class="price">à partir de <span class="review">{{ getPriceHelper($product->chambres->where('occupee',0)->min('prix')) }}</span></div>
+                                                 <div class="price">à partir de <span class="review">{{ getPriceHelper($product->chambres->min('prix')) }}</span></div>
                                         </div>
                                         <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
                                         <div class="thumb-content">
@@ -194,67 +194,12 @@
 <section class="testimonial-area section-gap">
     <div class="container">
         <div class="row d-flex justify-content-center">
-            <div class="menu-content pb-70 col-lg-8">
-                <div class="title text-center">
-                    <h1 class="mb-10">Avis de nos Clients</h1>
-                    <p>Nous nous soucions du plaisir de nos clients<br> et nous les proposons de partager librement leurs expériences avec nos services </p>
+            <div class="menu-content pb-70 col-lg-8 container row">
+                <div class="title col-lg-12">
+                    <h2>Voir Nos Offres <b>d'Omra</b></h2>
                 </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="active-testimonial">
-                <div class="single-testimonial item d-flex flex-row">
-                    <div class="thumb">
-                        <img class="img-fluid" src="img/elements/user1.png" alt="">
-                    </div>
-                    <div class="desc">
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
-                        </p>
-                        <h4>Lorem ipsum</h4>
-                        <div class="star">
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span>                
-                        </div>  
-                    </div>
-                </div>
-                <div class="single-testimonial item d-flex flex-row">
-                    <div class="thumb">
-                        <img class="img-fluid" src="img/elements/user2.png" alt="">
-                    </div>
-                    <div class="desc">
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.                                                </p>
-                        <h4>Lorem ipsum</h4>
-                        <div class="star">
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>            
-                        </div>  
-                    </div>
-                </div>
-                <div class="single-testimonial item d-flex flex-row">
-                    <div class="thumb">
-                        <img class="img-fluid" src="img/elements/user1.png" alt="">
-                    </div>
-                    <div class="desc">
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.             
-                        </p>
-                        <h4>Lorem ipsum</h4>
-                        <div class="star">
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span>                
-                        </div>  
-                    </div>
+                <div class="col-lg-12 text-center mx-auto">
+                    <a href="{{ route('omra.index') }}" class="primary-btn col-6 text-center mx-auto" style="font-size: 1.3em;">Consulter la page d'omra</a>
                 </div>
             </div>
         </div>

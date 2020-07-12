@@ -36,9 +36,13 @@ class HomeController extends Controller
     
     public function index()
     {
-        $hotels = Hotel::has('chambres')->where('etoiles','>',3)->get();
+
         $this->refreshHotel();              //refresh Hotel 
         
+                $hotels = Hotel::where('etoiles','>',3)
+                        ->where('chambres_disponible','>',0)
+                        ->get();
+                        
         if(request()->has('currency'))
         {
             $array = array("dzd","dzd","eur","gbp","usd");

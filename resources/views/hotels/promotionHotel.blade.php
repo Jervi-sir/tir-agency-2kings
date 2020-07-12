@@ -130,7 +130,7 @@
 
 
     <div class="rt-widget widget_rating">
-        <h6>{{ $hotels->total() }}  service(s) trouvés </h6>
+        <h6>{{ $hotels->count() }}  service(s) trouvés </h6>
             
     </div>
 
@@ -197,14 +197,23 @@
     <?php 
         $show_pagination = 0;
      ?>
+
+@if($exist == 0)
+
+    <h2 style="margin: 1.2em;margin-top: 0;">Aucune promotion n'est disponible</h2>
+    
+@else
+    <h2 style="margin: 1.2em;margin-top: 0;"></h2>
+@endif
+
 @foreach($hotels as $product)
-@if($product->chambres->where('occupee',0)->where('promotion_pourcentage','>',0)->count())
+@if($product->chambres->where('promotion_pourcentage','>',0)->count())
     <?php 
         $show_pagination = $show_pagination + 1;
      ?>
 <div class="box-style__1 rt-mb-30">
     <div class="hotel-inner-content row">
-        <div class="hotel-thumb col-lg-4 mb-4 mb-md-0">
+        <div class="hotel-thumb col-lg-4 mb-4 mb-md-0 mx-auto">
             <div  class="mb-0">
 
                 <img src="{{ secure_asset($product->image) }}" class="hotel-bg rtbgprefix-cover">
@@ -225,7 +234,7 @@
             </div>
 
         </div><!-- /.hotel-thumb -->
-        <div class="hotel-text col-lg-5">
+        <div class="hotel-text col-lg-5 text-center">
             <div class="row top mb-4 mb-md-0">
                 
                 <div class="col-12 mb-2">
@@ -295,7 +304,7 @@
 
         </div><!-- /.hotel-text -->
         <div class="hotel-text col-lg-3 px-0">
-             <div class="right text-left text-md-right mt-md-0">
+             <div class="right text-left text-md-right mt-md-0 text-center">
                     <div class="col-12">
                         <div class="right" style="float: left;">
                             @for ($i = 0;$i < $product->etoiles;$i++)
@@ -321,9 +330,5 @@
 </div><!-- /.hotel-list-box -->
 @endif
 @endforeach
-
-@if($show_pagination)
-{{ $hotels->appends(request()->input())->links() }}
-@endif
 
 @endsection

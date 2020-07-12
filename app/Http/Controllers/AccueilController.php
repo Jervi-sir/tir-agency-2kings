@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Hotel;
 
 class AccueilController extends Controller
 {
@@ -27,7 +28,9 @@ class AccueilController extends Controller
     {
         $this->refreshHotel();              //refresh Hotel 
         
-        $hotels = \App\Hotel::has('chambres')->where('etoiles','>',3)->get();
+        $hotels = Hotel::where('etoiles','>',3)
+                        ->where('chambres_disponible','>',0)
+                        ->get();
 
         if(request()->has('currency'))
         {

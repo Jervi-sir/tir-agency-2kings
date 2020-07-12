@@ -51,7 +51,7 @@
                                                     @endforeach
                                                 @endif
                                                 </td>
-                                                </td>
+                                            </tr>
                                             <tr>
                                                 <td >Occupée</td>
                                                 <td>{{ $chambre->occupee }}</td>
